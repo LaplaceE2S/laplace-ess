@@ -1,4 +1,7 @@
+@extends('layout')
 
+@section('content')
+   
 
         <!-- Bootstrap CSS -->
 
@@ -448,3 +451,5 @@
     </div>
   </section>
 </div>
+
+@endsection
