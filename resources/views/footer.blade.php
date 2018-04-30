@@ -6,9 +6,6 @@
 <!-- footer -->
 <div class="footer">
   <div class="container">
-
-    <hr class="footer-line">
-    
     <div class="row ">
       <!-- footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">

@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// view Home
+Route::get('/', 'WelcomeController@index');
+
+// demande du formulaire
+Route::get('users', 'UsersController@getInfos');
+
+// soumission du formulaire
+Route::post('users', 'UsersController@postInfos');
+
+// demande du formulaire
+Route::get('contact', 'ContactController@getForm');
+
+// soumission du formulaire
+Route::post('contact', 'ContactController@postForm');

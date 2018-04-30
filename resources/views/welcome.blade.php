@@ -1,4 +1,7 @@
+@extends('layout')
 
+@section('content')
+   
 
         <!-- Bootstrap CSS -->
 
@@ -171,7 +174,7 @@
 
                     <div class="featured__column featured__column--small">
 
-                        <div class="entry" style="background-image:url('./images/img3.jpgimg3.jpg');">
+                        <div class="entry" style="background-image:url('./images/img3.jpg');">
                             
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0">Offres</a></span>
@@ -182,7 +185,7 @@
                           
                         </div> <!-- end entry -->
 
-                        <div class="entry" style="background-image:url('./images/img2.jpgimg2.jpg');">
+                        <div class="entry" style="background-image:url('./images/img2.jpg');">
 
                             <div class="entry__content">
                                 <span class="entry__category"><a href="#0">Actu</a></span>
@@ -448,3 +451,5 @@
     </div>
   </section>
 </div>
+
+@endsection
