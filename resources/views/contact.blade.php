@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 
 @section('content')
 
@@ -8,7 +8,7 @@
 
         <div class="panel panel-info">
 
-            <div class="panel-heading">Contactez-moi</div>
+            <div class="panel-heading">Contactez-nous</div>
 
             <div class="panel-body"> 
 
@@ -19,6 +19,22 @@
                         {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Votre nom']) !!}
 
                         {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
+
+                    </div>
+
+                    <div class="form-group {!! $errors->has('structures') ? 'has-error' : '' !!}">
+
+                    {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Votre structure']) !!}
+
+                    {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
+
+                    </div>
+
+                    <div class="form-group {!! $errors->has('telephone') ? 'has-error' : '' !!}">
+
+                    {!! Form::tel('tel', null, ['class' => 'form-control', 'placeholder' => 'Votre numéro de téléphone']) !!}
+
+                    {!! $errors->first('tel', '<small class="help-block">:message</small>') !!}
 
                     </div>
 

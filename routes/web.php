@@ -12,7 +12,7 @@
 */
 
 // view Home
-Route::get('/', 'WelcomeController@index');
+Route::get('/welcome', 'WelcomeController@index');
 
 // demande du formulaire
 Route::get('users', 'UsersController@getInfos');
@@ -21,7 +21,11 @@ Route::get('users', 'UsersController@getInfos');
 Route::post('users', 'UsersController@postInfos');
 
 // demande du formulaire
-Route::get('contact', 'ContactController@getForm');
+Route::get('contact', 'ContactController@getForm')->name('contact');
 
 // soumission du formulaire
 Route::post('contact', 'ContactController@postForm');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
