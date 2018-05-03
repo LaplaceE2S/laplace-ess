@@ -12,7 +12,16 @@
 */
 
 // view Home
+
 Route::get('/', 'WelcomeController@index')->name('welcome');
+
+
+Route::get('/welcome', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
+
+
+Route::get('/welcome', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
 
 // demande du formulaire
 Route::get('users', 'UsersController@getInfos');
@@ -38,3 +47,4 @@ Route::get('/admin', 'AdminController@index')
 
 // dashboard users
 Route::get('/userWelcome', 'HomeController@index');
+

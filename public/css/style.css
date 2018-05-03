@@ -654,3 +654,22 @@ footer .text-color-footer{
 footer .text-color-footer:hover{
     color: rgba(255,255,255,.75);
 }
+
+
+    /*** ADMIN ***
+    ***************/
+.admin{
+    width: 100%;
+    text-align: center;
+}
+.admin-menu .card-header{
+    background-color: #594e4b;
+    text-decoration: none;
+    color:inherit;
+    color: white;
+    
+}
+
+.admin-main{
+    background-color: whitesmoke;
+}

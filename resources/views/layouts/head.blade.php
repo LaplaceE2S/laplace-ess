@@ -21,7 +21,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'La Place ess') }}</title>
+<title>La Place ess - @yield('title')</title>
 
 <!-- réseau sociaux -->
  <!-- Twitter Card data -->
@@ -38,6 +38,12 @@
 <meta property="og:url" content="laplace-ess.fr" />
 <meta property="og:image" content="http://example.com/image.jpg" />
 <meta property="og:description" content="la page d'accueil de ess présentes l'ess" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style_back.css') }}">
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 
 <!-- Scripts -->
 <!-- <script src="{{ asset('js/app.js') }}" defer></script>  -->
@@ -57,7 +63,5 @@ crossorigin="anonymous"></script>
 
 <script src="./js/carousel.js"></script>
 
-<!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 </head>
