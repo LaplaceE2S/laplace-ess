@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Mail;
-use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
@@ -17,7 +16,7 @@ class ContactController extends Controller
     {
         Mail::send('email_contact', $request->all(), function($message) 
         {
-            $message->to('webdev.fk@gmail.com')->subject('Contact');
+            $message->to('webDev.fk@gmail.com')->subject('Contact');
         });
 
         return view('confirm');

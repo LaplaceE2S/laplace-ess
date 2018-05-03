@@ -188,7 +188,11 @@ header .right-item-nav-end{
 
   /*** ENCART actu ***
   *******************/
-  .pageheader-content {
+
+.pageheader-content.row{
+    margin:0 auto;
+}
+.pageheader-content {
     padding: 0;
     overflow: hidden;
     max-width: 1000px;
@@ -196,7 +200,6 @@ header .right-item-nav-end{
 
 .row {
     width: 94%;
-    max-width: 1000px;
     margin: 0 auto;
 }
 

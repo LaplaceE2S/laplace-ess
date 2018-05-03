@@ -30,4 +30,16 @@ class User extends Authenticatable
     public function apartenir(){
         return $this->belongsTo('App\Companies');     
     }
+
+    /**
+     * Admin 
+     */
+    const ADMIN_TYPE = 1;
+    const DEFAULT_TYPE = 0;
+
+    public function isAdmin(){        
+        return $this->type === self::ADMIN_TYPE;    
+    }
+
+
 }

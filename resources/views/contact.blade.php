@@ -1,8 +1,11 @@
 @extends('layouts.layout')
 
+@section('title')
+contact
+@endsection
+
 @section('content')
 
-    <!-- <div class="col-sm-offset-3 col-sm-6"> -->
 </br>
     <div class="container">
 
@@ -22,7 +25,7 @@
 
                     </div>
 
-                    <div class="form-group {!! $errors->has('structures') ? 'has-error' : '' !!}">
+                    <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!}">
 
                     {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Votre structure']) !!}
 
@@ -54,7 +57,7 @@
 
                     </div>
 
-                    {!! Form::submit('Envoyer !', ['class' => 'btn btn-info pull-right']) !!}
+                    {!! Form::submit('Envoyer', ['class' => 'btn btn-info pull-right']) !!}
 
                 {!! Form::close() !!}
 

@@ -12,7 +12,7 @@
 */
 
 // view Home
-Route::get('/welcome', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
 // demande du formulaire
 Route::get('users', 'UsersController@getInfos');
@@ -24,8 +24,17 @@ Route::post('users', 'UsersController@postInfos');
 Route::get('contact', 'ContactController@getForm')->name('contact');
 
 // soumission du formulaire
-Route::post('contact', 'ContactController@postForm');
+Route::post('contact', 'ContactController@postForm')->name('confirm');
 
 Auth::routes();
 
+// dashboard view
 Route::get('/home', 'HomeController@index')->name('home');
+
+// dashboard admin
+Route::get('/admin', 'AdminController@index')    
+    ->middleware('is_admin')    
+    ->name('admin');
+
+// dashboard users
+Route::get('/userWelcome', 'HomeController@index');

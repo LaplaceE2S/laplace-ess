@@ -1,4 +1,8 @@
-@extends('layout')
+@extends('layouts.layout')
+
+@section('title')
+confirmation de contact
+@endsection
 
 @section('content')
 
@@ -8,7 +12,7 @@
 
         <div class="panel panel-info">
 
-            <div class="panel-heading">Contactez-moi</div>
+            <div class="panel-heading">Confirmation de contact</div>
 
             <div class="panel-body"> 
 
