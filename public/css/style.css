@@ -658,11 +658,17 @@ footer .text-color-footer:hover{
     width: 100%;
     text-align: center;
 }
+.admin .btn{
+    background-color: whitesmoke;
+    color: black;
+    margin-top:    
+}
+
+.admin .btn:hover{
+    background-color: #f49712;
+}
 .admin-menu .card-header{
     background-color: #594e4b;
-    text-decoration: none;
-    color:inherit;
-    color: white;
     
 }
 

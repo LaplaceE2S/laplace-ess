@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-header" id="heading2">
                 <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                <button class="btn" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                 Structures
                 </button>
                 </h5>
@@ -36,7 +36,7 @@
         <div class="card">
             <div class="card-header" id="heading3">
                 <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                <button class="btn" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                 Annonces
                 </button>
                 </h5>
@@ -44,13 +44,13 @@
                 <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
                     <ul>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                        voir les toutes les annonces
+                    voir les toutes les annonces
                     </a></li>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
                     voir les annonces en attentes
                     </a></li>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    voir les annonces en publiés en cours
+                    voir les annonces publiés en cours
                     </a></li>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
                     voir les annonces archivées
@@ -73,7 +73,7 @@
         <div class="card">
             <div class="card-header" id="heading4">
                 <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                <button class="btn" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                 Agenda
                 </button>
                 </h5>
