@@ -9,6 +9,7 @@
     <p>Réception d'une prise de contact avec les éléments suivants :</p>
     <ul>
       <li><strong>Nom</strong> : {{ $nom }}</li>
+      <li><strong>Structure</strong> : {{ $structure }}</li>
       <li><strong>Email</strong> : {{ $email }}</li>
       <li><strong>Message</strong> : {{ $texte }}</li>
     </ul>

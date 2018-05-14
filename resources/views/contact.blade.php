@@ -6,66 +6,93 @@ contact
 
 @section('content')
 
-</br>
-    <div class="container">
+<br />
 
-        <div class="panel panel-info">
+<h1 class="text-center">Contactez-nous</h1>
 
-            <div class="panel-heading">Contactez-nous</div>
+<br />
 
-            <div class="panel-body"> 
+<div class="contact">
+    {!! Form::open(['url' => 'contact']) !!}
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="panel">
+                <div class="panel-heading">Par message</div>
+                <div class="panel-body clearfix">
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 no-padding-bottom">
+        <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!}">
 
-                {!! Form::open(['url' => 'contact']) !!}
+            {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Votre nom']) !!}
 
-                    <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!}">
-
-                        {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Votre nom']) !!}
-
-                        {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
-
-                    </div>
-
-                    <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!}">
-
-                    {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Votre structure']) !!}
-
-                    {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
-
-                    </div>
-
-                    <div class="form-group {!! $errors->has('telephone') ? 'has-error' : '' !!}">
-
-                    {!! Form::tel('tel', null, ['class' => 'form-control', 'placeholder' => 'Votre numéro de téléphone']) !!}
-
-                    {!! $errors->first('tel', '<small class="help-block">:message</small>') !!}
-
-                    </div>
-
-                    <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
-
-                        {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre email']) !!}
-
-                        {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-
-                    </div>
-
-                    <div class="form-group {!! $errors->has('texte') ? 'has-error' : '' !!}">
-
-                        {!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Votre message']) !!}
-
-                        {!! $errors->first('texte', '<small class="help-block">:message</small>') !!}
-
-                    </div>
-
-                    {!! Form::submit('Envoyer', ['class' => 'btn btn-info pull-right']) !!}
-
-                {!! Form::close() !!}
-
-            </div>
+            {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
 
         </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 no-padding-bottom">
+        <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!}">
+
+            {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Votre structure']) !!}
+
+            {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
+
+        </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 no-padding-bottom">
+        <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
+
+            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre email']) !!}
+
+            {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+
+        </div>
+        </div>
+    </div>
+
+    <div class="form-group {!! $errors->has('texte') ? 'has-error' : '' !!}">
+
+        {!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Votre message']) !!}
+
+        {!! $errors->first('texte', '<small class="help-block">:message</small>') !!}
 
     </div>
-</br>
+
+        {!! Form::submit('Envoyer', ['class' => 'btn btn-success pull-right']) !!}
+
+        {!! Form::close() !!}
+
+</div>
+</div>
+</div>
+
+     <div class="col-sm-4">
+        <div class="call-back">
+            <h3>Par téléphone</h3>
+                <p class="gray">Laissez nous votre numéro de téléphone<br />et nous vous rappellerons</p>
+
+    <div class="input-group {!! $errors->has('tel') ? 'has-error' : '' !!}">
+    {!! Form::tel('téléphone', null, ['class' => 'form-control', 'placeholder' => 'Votre téléphone']) !!}
+
+    {!! $errors->first('téléphone', '<small class="help-block">:message</small>') !!}
+
+        <span class="input-group-btn">
+        {!! Form::submit('ok', ['class' => 'btn btn-success pull-right']) !!}
+        </span>
+    </div>
+
+                    <br />
+                    <h3>Par courrier</h3>
+                    <p class="gray">E2S Pays de Vannes<br /> 47 Rue de Ferdinand Le Dressay<br />BP 74<br />56002 VANNES cedex</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @endsection

@@ -12,11 +12,5 @@
 
   @include('layouts.footer')</div>
 
-  @include('layouts.adminMenu')
-  @yield('content')
-  </div>
-  </section>
-  @include('layouts.footer')</div>
-
 </body>
 </html>

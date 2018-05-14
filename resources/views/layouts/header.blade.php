@@ -1,8 +1,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark essbg1">
-        <a class="navbar-brand" href="{{ route('welcome') }}"><img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt=""></a>
-        <a class="navbar-brand" href="#"><img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt=""></a>
-        <a class="navbar-brand" href="#"><img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt=""></a>
+        <a class="navbar-brand" href="{{ route('welcome') }}">
+        <img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,63 +48,10 @@
             </li>
             @endguest
             <li class="nav-item right-item-nav-end">
-                <a class="nav-link" href="{{ route('contact') }}">{{ __('Nous contacter') }}</a>
-            </li>
-              <a class="nav-link" href="{{ route('register') }}">{{ __('s inscrire') }}</a>
-            </li>
-            <li class="nav-item right-item-nav-end">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('se connecter') }}</a>
-            </li>
-            @else
-            <li class="nav-item dropdown right-item-nav">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    {{ Auth::user()->name }} </span>
-                                </a>
-
-                                <div class="dropdown-menu essbg2">
-                                    <a class="dropdown-item essbg3" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-            @endguest
-            <li class="nav-item right-item-nav-end">
-                <a class="nav-link" href="#">Nous contacter</a>
-            </li>
-              <a class="nav-link" href="{{ route('register') }}">{{ __('s inscrire') }}</a>
-            </li>
-            <li class="nav-item right-item-nav-end">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('se connecter') }}</a>
-            </li>
-            @else
-            <li class="nav-item dropdown right-item-nav">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                                    {{ Auth::user()->name }} </span>
-                                </a>
-
-                                <div class="dropdown-menu essbg2">
-                                    <a class="dropdown-item essbg3" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-            @endguest
-            <li class="nav-item right-item-nav-end">
-                <a class="nav-link" href="#">Nous contacter</a>
+                <a class="nav-link" href="{{ route('contact') }}">Nous contacter</a>
             </li>
           </ul>
         </div>  
+            
     </nav>
 </header>
