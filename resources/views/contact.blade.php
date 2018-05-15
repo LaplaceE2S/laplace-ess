@@ -17,8 +17,8 @@ contact
     <div class="row">
         <div class="col-sm-8">
             <div class="panel">
-                <div class="panel-heading">Par message</div>
-                <div class="panel-body clearfix">
+                <h3>Par message</h3>
+                    <div class="panel-body clearfix">
     
     <div class="row">
         <div class="col-xs-12 col-sm-6 no-padding-bottom">
@@ -70,20 +70,23 @@ contact
 </div>
 </div>
 
+
      <div class="col-sm-4">
         <div class="call-back">
             <h3>Par téléphone</h3>
                 <p class="gray">Laissez nous votre numéro de téléphone<br />et nous vous rappellerons</p>
 
+    {!! Form::open(['url' => 'tel_contact']) !!}            
     <div class="input-group {!! $errors->has('tel') ? 'has-error' : '' !!}">
-    {!! Form::tel('téléphone', null, ['class' => 'form-control', 'placeholder' => 'Votre téléphone']) !!}
+    {!! Form::tel('telephone', null, ['class' => 'form-control', 'placeholder' => 'Votre téléphone']) !!}
 
-    {!! $errors->first('téléphone', '<small class="help-block">:message</small>') !!}
+    {!! $errors->first('telephone', '<small class="help-block">:message</small>') !!}
 
         <span class="input-group-btn">
         {!! Form::submit('ok', ['class' => 'btn btn-success pull-right']) !!}
         </span>
     </div>
+{!! Form::close() !!}
 
                     <br />
                     <h3>Par courrier</h3>
@@ -93,6 +96,4 @@ contact
         </div>
     </div>
 </div>
-
-
 @endsection

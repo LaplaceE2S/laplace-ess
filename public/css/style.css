@@ -138,12 +138,16 @@ header .right-item-nav-end{
  /*** FORM nous-contactez ***
  ***************************/
  .contact{
-    height:500px;
-    margin-left: auto;
-    margin-right: auto;
+    min-height:550px;
+    margin: 0 auto;
     width: 90%;
-    
- }
+}
+
+.formContact{
+    max-width:35%;
+    margin: 0 auto;
+    margin-bottom:23px;
+}
 
   /*** ENCART actu ***
   *******************/

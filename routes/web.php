@@ -14,21 +14,19 @@
 // view Home
 Route::get('welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/', 'WelcomeController@index');
-// demande du formulaire
-Route::get('users', 'UsersController@getInfos');
-
-// soumission du formulaire
-Route::post('users', 'UsersController@postInfos');
 
 // demande du formulaire
 Route::get('contact', 'ContactController@getForm')->name('contact');
 
 // soumission du formulaire
 Route::post('contact', 'ContactController@postForm')->name('confirm');
+// soumission du formulaire telephone
+Route::post('tel_contact', 'ContactController@store')->name('confirm_tel');
 
+// Authentification
 Auth::routes();
 
-// dashboard view
+// dashboard user
 Route::get('/home', 'HomeController@index')->name('home');
 
 // dashboard admin
@@ -36,9 +34,5 @@ Route::get('/admin', 'AdminController@index')
     ->middleware('is_admin')    
     ->name('admin');
 
-// dashboard users
-Route::get('/userWelcome', 'HomeController@index');
 
-//gestion page
-Route::get('page', 'PageController@index')->name('page');
-Route::any('navCat', 'NavCatController@index')->name('navCat');
+

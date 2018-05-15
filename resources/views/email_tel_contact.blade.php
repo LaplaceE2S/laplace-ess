@@ -8,9 +8,7 @@
     <h2>Prise de contact sur La Place</h2>
     <p>Réception d'une prise de contact avec les éléments suivants :</p>
     <ul>
-      <li><strong>Nom</strong> : {{ $nom }}</li>
-      <li><strong>Email</strong> : {{ $email }}</li>
-      <li><strong>Message</strong> : {{ $texte }}</li>
+      <li><strong>téléphone</strong> : {{ $telephone }}</li>
     </ul>
   </body>
 </html>

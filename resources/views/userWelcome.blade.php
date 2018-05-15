@@ -4,9 +4,6 @@ administration
 @endsection
 @section('content')
 
-
-Bienvenue dans l'espace d'administration des structures
-
-
+Bienvenue dans votre espace administratif (structures) 
 
 @endsection

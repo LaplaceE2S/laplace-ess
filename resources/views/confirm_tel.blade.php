@@ -12,11 +12,11 @@ confirmation de contact
 
         <div class="row card text-white bg-dark">
 
-            <h4 class="card-header">Confirmation de contact</h4>
+            <h4 class="card-header">Confirmation de contact téléphonique</h4>
 
             <div class="card-body"> 
 
-               <p class="card-text">Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.</p>
+                <p class="card-text">Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.</p>
 
             </div>
 

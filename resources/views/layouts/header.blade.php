@@ -41,6 +41,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour {{ Auth::user()->name }}</a>
 
             <div class="dropdown-menu essbg2">
+            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
               <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('se déconnecter') }}</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf
               </form>
