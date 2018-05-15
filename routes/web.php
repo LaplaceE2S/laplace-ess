@@ -39,3 +39,6 @@ Route::get('/admin', 'AdminController@index')
 // dashboard users
 Route::get('/userWelcome', 'HomeController@index');
 
+//gestion page
+Route::get('page', 'PageController@index')->name('page');
+Route::any('navCat', 'NavCatController@index')->name('navCat');

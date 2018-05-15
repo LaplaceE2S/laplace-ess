@@ -1,8 +1,9 @@
-
 <section class='row admin'>
 <div class='col-3 admin-menu'>
     <ul>
     <div id="accordion">
+
+
         <div class="card">
             <div class="card-header" id="heading2">
                 <h5 class="mb-0">
@@ -41,7 +42,7 @@
                     voir toutes mes annonces
                     </a></li>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    rechercher une annonces
+                    rechercher une annonce
                     </a></li>
                     <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
                     voir mes annonces archivées
@@ -86,4 +87,3 @@
     </ul>
 </div>
 <div class='col-9 admin-main'>
-
