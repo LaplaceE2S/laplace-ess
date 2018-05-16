@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-header" id="heading1">
                 <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>pages</a>
+                <a class='btn' href="{{route('adminCatActu')}}">actualité</a>
                 </h5>
             </div>
         </div>
@@ -23,10 +23,10 @@
 
                 <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
                     <ul>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                         Toutes les structures
                     </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                         Dernière structures inscrites
                     </a></li>
                     </ul>
@@ -44,16 +44,16 @@
 
                 <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
                     <ul>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                         voir les toutes les annonces
                     </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                     voir les annonces en attentes
                     </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                     voir les annonces en publiés en cours
                     </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                     voir les annonces archivées
                     </a></li>
                     </ul>
@@ -64,7 +64,7 @@
         <div class="card">
             <div class="card-header" id="heading2">
                 <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                <a class='btn' href='#'>
                 Documents
                 </a>
                 </h5>
@@ -81,10 +81,10 @@
 
                 <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
                     <ul>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                         voir les prochains rendez vous
                     <a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                    <li><a class='btn' href='#'>
                         voir les prochaines contributions
                     <a></li>
                     </ul>
@@ -95,7 +95,7 @@
         <div class="card">
             <div class="card-header" id="heading2">
                 <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                <a class='btn' href='#'>
                 Messagerie
                 </a>
                 </h5>

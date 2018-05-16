@@ -33,6 +33,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')    
     ->middleware('is_admin')    
     ->name('admin');
+    
+// dashboard admin actu
+//index
+Route::get('/adminActu', 'ActuCatController@index')    
+    ->middleware('is_admin')    
+    ->name('adminCatActu');
+// soumission du formulaire de création de catégorie d'actualités
+Route::post('/catActu', 'ActuCatController@store')->name('catActu');
+
 
 // view structures
 Route::get('structures', 'WelcomeController@structure')->name('structures');
