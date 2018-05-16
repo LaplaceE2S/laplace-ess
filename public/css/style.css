@@ -603,8 +603,8 @@ h2{
     color:black;
 } 
 
-    /*** FOOTER ***
-    ***************/
+/*** FOOTER ***
+***************/
 footer{
     background-color: #594e4b;
     color: white;
@@ -616,4 +616,14 @@ footer .text-color-footer{
 
 footer .text-color-footer:hover{
     color: rgba(255,255,255,.75);
+}
+
+#footer{
+    margin:0 auto;
+}
+
+/***page STRUCTURES ***
+**********************/
+.ssTitre{
+    color:#f49712;
 }

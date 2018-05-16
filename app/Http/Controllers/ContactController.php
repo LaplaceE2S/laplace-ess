@@ -20,7 +20,10 @@ class ContactController extends Controller
             $message->to('webDev.fk@gmail.com')->subject('Contact');
         });
 
-        return view('confirm');
+        $title = "Confirmation de contact";
+        $msg = "Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.";
+
+        return view('confirm', compact('title', 'msg'));
     }
 
     public function store(Request $request)
@@ -34,6 +37,9 @@ class ContactController extends Controller
             $message->to('webDev.fk@gmail.com')->subject('Contact téléphonique');
         });
 
-        return view('confirm_tel');
+        $title = "Confirmation de contact téléphonique";
+        $msg = "Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.";
+        
+        return view('confirm', compact('title', 'msg'));
     }
 }

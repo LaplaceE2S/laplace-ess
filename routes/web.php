@@ -34,5 +34,7 @@ Route::get('/admin', 'AdminController@index')
     ->middleware('is_admin')    
     ->name('admin');
 
+// view structures
+Route::get('structures', 'WelcomeController@structure')->name('structures');
 
 

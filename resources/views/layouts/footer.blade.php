@@ -6,7 +6,7 @@
 <!-- footer -->
 <div class="footer">
   <div class="container">
-    <div class="row ">
+    <div id="footer" class="row ">
       <!-- footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
           <div class="footer-widget ">
@@ -16,7 +16,10 @@
                 <a href="#" class="text-color-footer">Actualités</a>
               </li>
               <li>
-                <a href="#" class="text-color-footer">Contactez-nous</a>
+                <a href="#" class="text-color-footer">La Place Tuto</a>
+              </li>
+              <li>
+                <a href="{{ route('contact') }}" class="text-color-footer">Contactez-nous</a>
               </li>
             </ul>
           </div>
@@ -24,16 +27,13 @@
          <!-- /.footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
         <div class="footer-widget ">
-          <div class="footer-title">besoin d'aide?</div>
+          <div class="footer-title">Besoin d'aide?</div>
           <ul class="list-unstyled">
           <li>
               <a href="#" class="text-color-footer">La mutualisation pour nous</a>
             </li>
             <li>
-              <a href="#" class="text-color-footer">FAQ entreprises</a>
-            </li>
-            <li>
-              <a href="#" class="text-color-footer">FAQ salariés</a>
+              <a href="#" class="text-color-footer">FAQ structures</a>
             </li>
           </ul>
         </div>
@@ -64,6 +64,9 @@
             <li>
               <a href="#" class="text-color-footer">Facebook</a>
             </li>
+            <li>
+              <a href="#" class="text-color-footer">Linked in</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -75,7 +78,7 @@
     <div class="row ">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
         <div class="tiny-footer">
-          <p>Copyright © All Rights Reserved 2018 | La Place</p>
+          <p>Copyright © 2018 | La Place</p>
         </div>
       </div>
       <!-- /. tiny-footer -->

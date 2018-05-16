@@ -6,57 +6,19 @@
         <div class="card">
             <div class="card-header" id="heading2">
                 <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                Structures
+                <button class="btn" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                Rechercher une annonce
                 </button>
                 </h5>
-
-                <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
-                    <ul>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                        ma Structure
-                    </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                        Structures en contact
-                    </a></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header" id="heading3">
                 <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                Annonces
+                <button class="btn" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                Gérer mes annonces
                 </button>
-                </h5>
-
-                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
-                    <ul>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    publier une annonce
-                    </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    voir toutes mes annonces
-                    </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    rechercher une annonces
-                    </a></li>
-                    <li><a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                    voir mes annonces archivées
-                    </a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading2">
-                <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                Mes documents
-                </a>
                 </h5>
             </div>
         </div>
@@ -64,19 +26,59 @@
         <div class="card">
             <div class="card-header" id="heading4">
                 <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
-                Mon agenda
-                </a>
+                <button class="btn" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse3">
+                Gérer mes favoris
+                </button>
                 </h5>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-header" id="heading2">
+            <div class="card-header" id="heading5">
                 <h5 class="mb-0">
-                <a class='btn' href='http://127.0.0.1/laplace-ess/public/'>
+                <button class="btn" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse3">
+                Créer une fiché récapitulatif
+                </button>
+                </h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="heading6">
+                <h5 class="mb-0">
+                <button class="btn" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse3">
+                Documents juridiques
+                </button>
+                </h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="heading7">
+                <h5 class="mb-0">
+                <button class="btn" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse3">
+                Déposer une contribution
+                </button>
+                </h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="heading8">
+                <h5 class="mb-0">
+                <button class="btn" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse3">
+                Agenda
+                </button>
+                </h5>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="heading9">
+                <h5 class="mb-0">
+                <button class="btn" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse3">
                 Messagerie
-                </a>
+                </button>
                 </h5>
             </div>
         </div>

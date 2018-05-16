@@ -272,9 +272,9 @@ accueil
 
 <div id="infosEss" class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h3 class="display-4">Structures Ess, associations ...</h3>
-    <p class="lead">Découvrez tous les avantages de la mutualisation des compétences!</p>
-    <button type="button" id="btn-infos" class="btn btn-warning">Plus d'infos</button>
+    <h5 class="h5">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités.</h5>
+    <p class="lead">Vous recherchez une compétence particulière pour développer votre activité et/ou vous souhaitez vous consacrer à votre projet associatif, coopératif, mutualiste. Ou vous disposez de compétences à partager et/ou de temps salarié disponible. Vous souhaitez déposer une annonce pour mutualiser une compétence ou un emploi. Inscrivez-vous au service La Place, plate-forme innovante de mutualisation de compétences et d'échanges entre les structures de l'ESS.</p>
+    <a href="{{ route('structures') }}" class="btn btn-warning">Découvrez comment ça marche</a>
   </div>
 </div>
 
@@ -285,7 +285,7 @@ accueil
   <section class="customer-logos slider" id='fcontainer'>
     
     <div class="slide">
-      <img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="80" width="80" alt="">
+      <a href="http://www.e2s-paysdevannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
       <img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="80" width="80" alt="">
@@ -310,5 +310,7 @@ accueil
     </div>
   </section>
 </div>
+
+<br />
 
 @endsection

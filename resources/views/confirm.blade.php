@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-confirmation de contact
+{{ $title }}
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@ confirmation de contact
 
         <div class="row card text-white bg-dark">
 
-            <h4 class="card-header">Confirmation de contact</h4>
+            <h4 class="card-header">{{ $title }}</h4>
 
             <div class="card-body"> 
 
-               <p class="card-text">Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.</p>
+               <p class="card-text">{{ $msg }}</p>
 
             </div>
 
@@ -25,3 +25,4 @@ confirmation de contact
     </div>
 
 @endsection
+
