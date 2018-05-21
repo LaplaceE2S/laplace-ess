@@ -38,7 +38,7 @@ class ContactController extends Controller
         });
 
         $title = "Confirmation de contact téléphonique";
-        $msg = "Merci. Votre message a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.";
+        $msg = "Merci. Votre numéro de téléphone a été transmis à l'administrateur du site. Vous recevrez une réponse rapidement.";
         
         return view('confirm', compact('title', 'msg'));
     }

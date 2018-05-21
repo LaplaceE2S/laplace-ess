@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UsersController extends Controller 
 {
+
+  public function liste()
+  {
+    $utilisateurs = User::all();
+
+    return view('utilisateurs', [
+        'utilisateurs' => $utilisateurs,
+    ]);
+  }
 
   /**
    * Display a listing of the resource.

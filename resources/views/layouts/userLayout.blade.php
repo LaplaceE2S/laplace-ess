@@ -2,7 +2,7 @@
 
 <body>
 
-  @include('layouts.header')
+  @include('layouts.userheader')
   @include('layouts.userMenu')
   @yield('content')
   </div>

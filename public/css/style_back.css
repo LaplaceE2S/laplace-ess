@@ -9,9 +9,22 @@
         text-decoration: none;
         color:inherit;
         color: white;
-        
     }
     
     .admin-main{
         background-color: whitesmoke;
     }
+
+    /*** page UTILISATEURS ***
+    *************************/
+#titleUtilisateur{
+    margin-left:40px;
+}
+
+/*** espace MEMBRE ***
+*********************/
+.avatarProfil{
+    width: 50px;
+    border-radius: 18px 4px;
+}
+

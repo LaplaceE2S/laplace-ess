@@ -285,25 +285,25 @@ accueil
   <section class="customer-logos slider" id='fcontainer'>
     
     <div class="slide">
-      <a href="http://www.e2s-paysdevannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="80" width="80" alt=""></a>
+      <a href="https://www.pays-vannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="80" width="80" alt="">
+    <a href="https://europa.eu/european-union/index_fr"><img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="80" width="80" alt="">
+      <a href="http://www.bretagne.bzh/"><img src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/4.Logo_direccte.jpg" height="80" width="80" alt="">
+      <a href="http://direccte.gouv.fr/"><img src="./images/logo_partenaires/4.Logo_direccte.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/5.Cress-bretagne.jpg" height="80" width="80" alt="">
+      <a href="https://www.ess-bretagne.org/"><img src="./images/logo_partenaires/5.Cress-bretagne.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="80" width="80" alt="">
+      <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/"><img src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
-      <img src="./images/logo_partenaires/7.Maif.jpg" height="80" width="80" alt="">
+      <a href="https://www.maif.fr/"><img src="./images/logo_partenaires/7.Maif.jpg" height="80" width="80" alt=""></a>
     </div>
     <div class="slide">
       <img src="./images/logo_partenaires/Logo_Copil.png" height="80" width="80" alt="">

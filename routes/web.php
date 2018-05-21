@@ -15,6 +15,9 @@
 Route::get('welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/', 'WelcomeController@index');
 
+// raccourci affiche vue
+Route::view('/', 'welcome');
+
 // demande du formulaire
 Route::get('contact', 'ContactController@getForm')->name('contact');
 
@@ -42,8 +45,8 @@ Route::get('/adminActu', 'ActuCatController@index')
 // soumission du formulaire de création de catégorie d'actualités
 Route::post('/catActu', 'ActuCatController@store')->name('catActu');
 
-
 // view structures
 Route::get('structures', 'WelcomeController@structure')->name('structures');
 
-
+// afficher les utilisateurs
+Route::get('/utilisateurs', 'UsersController@liste');

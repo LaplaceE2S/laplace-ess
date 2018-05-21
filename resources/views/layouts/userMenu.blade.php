@@ -1,91 +1,33 @@
 
 <section class='row admin'>
-<div class='col-3 admin-menu'>
-    <ul>
-    <div id="accordion">
-        <div class="card">
-            <div class="card-header" id="heading2">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                Rechercher une annonce
-                </button>
-                </h5>
-            </div>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs|pills" id="navId">
+    <li class="nav-item">
+        <a href="#tab1Id" class="nav-link active">Mes favoris</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mes annonces</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#tab2Id">Création</a>
+            <a class="dropdown-item" href="#tab3Id">Suivi</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#tab4Id">Archivages des annonces publiées</a>
         </div>
-
-        <div class="card">
-            <div class="card-header" id="heading3">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                Gérer mes annonces
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading4">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse3">
-                Gérer mes favoris
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading5">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse3">
-                Créer une fiché récapitulatif
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading6">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse3">
-                Documents juridiques
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading7">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="collapse3">
-                Déposer une contribution
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading8">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="collapse3">
-                Agenda
-                </button>
-                </h5>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" id="heading9">
-                <h5 class="mb-0">
-                <button class="btn" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="collapse3">
-                Messagerie
-                </button>
-                </h5>
-            </div>
-        </div>
+    </li>
+    <li class="nav-item">
+        <a href="#tab5Id" class="nav-link">Mes documents</a>
+    </li>
+    <li class="nav-item">
+        <a href="#tab5Id" class="nav-link">Mes contributions</a>
+    </li>
+    <li class="nav-item">
+        <a href="#tab5Id" class="nav-link">Mes messages</a>
+    </li>
+    <li class="nav-item">
+        <a href="#tab5Id" class="nav-link">Mon abonnement</a>
+    </li>
+</ul>
 
 
-    </div>
-    </ul>
-</div>
 <div class='col-9 admin-main'>
 
