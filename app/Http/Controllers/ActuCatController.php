@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\ActuCat;
 class ActuCatController extends Controller 
 {
 
@@ -13,8 +13,9 @@ class ActuCatController extends Controller
    * @return Response
    */
   public function index()
-  {
-    
+  { 
+    $cats = ActuCat::all();
+    return view('catActuIndex', ['cats' => $cats]);
   }
 
   /**

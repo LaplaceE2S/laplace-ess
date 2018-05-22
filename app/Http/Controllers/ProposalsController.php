@@ -15,6 +15,7 @@ class ProposalsController extends Controller
   public function index()
   {
     
+    
   }
 
   /**
@@ -24,7 +25,7 @@ class ProposalsController extends Controller
    */
   public function create()
   {
-    
+    return view('proposals.create');
   }
 
   /**
