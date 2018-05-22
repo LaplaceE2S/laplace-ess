@@ -9,6 +9,10 @@
 			{!! Form::text('nom') !!}
 		</li>
 		<li>
+			{!! Form::label('prenom', 'Prenom:') !!}
+			{!! Form::text('prenom') !!}
+		</li>
+		<li>
 			{!! Form::label('dirigeant', 'Dirigeant:') !!}
 			{!! Form::text('dirigeant') !!}
 		</li>
@@ -33,10 +37,6 @@
 			{!! Form::text('telephone') !!}
 		</li>
 		<li>
-			{!! Form::label('email', 'Email:') !!}
-			{!! Form::text('email') !!}
-		</li>
-		<li>
 			{!! Form::label('statut', 'Statut:') !!}
 			{!! Form::text('statut') !!}
 		</li>
@@ -47,10 +47,6 @@
 		<li>
 			{!! Form::label('budget', 'Budget:') !!}
 			{!! Form::text('budget') !!}
-		</li>
-		<li>
-			{!! Form::label('ca', 'Ca:') !!}
-			{!! Form::text('ca') !!}
 		</li>
 		<li>
 			{!! Form::label('users_id', 'Users_id:') !!}

@@ -11,17 +11,16 @@ class CreateCompaniesTable extends Migration {
 			$table->increments('id');
 			$table->string('siret', 20);
 			$table->string('nom');
+			$table->string('prenom');
 			$table->string('dirigeant');
 			$table->string('url');
 			$table->string('ville');
 			$table->integer('postal');
 			$table->string('rue');
 			$table->string('telephone');
-			$table->string('email');
 			$table->string('statut');
 			$table->boolean('abonne');
 			$table->integer('budget');
-			$table->integer('ca');
 			$table->timestamps();
 			$table->integer('users_id')->unsigned();
 		});

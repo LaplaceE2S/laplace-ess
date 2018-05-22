@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ActuCatRequest;
-use DB;
-use App\Quotation;
 
-class ActuCatController extends Controller 
+class FaqController extends Controller 
 {
 
   /**
@@ -17,8 +14,6 @@ class ActuCatController extends Controller
    */
   public function index()
   {
-    $cats =  DB::table('actuCat')->get();
-    return view('catActuIndex',compact('cats'));
     
   }
 
@@ -37,17 +32,9 @@ class ActuCatController extends Controller
    *
    * @return Response
    */
-  public function store(ActuCatRequest $request)
-  { 
-    $tableau = $request->all();
-    unset($tableau['_token']);
-    DB::table('actuCat')->insert(
-      $tableau
-    );
-    $title = 'nouvelle catégorie créer';
+  public function store(Request $request)
+  {
     
-    $msg = $tableau['name'].$tableau['description'];
-    return view('confirmAdmin', compact('title','msg'));
   }
 
   /**

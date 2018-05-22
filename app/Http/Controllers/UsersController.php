@@ -8,15 +8,6 @@ use App\User;
 class UsersController extends Controller 
 {
 
-  public function liste()
-  {
-    $utilisateurs = User::all();
-
-    return view('utilisateurs', [
-        'utilisateurs' => $utilisateurs,
-    ]);
-  }
-
   /**
    * Display a listing of the resource.
    *
@@ -25,6 +16,15 @@ class UsersController extends Controller
   public function index()
   {
     
+  }
+
+  public function liste()
+  {
+    $utilisateurs = User::all();
+
+    return view('utilisateurs', [
+        'utilisateurs' => $utilisateurs,
+    ]);
   }
 
   /**

@@ -33,16 +33,32 @@
 			{!! Form::text('fin') !!}
 		</li>
 		<li>
-			{!! Form::label('tarif', 'Tarif:') !!}
-			{!! Form::text('tarif') !!}
-		</li>
-		<li>
 			{!! Form::label('skills_id', 'Skills_id:') !!}
 			{!! Form::text('skills_id') !!}
 		</li>
 		<li>
 			{!! Form::label('is_valid', 'Is_valid:') !!}
 			{!! Form::text('is_valid') !!}
+		</li>
+		<li>
+			{!! Form::label('expiration', 'Expiration:') !!}
+			{!! Form::text('expiration') !!}
+		</li>
+		<li>
+			{!! Form::label('cout_horaire', 'Cout_horaire:') !!}
+			{!! Form::text('cout_horaire') !!}
+		</li>
+		<li>
+			{!! Form::label('mois', 'Mois:') !!}
+			{!! Form::text('mois') !!}
+		</li>
+		<li>
+			{!! Form::label('cout_total', 'Cout_total:') !!}
+			{!! Form::text('cout_total') !!}
+		</li>
+		<li>
+			{!! Form::label('lieu', 'Lieu:') !!}
+			{!! Form::text('lieu') !!}
 		</li>
 		<li>
 			{!! Form::submit() !!}

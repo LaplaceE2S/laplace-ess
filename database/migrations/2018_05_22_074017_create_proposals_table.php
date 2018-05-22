@@ -18,9 +18,13 @@ class CreateProposalsTable extends Migration {
 			$table->date('heure');
 			$table->date('debut');
 			$table->date('fin');
-			$table->integer('tarif');
 			$table->integer('skills_id')->unsigned();
 			$table->integer('is_valid');
+			$table->date('expiration');
+			$table->integer('cout_horaire');
+			$table->string('mois');
+			$table->integer('cout_total');
+			$table->string('lieu');
 		});
 	}
 

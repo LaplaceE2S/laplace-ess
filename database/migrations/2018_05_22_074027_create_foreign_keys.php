@@ -48,6 +48,11 @@ class CreateForeignKeys extends Migration {
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
+		Schema::table('actu', function(Blueprint $table) {
+			$table->foreign('categorie')->references('id')->on('actuCat')
+						->onDelete('restrict')
+						->onUpdate('restrict');
+		});
 	}
 
 	public function down()
@@ -75,6 +80,9 @@ class CreateForeignKeys extends Migration {
 		});
 		Schema::table('companies_skills', function(Blueprint $table) {
 			$table->dropForeign('companies_skills_skills_id_foreign');
+		});
+		Schema::table('actu', function(Blueprint $table) {
+			$table->dropForeign('actu_categorie_foreign');
 		});
 	}
 }

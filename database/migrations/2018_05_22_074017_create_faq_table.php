@@ -3,19 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateNavCatTable extends Migration {
+class CreateFaqTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('navCat', function(Blueprint $table) {
+		Schema::create('faq', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('name');
+			$table->text('question');
+			$table->text('reponse');
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('navCat');
+		Schema::drop('faq');
 	}
 }
