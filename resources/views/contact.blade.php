@@ -14,6 +14,7 @@ contact
 
 <div class="contact">
     {!! Form::open(['url' => 'contact']) !!}
+    @csrf
     <div class="row">
         <div class="col-sm-8">
             <div class="panel">

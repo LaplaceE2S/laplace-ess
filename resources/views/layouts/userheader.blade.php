@@ -18,7 +18,7 @@
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Annonces publiées') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Message') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Profil') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('profil') }}">{{ __('Profil') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
         </div>

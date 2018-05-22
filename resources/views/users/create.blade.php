@@ -4,193 +4,149 @@ Créer son profil
 @endsection
 @section('content')
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1>{{ __("Créer son profil") }}</h1></div>
-
+                <div class="card-header"><h1 class="text-center">Créer son profil</h1></div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('home') }}">
+                {!! Form::open(['url' => 'profil']) !!} 
                         @csrf
-                    <div class="row justify-content-left"><h4>Renseignements sur la structure<h4></div>
+                    <div class="row justify-content-left"><h5>Renseignements sur la structure<h5></div>
+
                         <!-- label STRUCTURE -->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Structure') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="structure" type="text" class="form-control{{ $errors->has('structure') ? ' is-invalid' : '' }}" name="structure" value="{{ old('structure') }}" required autofocus>
-
-                                @if ($errors->has('structure'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('structure') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('structure') ? 'has-error' : 'erreur dans le nom de votre structure' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('structure', 'Structure') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Le nom de votre structure']) !!}
+                            {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
                         </div>
+                        </div>
+
                           <!-- label STATUT -->
-                          <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Statut') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="statut" type="text" class="form-control{{ $errors->has('statut') ? ' is-invalid' : '' }}" name="statut" value="{{ old('statut') }}" required autofocus>
-
-                                @if ($errors->has('statut'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('statut') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('statut') ? 'has-error' : 'erreur dans le nom de votre statut' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('statut', 'Statut') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('statut', null, ['class' => 'form-control', 'placeholder' => 'Le statut de votre structure']) !!}
+                            {!! $errors->first('statut', '<small class="help-block">:message</small>') !!}
                         </div>
+                        </div>
+
                         <!-- label BUDGET -->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Budget') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="budget" type="text" class="form-control{{ $errors->has('budget') ? ' is-invalid' : '' }}" name="budget" value="{{ old('budget') }}" required autofocus>
-
-                                @if ($errors->has('budget'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('budget') }}</strong>
-                                    </span>
-                                @endif
+                         <div class="form-group {!! $errors->has('budget') ? 'has-error' : 'saisissez un nombre' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('budget', 'Budget') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('budget', null, ['class' => 'form-control', 'placeholder' => 'Le budget de votre structure']) !!}
+                            {!! $errors->first('budget', '<small class="help-block">:message</small>') !!}
                         </div>
+                        </div>
+
                         <!-- label SIRET -->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('N° SIRET') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="siret" type="text" class="form-control{{ $errors->has('siret') ? ' is-invalid' : '' }}" name="siret" value="{{ old('siret') }}" required autofocus>
-
-                                @if ($errors->has('siret'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('siret') }}</strong>
-                                    </span>
-                                @endif
+                         <div class="form-group {!! $errors->has('siret') ? 'has-error' : 'saisissez un nombre' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('siret', 'N° SIRET') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('siret', null, ['class' => 'form-control', 'placeholder' => 'Le numéro de siret de votre structure']) !!}
+                            {!! $errors->first('siret', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label ADRESSE-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Adresse') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="rue" type="text" class="form-control{{ $errors->has('rue') ? ' is-invalid' : '' }}" name="rue" value="{{ old('rue') }}" required autofocus>
-
-                                @if ($errors->has('adresse'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('adresse') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('adresse') ? 'has-error' : 'saisissez une adresse valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('adresse', 'Adresse') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('adresse', null, ['class' => 'form-control', 'placeholder' => "L'adresse de votre structure"]) !!}
+                            {!! $errors->first('adresse', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label CODE POSTAL-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Code postal') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="postal" type="text" class="form-control{{ $errors->has('postal') ? ' is-invalid' : '' }}" name="postal" value="{{ old('postal') }}" required autofocus>
-
-                                @if ($errors->has('Code postal'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('Code postal') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('postal') ? 'has-error' : 'saisissez un code postal valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('postal', 'Code Postal') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('postal', null, ['class' => 'form-control', 'placeholder' => "Le code postal de votre structure"]) !!}
+                            {!! $errors->first('postal', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label VILLE-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Ville') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="ville" type="text" class="form-control{{ $errors->has('ville') ? ' is-invalid' : '' }}" name="ville" value="{{ old('ville') }}" required autofocus>
-
-                                @if ($errors->has('Ville'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('Ville') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('ville') ? 'has-error' : 'saisissez une ville' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('ville', 'Ville') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('ville', null, ['class' => 'form-control', 'placeholder' => "La ville de votre structure"]) !!}
+                            {!! $errors->first('ville', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
                         
-                        <div class="row justify-content-left"><h4>Renseignements sur le responsable de la structure</h4></div>
+                        <div class="row justify-content-left"><h5>Renseignements sur le responsable de la structure</h5></div>
 
                         <!-- label NOM-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="nameDir" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('Nom'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('Nom') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('nom') ? 'has-error' : 'saisissez un nom valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('nom', 'Nom') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => "Le nom du responsable de la structure"]) !!}
+                            {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label PRENOM-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="prenom" type="text" class="form-control{{ $errors->has('prenom') ? ' is-invalid' : '' }}" name="prenom" value="{{ old('prenom') }}" required autofocus>
-
-                                @if ($errors->has('Prénom'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('Prénom') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('prenom') ? 'has-error' : 'saisissez un prénom valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('prenom', 'Prénom') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::text('prenom', null, ['class' => 'form-control', 'placeholder' => "Le prénom du responsable de la structure"]) !!}
+                            {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label TELEPHONE-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="tel" type="text" class="form-control{{ $errors->has('tel') ? ' is-invalid' : '' }}" name="tel" value="{{ old('tel') }}" required autofocus>
-
-                                @if ($errors->has('Téléphone'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('Téléphone') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('tel') ? 'has-error' : 'saisissez un numéro de téléphone valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('tel', 'Téléphone') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::tel('tel', null, ['class' => 'form-control', 'placeholder' => "Le numéro de téléphone de la structure"]) !!}
+                            {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- label EMAIL-->
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="form-group {!! $errors->has('email') ? 'has-error' : 'saisissez une adresse mail valide' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('email', 'Email') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => "L'adresse mail du responsable"]) !!}
+                            {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
-                        <!-- label EMAIL-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Site internet') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="url" type="email" class="form-control{{ $errors->has('url') ? ' is-invalid' : '' }}" name="url" value="{{ old('url') }}" required>
-
-                                @if ($errors->has('url'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('url') }}</strong>
-                                    </span>
-                                @endif
+                        <!-- label URL-->
+                        <div class="form-group {!! $errors->has('url') ? 'has-error' : 'saisissez votre site internet' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('url', 'site internet') !!}
                             </div>
+                        <div class="col-md-6">
+                            {!! Form::url('url', null, ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
+                            {!! $errors->first('url', '<small class="help-block">:message</small>') !!}
+                        </div>
                         </div>
 
                         <!-- Label PHOTO-->
@@ -202,19 +158,18 @@ Créer son profil
                             </div>
                         </div>
 
-                       
-
+                        <!-- bouton CREER SON PROFIL -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __("Créer son profil") }}
-                                </button>
+                                {!! Form::submit('Créer son profil', ['class' => 'btn btn-success pull-center']) !!}
                             </div>
                         </div>
-                    </form>
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
+{!! Form::close() !!}
 @endsection

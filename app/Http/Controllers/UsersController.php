@@ -31,10 +31,16 @@ class UsersController extends Controller
    *
    * @return Response
    */
+
   public function create()
   {
-    return view('users.create');
+    if (auth()->guest()) {
+
+      return redirect('/login');
   }
+    return view('users.create');
+}
+
 
   /**
    * Store a newly created resource in storage.
@@ -45,6 +51,7 @@ class UsersController extends Controller
   {
     
   }
+
 
   /**
    * Display the specified resource.
