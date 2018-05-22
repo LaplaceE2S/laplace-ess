@@ -12,7 +12,7 @@ class CreateCompaniesTable extends Migration {
 			$table->string('siret', 20);
 			$table->string('nom');
 			$table->string('prenom');
-			$table->string('dirigeant');
+			$table->string('structure');
 			$table->string('url');
 			$table->string('ville');
 			$table->integer('postal');

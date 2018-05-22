@@ -24,7 +24,7 @@ class CreateForeignKeys extends Migration {
 						->onUpdate('restrict');
 		});
 		Schema::table('proposals', function(Blueprint $table) {
-			$table->foreign('skills_id')->references('id')->on('skills')
+			$table->foreign('sub_skills_id')->references('id')->on('sub_skills')
 						->onDelete('restrict')
 						->onUpdate('restrict');
 		});
@@ -67,7 +67,7 @@ class CreateForeignKeys extends Migration {
 			$table->dropForeign('proposals_companies_id_foreign');
 		});
 		Schema::table('proposals', function(Blueprint $table) {
-			$table->dropForeign('proposals_skills_id_foreign');
+			$table->dropForeign('proposals_sub_skills_id_foreign');
 		});
 		Schema::table('companies_proposals', function(Blueprint $table) {
 			$table->dropForeign('companies_proposals_companies_id_foreign');

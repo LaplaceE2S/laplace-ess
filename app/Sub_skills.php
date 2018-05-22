@@ -15,4 +15,9 @@ class Sub_skills extends Model
         return $this->hasOne('App\Skills');
     }
 
+    public function proposals()
+    {
+        return $this->belongsToMany('Proposals');
+    }
+
 }

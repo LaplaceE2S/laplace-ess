@@ -15,14 +15,9 @@ class Skills extends Model
         return $this->hasMany('App\Sub_skills');
     }
 
-    public function companies()
+    public function compagnies()
     {
-        return $this->belongsToMany('App\Companies');
-    }
-
-    public function proposals()
-    {
-        return $this->hasMany('App\Proposals');
+        return $this->belongsToMany('Companies');
     }
 
 }

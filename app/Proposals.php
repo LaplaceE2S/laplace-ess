@@ -10,9 +10,9 @@ class Proposals extends Model
     protected $table = 'proposals';
     public $timestamps = true;
 
-    public function skills()
+    public function subSkills()
     {
-        return $this->hasOne('App\Skills');
+        return $this->hasOne('App\Sub_skills');
     }
 
     public function companies()

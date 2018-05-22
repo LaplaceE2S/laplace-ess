@@ -50,3 +50,6 @@ Route::get('structures', 'WelcomeController@structure')->name('structures');
 
 // afficher les utilisateurs
 Route::get('/utilisateurs', 'UsersController@liste');
+
+// créer un profil user
+Route::get('/profil', 'UsersController@create');

@@ -13,8 +13,8 @@
 			{!! Form::text('prenom') !!}
 		</li>
 		<li>
-			{!! Form::label('dirigeant', 'Dirigeant:') !!}
-			{!! Form::text('dirigeant') !!}
+			{!! Form::label('structure', 'Structure:') !!}
+			{!! Form::text('structure') !!}
 		</li>
 		<li>
 			{!! Form::label('url', 'Url:') !!}

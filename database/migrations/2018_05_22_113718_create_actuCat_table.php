@@ -10,7 +10,7 @@ class CreateActuCatTable extends Migration {
 		Schema::create('actuCat', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('nom');
+			$table->string('name');
 			$table->string('description');
 		});
 	}

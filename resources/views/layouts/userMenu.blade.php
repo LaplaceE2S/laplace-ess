@@ -29,5 +29,3 @@
 </ul>
 
 
-<div class='col-9 admin-main'>
-

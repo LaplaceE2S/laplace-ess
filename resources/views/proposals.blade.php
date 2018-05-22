@@ -1,8 +1,8 @@
 {!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
 	<ul>
 		<li>
-			{!! Form::label('nom', 'Nom:') !!}
-			{!! Form::text('nom') !!}
+			{!! Form::label('titre', 'Titre:') !!}
+			{!! Form::text('titre') !!}
 		</li>
 		<li>
 			{!! Form::label('type', 'Type:') !!}
@@ -33,8 +33,8 @@
 			{!! Form::text('fin') !!}
 		</li>
 		<li>
-			{!! Form::label('skills_id', 'Skills_id:') !!}
-			{!! Form::text('skills_id') !!}
+			{!! Form::label('sub_skills_id', 'Sub_skills_id:') !!}
+			{!! Form::text('sub_skills_id') !!}
 		</li>
 		<li>
 			{!! Form::label('is_valid', 'Is_valid:') !!}
@@ -45,20 +45,24 @@
 			{!! Form::text('expiration') !!}
 		</li>
 		<li>
-			{!! Form::label('cout_horaire', 'Cout_horaire:') !!}
-			{!! Form::text('cout_horaire') !!}
+			{!! Form::label('besoin', 'Besoin:') !!}
+			{!! Form::text('besoin') !!}
 		</li>
 		<li>
-			{!! Form::label('mois', 'Mois:') !!}
-			{!! Form::text('mois') !!}
-		</li>
-		<li>
-			{!! Form::label('cout_total', 'Cout_total:') !!}
-			{!! Form::text('cout_total') !!}
+			{!! Form::label('cout', 'Cout:') !!}
+			{!! Form::text('cout') !!}
 		</li>
 		<li>
 			{!! Form::label('lieu', 'Lieu:') !!}
 			{!! Form::text('lieu') !!}
+		</li>
+		<li>
+			{!! Form::label('materiel', 'Materiel:') !!}
+			{!! Form::text('materiel') !!}
+		</li>
+		<li>
+			{!! Form::label('deplacement', 'Deplacement:') !!}
+			{!! Form::text('deplacement') !!}
 		</li>
 		<li>
 			{!! Form::submit() !!}

@@ -27,4 +27,8 @@
     width: 50px;
     border-radius: 18px 4px;
 }
+.row{
+    margin-right: 0px !important;
+    margin-left:0px !important;
+}
 
