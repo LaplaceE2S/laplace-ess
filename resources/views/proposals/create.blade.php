@@ -3,7 +3,7 @@
 Créer son profil
 @endsection
 @section('content')
-
+<?php $element = 'demande'; ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -20,7 +20,7 @@ Créer son profil
                         {!! Form::label('type', 'type :') !!}
                         </div>
                         <div class="col-md-6">
-                        {!! Form::label('type2', ' demande ou offre') !!}
+                        {!! Form::label('type2', $element) !!}
                         </div>
                         </div>
 
@@ -153,6 +153,46 @@ Créer son profil
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
+                        
+                        @if ($element == 'offre')
+                                                    <!-- label service -->
+                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('serviceL', 'service : ') !!}
+                            </div>
+                            <div class="col-md-6">
+                            {!! Form::label('prestationL', 'prestation : ') !!}
+                            {!! Form::radio('service', 'value', ['class' => 'form-control']) !!}
+                            {!! Form::label('dispositionL', 'mis a disposition : ') !!}
+                            {!! Form::radio('service', 'value', ['class' => 'form-control']) !!}
+                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+
+
+                                                    <!-- label localisation -->
+                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('coutL', 'Entrer le prix de la prestation (ou le cout horaire de la mise a disposition):') !!}
+                            </div>
+                            <div class="col-md-6">
+                            {!! Form::number('cout', null, ['class' => 'form-control']) !!}
+
+                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+                        @else
+                                                    <!-- label localisation -->
+                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('materielL', 'Description du context matériel: ') !!}
+                            </div>
+                            <div class="col-md-6">
+                            {!! Form::textarea('materiel', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+                        @endif
 
 
                         
