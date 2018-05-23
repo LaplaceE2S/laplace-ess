@@ -19,7 +19,6 @@ class CreateCompaniesTable extends Migration {
 			$table->string('rue');
 			$table->string('telephone');
 			$table->string('statut');
-			$table->boolean('abonne');
 			$table->integer('budget');
 			$table->timestamps();
 			$table->integer('users_id')->unsigned();

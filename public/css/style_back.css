@@ -5,14 +5,15 @@
         text-align: center;
     }
     .admin-menu .card-header{
-        background-color: #594e4b;
+        background-color: whitesmoke;
         text-decoration: none;
         color:inherit;
         color: white;
     }
     
     .admin-main{
-        background-color: whitesmoke;
+        background-color: white;
+        margin-left:5%;
     }
 
     /*** page UTILISATEURS ***
@@ -24,9 +25,9 @@
 /*** espace MEMBRE ***
 *********************/
 .avatarProfil{
-    width: 50px;
-    border-radius: 18px 4px;
+    width: 35px;
 }
+
 .row{
     margin-right: 0px !important;
     margin-left:0px !important;

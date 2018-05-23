@@ -1,5 +1,5 @@
 /*** page ACCUEIL ***
-  **************/
+********************/
 
 @font-face {
     font-family: 'robotobold';
@@ -8,6 +8,7 @@
     src: url('./css/police/roboto-bold-webfont.eot');
     src: url('./css/police/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'), url('./css/police/roboto-bold-webfont.woff2') format('woff2'), url('./css/police/roboto-bold-webfont.woff') format('woff'), url('./css/police/roboto-bold-webfont.ttf') format('truetype'), url('./css/police/roboto-bold-webfont.svg#robotobold') format('svg');
 }
+
 @font-face {
     font-family: 'robotoregular';
     font-style: normal;
@@ -35,15 +36,9 @@ p{
 }
 
 
-  /*** HEADER ***
-  **************/
-
-header{
-    background-color: #594e4b;
-}
-
+/*** HEADER ***
+**************/
 header img{
-    background-color: whitesmoke;
     border-radius: 200px;
     width: 120px;
     height:auto;
@@ -55,7 +50,7 @@ header .navbar-brand{
 }
 
 header .essbg1{
-    background-color: #594e4b;
+    background-color:grey;
 }
 
 header .essbg2{
@@ -151,9 +146,12 @@ header .right-item-nav-end{
   /*** ENCART actu ***
   *******************/
 
-.pageheader-content.row{
-    margin:0 auto;
-}
+/* no-gutters Class Rules */
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+ }
+
 .pageheader-content {
     padding: 0;
     overflow: hidden;
@@ -162,14 +160,10 @@ header .right-item-nav-end{
 
 .row {
     width: 94%;
-    margin: 0 auto;
 }
 
 .col-full {
     width: 100%;
-}
-
-[class*="col-"] {
     padding: 0 0;
 }
 
@@ -178,6 +172,7 @@ header .right-item-nav-end{
     -webkit-animation-name: fadeIn;
     animation-name: fadeIn;
 }
+
 .featured {
     background-color: #151515;
     height: 564px;
@@ -605,7 +600,8 @@ h2{
 /*** FOOTER ***
 ***************/
 footer{
-    background-color: #594e4b;
+    padding-top:15px;
+    background-color: grey;
     color: white;
 }
 
@@ -618,7 +614,12 @@ footer .text-color-footer:hover{
 }
 
 #footer{
-    margin:0 auto;
+    display:flex;
+    justify-content:center;
+}
+
+.footer-title{
+    color:#f49712;
 }
 
 /***page STRUCTURES ***

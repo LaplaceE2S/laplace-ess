@@ -42,6 +42,7 @@ Route::get('/admin', 'AdminController@index')
 Route::get('/adminActu', 'ActuCatController@index')    
     ->middleware('is_admin')    
     ->name('adminCatActu');
+
 // soumission du formulaire de création de catégorie d'actualités
 Route::post('/catActu', 'ActuCatController@store')->name('catActu');
 
@@ -49,25 +50,9 @@ Route::post('/catActu', 'ActuCatController@store')->name('catActu');
 Route::get('structures', 'WelcomeController@structure')->name('structures');
 
 // afficher les utilisateurs
-Route::get('/utilisateurs', 'UsersController@liste');
+Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 
 // créer un profil user
 Route::get('/profil', 'UsersController@create')->name('profil');
 
-Route::post('/profil', function () {
-    $structure = App\Companies::create([
-            'structure' => request('structure'),
-            'statut' => request('statut'),
-            'budget' => request('budget'),
-            'siret' => request('siret'),
-            'rue' => request('rue'),
-            'postal' => request('postal'),
-            'ville' => request('ville'),
-            'nom' => request('nom'),
-            'prenom' => request('prenom'),
-            'tel' => request('telephone'),
-            'url' => request('url'),
-    ]);
-
-    return "Nous avons reçu votre profil qui est " . request('structure') . ' et votre nom est ' . request('nom');
-});
+Route::post('/profil', 'UsersController@store');

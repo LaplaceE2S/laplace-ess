@@ -60,13 +60,13 @@ Créer son profil
                         </div>
 
                         <!-- label ADRESSE-->
-                        <div class="form-group {!! $errors->has('adresse') ? 'has-error' : 'saisissez une adresse valide' !!} row">
+                        <div class="form-group {!! $errors->has('rue') ? 'has-error' : 'saisissez une adresse valide' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
-                            {!! Form::label('adresse', 'Adresse') !!}
+                            {!! Form::label('rue', 'Adresse') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('adresse', null, ['class' => 'form-control', 'placeholder' => "L'adresse de votre structure"]) !!}
-                            {!! $errors->first('adresse', '<small class="help-block">:message</small>') !!}
+                            {!! Form::text('rue', null, ['class' => 'form-control', 'placeholder' => "L'adresse de votre structure"]) !!}
+                            {!! $errors->first('rue', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
@@ -122,8 +122,8 @@ Créer son profil
                             {!! Form::label('tel', 'Téléphone') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::tel('tel', null, ['class' => 'form-control', 'placeholder' => "Le numéro de téléphone de la structure"]) !!}
-                            {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
+                            {!! Form::tel('telephone', null, ['class' => 'form-control', 'placeholder' => "Le numéro de téléphone de la structure"]) !!}
+                            {!! $errors->first('tel', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
@@ -141,7 +141,7 @@ Créer son profil
                         <!-- label URL-->
                         <div class="form-group {!! $errors->has('url') ? 'has-error' : 'saisissez votre site internet' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
-                            {!! Form::label('url', 'site internet') !!}
+                            {!! Form::label('url', 'Site internet') !!}
                             </div>
                         <div class="col-md-6">
                             {!! Form::url('url', null, ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}

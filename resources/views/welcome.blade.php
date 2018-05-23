@@ -6,7 +6,7 @@ accueil
 
 @section('content')
  
- <div class="pageheader-content row">
+ <div id="encart" class="pageheader-content row">
             <div class="col-full">
 
                 <div class="featured">

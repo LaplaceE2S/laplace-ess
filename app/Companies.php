@@ -8,7 +8,7 @@ class Companies extends Model
 {
 
     protected $table = 'companies';
-    protected $fillable = ['structure', 'statut', 'budget', 'siret', 'rue', 'postal', 'ville', 'nom', 'prenom', 'telephone', 'url'];
+    protected $fillable = ['siret', 'nom', 'prenom', 'structure', 'url', 'ville', 'postal', 'rue', 'telephone', 'statut', 'budget', 'users_id'];
     public $timestamps = true;
 
     public function skills()

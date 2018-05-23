@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Companies;
+use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserCreateRequest;
+
 
 class UsersController extends Controller 
 {
@@ -12,12 +16,8 @@ class UsersController extends Controller
    *
    * @return Response
    */
-  public function index()
-  {
-    
-  }
 
-  public function liste()
+  public function index()
   {
     $utilisateurs = User::all();
 
@@ -47,11 +47,31 @@ class UsersController extends Controller
    *
    * @return Response
    */
+
   public function store(Request $request)
   {
-    
-  }
+      $structure = Companies::create([
+          'siret' => request('siret'),
+          'nom' => request('nom'),
+          'prenom' => request('prenom'),       
+          'structure' => request('structure'),
+          'url' => request('url'),
+          'ville' => request('ville'),
+          'postal' => request('postal'),
+          'rue' => request('rue'),
+          'telephone' => request('telephone'),
+          'statut' => request('statut'),
+          'budget' => request('budget'), 
+          'users_id' => $request->user()->id, 
 
+      ]);
+
+    $title = "Confirmation de création de profil";
+    $msg = "Merci " . request('prenom') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
+    
+    return view('users.confirmCreate', compact('title', 'msg'));     
+   }
+    
 
   /**
    * Display the specified resource.

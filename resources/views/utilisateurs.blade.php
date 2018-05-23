@@ -1,13 +1,13 @@
-@extends('layouts.layout')
+@extends('layouts.adminLayout')
 
 @section('title')
-Liste des utilisateurs inscrits
+Liste des utilisateurs
 @endsection
 
 @section('content')
 
 <br />
-<h1 id="titleUtilisateur" >Les utilisateurs inscrits</h1>
+<h1 id="titleUtilisateur" >Les utilisateurs</h1>
 
 <div class="container">
     @foreach($utilisateurs as $utilisateur)

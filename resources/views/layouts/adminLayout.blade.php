@@ -2,7 +2,7 @@
 
 <body>
 
-  @include('layouts.header')
+  @include('layouts.adminheader')
 
   @include('layouts.adminMenu')
 
