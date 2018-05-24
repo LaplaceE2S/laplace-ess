@@ -159,7 +159,7 @@ header .right-item-nav-end{
 }
 
 .row {
-    width: 94%;
+    width: 100%;
 }
 
 .col-full {
@@ -473,7 +473,7 @@ h3.display-4{
 /*** SLIDER logo ***
 *******************/
 
-h2{
+.sliderTitle h2{
     text-align:center;
     padding: 20px;
 }

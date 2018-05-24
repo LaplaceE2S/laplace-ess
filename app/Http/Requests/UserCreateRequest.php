@@ -24,18 +24,18 @@ class UserCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'structure' => 'min:3|max:20|alpha_num',
-            'statut' => 'required|min:3|max:20|alpha',
-            'budget' => 'required|numeric',
-            'siret' => 'required|max:14|numeric',
-            'rue' => 'required|min:3|max:50|alpha_num',
-            'postal' => 'required|max:5|numeric',
-            'ville' => 'required|min:3|max:20|alpha',
-            'nom' => 'required|min:3|max:20|alpha',
-            'prenom' => 'required|min:3|max:20|alpha',
-            'telephone' => 'required|min:11|max:0989999999|numeric',
-            'email' => 'required|email',
-            'url' => 'required|url'
+            'structure' => 'bail|min:3|max:20|alpha_num',
+            'statut' => 'bail|required|min:3|max:20|alpha',
+            'budget' => 'bail|required|numeric',
+            'siret' => 'bail|required|max:14|numeric',
+            'rue' => 'bail|required|min:3|max:50|alpha_num',
+            'postal' => 'bail|required|max:5|numeric',
+            'ville' => 'bail|required|min:3|max:20|alpha',
+            'nom' => 'bail|required|min:3|max:20|alpha',
+            'prenom' => 'bail|required|min:3|max:20|alpha',
+            'telephone' => 'bail|required|min:11|max:0989999999|numeric',
+            'email' => 'bail|required|email|unique:users,email' . $this->user->id,
+            'url' => 'url'
         ];
     }
 }

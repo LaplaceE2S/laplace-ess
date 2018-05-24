@@ -54,5 +54,7 @@ Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 
 // créer un profil user
 Route::get('/profil', 'UsersController@create')->name('profil');
-
 Route::post('/profil', 'UsersController@store');
+
+// lire le profil user
+Route::get('lireprofil', 'UsersController@show')->name('lireprofil');

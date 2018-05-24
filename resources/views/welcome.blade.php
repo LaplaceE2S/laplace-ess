@@ -280,7 +280,7 @@ accueil
 
 <!-- LOGO SLIDER -->
 <div class="container">  
-  <h2>Nos partenaires</h2>
+  <h2 class="sliderTitle">Nos partenaires</h2>
       </br>
   <section class="customer-logos slider" id='fcontainer'>
     

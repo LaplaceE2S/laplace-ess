@@ -19,7 +19,7 @@ class UsersController extends Controller
 
   public function index()
   {
-    $utilisateurs = User::all();
+    $utilisateurs = Companies::all();
 
     return view('utilisateurs', [
         'utilisateurs' => $utilisateurs,
@@ -63,7 +63,6 @@ class UsersController extends Controller
           'statut' => request('statut'),
           'budget' => request('budget'), 
           'users_id' => $request->user()->id, 
-
       ]);
 
     $title = "Confirmation de création de profil";
@@ -79,9 +78,13 @@ class UsersController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function show($id)
+  public function show(Companies $id)
   {
-    
+    $profils = Companies::all();
+
+    return view('users.readProfil', [
+        'profils' => $profils,
+    ]);
   }
 
   /**

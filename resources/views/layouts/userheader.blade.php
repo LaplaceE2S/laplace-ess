@@ -9,7 +9,7 @@
         </form>
         <ul class="">
             <li class="nav-item dropdown right-item-nav">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour {{ Auth::user()->name }} <img class="avatarProfil" src="./images/img1.jpg" alt""></a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour {{ Auth::user()->name }} <img class="avatarProfil" src="./images/avatar_utilisateur.png" alt""></a>
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>

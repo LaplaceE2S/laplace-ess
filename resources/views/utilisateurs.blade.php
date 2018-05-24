@@ -11,22 +11,11 @@ Liste des utilisateurs
 
 <div class="container">
     @foreach($utilisateurs as $utilisateur)
-    <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Utilisateurs</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">{{ $utilisateur -> id}}</th>
-      <td>{{ $utilisateur -> name}}</td>
-      <td>{{ $utilisateur -> email}}</td>
-    </tr>
-  </tbody>
-</table>
+    <ul>
+      <li>{{ $utilisateur -> id}}</li>
+      <li>Nom du responsable de structure: {{ $utilisateur -> nom}}</li>
+      <li>Structure: {{ $utilisateur ->structure}}</li>
+</ul>
 @endforeach
 </div>
 

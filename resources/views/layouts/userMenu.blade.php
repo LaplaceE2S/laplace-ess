@@ -28,8 +28,14 @@
     <li class="nav-item">
         <a href="#tab5Id" class="nav-link">Mes messages</a>
     </li>
-    <li class="nav-item">
-        <a href="#tab5Id" class="nav-link">Mon abonnement</a>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon abonnement</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="{{ route('lireprofil') }}">Gestion de vos informations</a>
+            <a class="dropdown-item" href="#tab3Id">Suivi de votre abonnement</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#tab4Id">Charte d'engagement</a>
+        </div>
     </li>
 </ul>
 
