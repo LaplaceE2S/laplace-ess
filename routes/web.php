@@ -58,3 +58,10 @@ Route::post('/profil', 'UsersController@store');
 
 // lire le profil user
 Route::get('lireprofil', 'UsersController@show')->name('lireprofil');
+
+// recherche par compétence
+Route::get('proposal', function (Request $request) {
+    $priorityID = $request->get('comp');
+    dd($priorityID);
+    return 'id comp: '.$priorityID;
+})->name('proposalBySkill');

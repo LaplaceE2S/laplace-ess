@@ -1,14 +1,12 @@
 <?php 
 use App\User;
+use App\Skills;
 $type = Auth::user()->type;
-//generation de la selection de competence
-$comps = Skills::all();
-$searchForm ="echo Form::select('id', array(";
-foreach( $comps as $comp ){
-  $searchForm = $searchForm."'".$comp->id."' => '".$comp->nom."',";
+$skills = Skills::all();
+$comps= array();
+foreach($skills as $skill){
+$comps[$skill->id] = $skill->nom;
 }
-$searchForm = $searchForm."));";
-
 ?>
 
 @include('layouts.head')

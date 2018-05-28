@@ -3,10 +3,12 @@
         <a class="navbar-brand" href="{{ route('welcome') }}">
             <img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Compétence ou sous-compétence" aria-label="Search">
+        <form class="form-inline" action="./proposal">
+         <?php
+         echo Form::select('comp', $comps);
+         ?>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        </form>
+            {{ Form::close() }}
         <ul class="">
             <li class="nav-item dropdown right-item-nav">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour {{ Auth::user()->name }} <img class="avatarProfil" src="./images/avatar_utilisateur.png" alt""></a>
