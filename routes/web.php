@@ -53,9 +53,17 @@ Route::get('structures', 'WelcomeController@structure')->name('structures');
 Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 
 // créer un profil user
-Route::get('/profil', 'UsersController@create')->name('profil');
-Route::post('/profil', 'UsersController@store');
+Route::get('/profil', 'UsersController@create')->middleware('auth')->name('profil');
+Route::post('/profil', 'UsersController@store')->middleware('auth');
 
+// liste les utilisateurs
+Route::get('utilisateurs', 'UsersController@index')->name('utilisateurs')->middleware('auth');
+
+// affiche le profil de l'utilisateur
+Route::get('/lireprofil', 'UsersController@show')->middleware('auth')->name('lireprofil');
+
+<<<<<<< HEAD
+=======
 // lire le profil user
 Route::get('lireprofil', 'UsersController@show')->name('lireprofil');
 
@@ -65,3 +73,4 @@ Route::get('proposal', function (Request $request) {
     dd($priorityID);
     return 'id comp: '.$priorityID;
 })->name('proposalBySkill');
+>>>>>>> 151917781f596093d949867894c7149f69b3251e

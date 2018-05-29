@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Companies;
 use App\User;
+use Auth;
+
 use Illuminate\Http\Request;
-use App\Http\Requests\UserCreateRequest;
+use Illuminate\Support\Facades\DB;
+
 
 
 class UsersController extends Controller 
@@ -26,6 +29,7 @@ class UsersController extends Controller
     ]);
   }
 
+
   /**
    * Show the form for creating a new resource.
    *
@@ -34,12 +38,8 @@ class UsersController extends Controller
 
   public function create()
   {
-    if (auth()->guest()) {
-
-      return redirect('/login');
-  }
     return view('users.create');
-}
+  }
 
 
   /**
@@ -50,24 +50,24 @@ class UsersController extends Controller
 
   public function store(Request $request)
   {
-      $structure = Companies::create([
-          'siret' => request('siret'),
-          'nom' => request('nom'),
-          'prenom' => request('prenom'),       
-          'structure' => request('structure'),
-          'url' => request('url'),
-          'ville' => request('ville'),
-          'postal' => request('postal'),
-          'rue' => request('rue'),
-          'telephone' => request('telephone'),
-          'statut' => request('statut'),
-          'budget' => request('budget'), 
-          'users_id' => $request->user()->id, 
-      ]);
+    $structure = Companies::create([
+    'siret' => request('siret'),
+    'nom' => request('nom'),
+    'prenom' => request('prenom'),       
+    'structure' => request('structure'),
+    'url' => request('url'),
+    'ville' => request('ville'),
+    'postal' => request('postal'),
+    'rue' => request('rue'),
+    'telephone' => request('telephone'),
+    'statut' => request('statut'),
+    'budget' => request('budget'), 
+    'users_id' => $request->user()->id, 
+    ]);
 
     $title = "Confirmation de création de profil";
     $msg = "Merci " . request('prenom') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
-    
+
     return view('users.confirmCreate', compact('title', 'msg'));     
    }
     
@@ -78,14 +78,20 @@ class UsersController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function show(Companies $id)
+  
+  public function show()
   {
-    $profils = Companies::all();
+    $id = Auth::user()->id;
 
-    return view('users.readProfil', [
-        'profils' => $profils,
-    ]);
-  }
+    $utilisateurs = DB::table('companies')
+            ->where('companies.users_id', '=', $id )
+            ->join('users', 'users.id', '=', 'companies.users_id')
+            ->select('companies.*', 'users.email', 'users.avatar')
+            ->get();
+ 
+            return view('users.readProfil', compact('utilisateurs')); 
+            /* la fonction compact équivaut à array('posts' => $posts) */
+}
 
   /**
    * Show the form for editing the specified resource.

@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Companies extends Model 
+class Companies extends Model
 {
-
     protected $table = 'companies';
     protected $fillable = ['siret', 'nom', 'prenom', 'structure', 'url', 'ville', 'postal', 'rue', 'telephone', 'statut', 'budget', 'users_id'];
     public $timestamps = true;
@@ -25,5 +24,4 @@ class Companies extends Model
     {
         return $this->hasOne('App\Users');
     }
-
 }

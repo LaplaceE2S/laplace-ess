@@ -16,7 +16,7 @@ inscription
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Structure') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __("Structure de l'économie sociale et solidaire") }}</label>
 
                             <div class="col-md-6">
                                 <input id="structure" type="text" class="form-control{{ $errors->has('structure') ? ' is-invalid' : '' }}" name="structure" value="{{ old('structure') }}" required autofocus>
@@ -24,6 +24,20 @@ inscription
                                 @if ($errors->has('structure'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('structure') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __("Statut de votre structure") }}</label>
+
+                            <div class="col-md-6">
+                                <input id="statut" type="text" class="form-control{{ $errors->has('statut') ? ' is-invalid' : '' }}" name="statut" value="{{ old('statut') }}" required autofocus>
+
+                                @if ($errors->has('statut'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('statut') }}</strong>
                                     </span>
                                 @endif
                             </div>

@@ -10,7 +10,7 @@ class CreateUsersTable extends Migration {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('avatar')->default('avatar_utilisateur.png');
+            $table->string('avatar')->default('./uploads/avatars/avatar_utilisateur.png');
             $table->string('email')->unique();
             $table->boolean('type')->default(false);
             $table->string('password');

@@ -16,7 +16,7 @@ Créer son profil
                     <div class="row justify-content-left"><h5>Renseignements sur la structure<h5></div>
 
                         <!-- label STRUCTURE -->
-                        <div class="form-group {!! $errors->has('structure') ? 'has-error' : 'erreur dans le nom de votre structure' !!} row">
+                        <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('structure', 'Structure') !!}
                             </div>
@@ -27,7 +27,7 @@ Créer son profil
                         </div>
 
                           <!-- label STATUT -->
-                        <div class="form-group {!! $errors->has('statut') ? 'has-error' : 'erreur dans le nom de votre statut' !!} row">
+                        <div class="form-group {!! $errors->has('statut') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('statut', 'Statut') !!}
                             </div>
@@ -38,7 +38,7 @@ Créer son profil
                         </div>
 
                         <!-- label BUDGET -->
-                         <div class="form-group {!! $errors->has('budget') ? 'has-error' : 'saisissez un nombre' !!} row">
+                         <div class="form-group {!! $errors->has('budget') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('budget', 'Budget') !!}
                             </div>
@@ -49,7 +49,7 @@ Créer son profil
                         </div>
 
                         <!-- label SIRET -->
-                         <div class="form-group {!! $errors->has('siret') ? 'has-error' : 'saisissez un nombre' !!} row">
+                         <div class="form-group {!! $errors->has('siret') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('siret', 'N° SIRET') !!}
                             </div>
@@ -60,7 +60,7 @@ Créer son profil
                         </div>
 
                         <!-- label ADRESSE-->
-                        <div class="form-group {!! $errors->has('rue') ? 'has-error' : 'saisissez une adresse valide' !!} row">
+                        <div class="form-group {!! $errors->has('rue') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('rue', 'Adresse') !!}
                             </div>
@@ -71,7 +71,7 @@ Créer son profil
                         </div>
 
                         <!-- label CODE POSTAL-->
-                        <div class="form-group {!! $errors->has('postal') ? 'has-error' : 'saisissez un code postal valide' !!} row">
+                        <div class="form-group {!! $errors->has('postal') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('postal', 'Code Postal') !!}
                             </div>
@@ -82,7 +82,7 @@ Créer son profil
                         </div>
 
                         <!-- label VILLE-->
-                        <div class="form-group {!! $errors->has('ville') ? 'has-error' : 'saisissez une ville' !!} row">
+                        <div class="form-group {!! $errors->has('ville') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('ville', 'Ville') !!}
                             </div>
@@ -95,7 +95,7 @@ Créer son profil
                         <div class="row justify-content-left"><h5>Renseignements sur le responsable de la structure</h5></div>
 
                         <!-- label NOM-->
-                        <div class="form-group {!! $errors->has('nom') ? 'has-error' : 'saisissez un nom valide' !!} row">
+                        <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('nom', 'Nom') !!}
                             </div>
@@ -106,7 +106,7 @@ Créer son profil
                         </div>
 
                         <!-- label PRENOM-->
-                        <div class="form-group {!! $errors->has('prenom') ? 'has-error' : 'saisissez un prénom valide' !!} row">
+                        <div class="form-group {!! $errors->has('prenom') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('prenom', 'Prénom') !!}
                             </div>
@@ -117,7 +117,7 @@ Créer son profil
                         </div>
 
                         <!-- label TELEPHONE-->
-                        <div class="form-group {!! $errors->has('tel') ? 'has-error' : 'saisissez un numéro de téléphone valide' !!} row">
+                        <div class="form-group {!! $errors->has('tel') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('tel', 'Téléphone') !!}
                             </div>
@@ -128,7 +128,7 @@ Créer son profil
                         </div>
 
                         <!-- label EMAIL-->
-                        <div class="form-group {!! $errors->has('email') ? 'has-error' : 'saisissez une adresse mail valide' !!} row">
+                        <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('email', 'Email') !!}
                             </div>
@@ -139,7 +139,7 @@ Créer son profil
                         </div>
 
                         <!-- label URL-->
-                        <div class="form-group {!! $errors->has('url') ? 'has-error' : 'saisissez votre site internet' !!} row">
+                        <div class="form-group {!! $errors->has('url') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('url', 'Site internet') !!}
                             </div>
@@ -152,12 +152,10 @@ Créer son profil
                         <!-- Label PHOTO-->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Photo</label>
-
-                            <div class="col-md-6" >
-                                <img id="avatarUtilisateur" src="./images/avatar_utilisateur.png" alt="avatar Utilisateur"/>
-                            </div>
+                            <input type="file" name="avatar">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
-
+             
                         <!-- bouton CREER SON PROFIL -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -169,7 +167,5 @@ Créer son profil
             </div>
         </div>
     </div>
-
-</div>
 {!! Form::close() !!}
 @endsection

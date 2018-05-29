@@ -6,49 +6,51 @@ Les informations de votre profil
 
 @section('content')
 
+@foreach($utilisateurs as $utilisateur)
+         
 <div class="container-fluid">
     <div class="row" >
         <div class="col-12">
             <div id="infoProfil" class="card card-inverse">
                 <div class="card-block">
-
+    <!-- info STRUCTURE -->
     <div class="row">
         <div class="col-md-4 col-sm-4">
             <h2 id="structureTitle" class="card-title text-left">Structure</h2>
-                <h5 class="card-text text-left"><strong>Statut </strong> </h5>
-                <h5 class="card-text text-left"><strong>Budget </strong> 1500<span> € </span> </h5>
-                <h5 class="card-text text-left"><strong>N° SIRET </strong> 12345678123454</h5>
+                <h5 class="card-text text-left"><strong>Statut: </strong> {{  $utilisateur->statut }}</h5>
+                <h5 class="card-text text-left"><strong>Budget: </strong> {{  $utilisateur->budget}}<span> € </span> </h5>
+                <h5 class="card-text text-left"><strong>N° SIRET: </strong> {{  $utilisateur->siret}}</h5>
         </div>
-
+        <!-- info STRUCTURE adresse -->
         <div class="col-md-4 col-sm-4">
-            <h2 id="structureTitle" class="card-title text-left">E2s</h2>
-                <h5 class="card-text text-left"><strong>Adresse </strong> 2 rue du Port</h5>
-                <h5 class="card-text text-left"><strong>Code postal </strong> 56000</h5>
-                <h5 class="card-text text-left"><strong>Ville </strong> Vannes</h5>
+            <h2 id="structureTitle" class="card-title text-left">{{  $utilisateur->structure }}</h2>
+                <h5 class="card-text text-left"><strong>Adresse: </strong>{{  $utilisateur->rue}}</h5>
+                <h5 class="card-text text-left"><strong>Code postal: </strong> {{  $utilisateur->postal}}</h5>
+                <h5 class="card-text text-left"><strong>Ville: </strong> {{  $utilisateur->ville}}</h5>
         </div>
-
+        <!-- avatar -->
         <div class="col-md-4 col-sm-4 text-center">
-            <img class="btn-md" src="./images/avatar_utilisateur.png" alt="" style="border-radius:50%;">
+            <img class="btn-md" src="{{ Auth::user()->avatar }}" alt="" style="border-radius:50%;">
         </div>     
 
         <div class="col-md-12 col-sm-12">
             <br />
             <br />
         </div>
-
+        <!-- info PERSONNE -->
         <div class="col-md-4 col-sm-4 text-center">    
-            <h5 class="card-text text-left"><strong>Nom </strong> Kersuzan</h5>     
-            <h5 class="card-text text-left"><strong>Prénom </strong> Fanny</h5>         
+            <h5 class="card-text text-left"><strong>Nom:</strong> {{  $utilisateur->nom}}</h5>     
+            <h5 class="card-text text-left"><strong>Prénom: </strong> {{  $utilisateur->prenom}}</h5>         
 
         </div>
-
+        <!-- info COORDONNEES -->
         <div class="col-md-4 col-sm-4 text-center">   
-            <h5 class="card-text text-left"><strong>Tel </strong> 0299457836</h5>     
-            <h5 class="card-text text-left"><strong>Mail </strong> webDev.fk@gmail.com</h5>            
+            <h5 class="card-text text-left"><strong>Tel: </strong> {{  $utilisateur->telephone}}</h5>     
+            <h5 class="card-text text-left"><strong>Mail: </strong> {{  $utilisateur->email}}</h5>            
         </div>
-
+        <!-- info site -->
         <div class="col-md-4 col-sm-4 text-center">  
-            <h5 class="card-text">www.laplace-ess.fr</h5>               
+            <h5 class="card-text">{{  $utilisateur->url}}</h5>               
                 <button type="button" class="btn btn-danger btn-block btn-md"><span class="fa fa-google-plus-square"></span> Modifier son profil </button>  
         </div>
 
@@ -58,4 +60,7 @@ Les informations de votre profil
 </div>
 </div> 
 </div>
+@endforeach
 @endsection
+
+
