@@ -50,8 +50,8 @@ Les informations de votre profil
         </div>
         <!-- info site -->
         <div class="col-md-4 col-sm-4 text-center">  
-            <h5 class="card-text">{{  $utilisateur->url}}</h5>               
-                <button type="button" class="btn btn-danger btn-block btn-md"><span class="fa fa-google-plus-square"></span> Modifier son profil </button>  
+            <h5 class="card-text">{{  $utilisateur->url}}</h5>  
+            <a href="{{ route('editProfil') }}" class="btn btn-danger btn-block" role="button">Modifier votre profil</a>             
         </div>
 
 </div>

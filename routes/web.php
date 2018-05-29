@@ -53,24 +53,26 @@ Route::get('structures', 'WelcomeController@structure')->name('structures');
 Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 
 // créer un profil user
-Route::get('/profil', 'UsersController@create')->middleware('auth')->name('profil');
-Route::post('/profil', 'UsersController@store')->middleware('auth');
+Route::get('/profil', 'UsersController@create')->name('profil');
+Route::post('/profil', 'UsersController@store');
 
 // liste les utilisateurs
-Route::get('utilisateurs', 'UsersController@index')->name('utilisateurs')->middleware('auth');
+Route::get('utilisateurs', 'UsersController@index')->name('utilisateurs');
 
 // affiche le profil de l'utilisateur
-Route::get('/lireprofil', 'UsersController@show')->middleware('auth')->name('lireprofil');
+Route::get('/lireprofil', 'UsersController@show')->name('lireprofil');
 
-<<<<<<< HEAD
-=======
-// lire le profil user
-Route::get('lireprofil', 'UsersController@show')->name('lireprofil');
+//éditer le profil de l'utilisateur
+Route::get('/editProfil', 'UsersController@edit')->name('editProfil');
+
+//mise à jour du profil de l'utilisateur
+Route::post('/editProfil', 'UsersController@update');
 
 // recherche par compétence
-Route::get('proposal', function (Request $request) {
+Route::get('proposal', function (Request $request) 
+{
     $priorityID = $request->get('comp');
     dd($priorityID);
     return 'id comp: '.$priorityID;
 })->name('proposalBySkill');
->>>>>>> 151917781f596093d949867894c7149f69b3251e
+

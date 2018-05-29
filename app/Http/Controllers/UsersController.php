@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\DB;
 class UsersController extends Controller 
 {
 
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
   /**
    * Display a listing of the resource.
    *
@@ -99,10 +104,19 @@ class UsersController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function edit($id)
-  {
-    
-  }
+  public function edit()
+    {   
+      $id = Auth::user()->id;
+
+      $utilisateurs = DB::table('companies')
+              ->where('companies.users_id', '=', $id )
+              ->join('users', 'users.id', '=', 'companies.users_id')
+              ->select('companies.*', 'users.email', 'users.avatar')
+              ->get();
+   
+              return view('users.editProfil', compact('utilisateurs')); 
+
+    }
 
   /**
    * Update the specified resource in storage.
@@ -110,10 +124,12 @@ class UsersController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
-  {
-    
-  }
+
+  public function update(Request $request, Companies $utilisateurs)
+    {
+      
+    }
+     
 
   /**
    * Remove the specified resource from storage.

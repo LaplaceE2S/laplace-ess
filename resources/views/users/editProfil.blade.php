@@ -1,18 +1,23 @@
+
 @extends('layouts.userLayout')
+
 @section('title')
-Créer son profil
+Modifiez votre profil
 @endsection
+
 @section('content')
 
+<!-- @foreach($utilisateurs as $utilisateur) -->
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1 class="text-center">Créer son profil</h1></div>
+                <div class="card-header"><h1 class="text-center">Modifier votre profil</h1></div>
                 <div class="card-body">
-                {!! Form::open(['url' => 'profil']) !!} 
-                        @csrf
+                {!! Form::open(['route' => 'editProfil', $utilisateurs]) !!} 
+                @csrf
+                
                     <div class="row justify-content-left"><h5>Renseignements sur la structure<h5></div>
 
                         <!-- label STRUCTURE -->
@@ -21,7 +26,7 @@ Créer son profil
                             {!! Form::label('structure', 'Structure') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Le nom de votre structure']) !!}
+                            {!! Form::text('structure', "$utilisateur->structure", ['class' => 'form-control', 'placeholder' => 'Le nom de votre structure']) !!}
                             {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -32,7 +37,7 @@ Créer son profil
                             {!! Form::label('statut', 'Statut') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('statut', null, ['class' => 'form-control', 'placeholder' => 'Le statut de votre structure']) !!}
+                            {!! Form::text('statut', "$utilisateur->statut", ['class' => 'form-control', 'placeholder' => 'Le statut de votre structure']) !!}
                             {!! $errors->first('statut', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -43,7 +48,7 @@ Créer son profil
                             {!! Form::label('budget', 'Budget') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('budget', null, ['class' => 'form-control', 'placeholder' => 'Le budget de votre structure']) !!}
+                            {!! Form::text('budget', "$utilisateur->budget", ['class' => 'form-control', 'placeholder' => 'Le budget de votre structure']) !!}
                             {!! $errors->first('budget', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -54,7 +59,7 @@ Créer son profil
                             {!! Form::label('siret', 'N° SIRET') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('siret', null, ['class' => 'form-control', 'placeholder' => 'Le numéro de siret de votre structure']) !!}
+                            {!! Form::text('siret', "$utilisateur->siret", ['class' => 'form-control', 'placeholder' => 'Le numéro de siret de votre structure']) !!}
                             {!! $errors->first('siret', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -65,7 +70,7 @@ Créer son profil
                             {!! Form::label('rue', 'Adresse') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('rue', null, ['class' => 'form-control', 'placeholder' => "L'adresse de votre structure"]) !!}
+                            {!! Form::text('rue', "$utilisateur->rue", ['class' => 'form-control', 'placeholder' => "L'adresse de votre structure"]) !!}
                             {!! $errors->first('rue', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -76,7 +81,7 @@ Créer son profil
                             {!! Form::label('postal', 'Code Postal') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('postal', null, ['class' => 'form-control', 'placeholder' => "Le code postal de votre structure"]) !!}
+                            {!! Form::text('postal', "$utilisateur->postal", ['class' => 'form-control', 'placeholder' => "Le code postal de votre structure"]) !!}
                             {!! $errors->first('postal', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -87,7 +92,7 @@ Créer son profil
                             {!! Form::label('ville', 'Ville') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('ville', null, ['class' => 'form-control', 'placeholder' => "La ville de votre structure"]) !!}
+                            {!! Form::text('ville', "$utilisateur->ville", ['class' => 'form-control', 'placeholder' => "La ville de votre structure"]) !!}
                             {!! $errors->first('ville', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -100,7 +105,7 @@ Créer son profil
                             {!! Form::label('nom', 'Nom') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => "Le nom du responsable de la structure"]) !!}
+                            {!! Form::text('nom', "$utilisateur->nom", ['class' => 'form-control',  'placeholder' => "Le nom du responsable de la structure"]) !!}          
                             {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -111,7 +116,7 @@ Créer son profil
                             {!! Form::label('prenom', 'Prénom') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('prenom', null, ['class' => 'form-control', 'placeholder' => "Le prénom du responsable de la structure"]) !!}
+                            {!! Form::text('prenom', "$utilisateur->prenom", ['class' => 'form-control', 'placeholder' => "Le prénom du responsable de la structure"]) !!}
                             {!! $errors->first('prenom', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -122,7 +127,7 @@ Créer son profil
                             {!! Form::label('tel', 'Téléphone') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::tel('telephone', null, ['class' => 'form-control', 'placeholder' => "Le numéro de téléphone de la structure"]) !!}
+                            {!! Form::tel('telephone', "$utilisateur->telephone", ['class' => 'form-control', 'placeholder' => "Le numéro de téléphone de la structure"]) !!}
                             {!! $errors->first('tel', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -133,7 +138,7 @@ Créer son profil
                             {!! Form::label('email', 'Email') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => "L'adresse mail du responsable"]) !!}
+                            {!! Form::email('email', "$utilisateur->email", ['class' => 'form-control', 'placeholder' => "L'adresse mail du responsable"]) !!}
                             {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -144,7 +149,7 @@ Créer son profil
                             {!! Form::label('url', 'Site internet') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::url('url', null, ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
+                            {!! Form::url('url', "$utilisateur->url", ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
                             {!! $errors->first('url', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -152,13 +157,15 @@ Créer son profil
                         <!-- Label PHOTO-->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Photo</label>
-                            <img class="btn-md my-2" src="{{ Auth::user()->avatar }}" alt="photo de profil par défaut" >
+                            <img class="btn-md" src="{{ Auth::user()->avatar }}" alt="photo de profil par défaut">
+                            <input type="file" name="avatar">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         </div>
              
                         <!-- bouton CREER SON PROFIL -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                {!! Form::submit('Créer son profil', ['class' => 'btn btn-success pull-center']) !!}
+                                {!! Form::submit('Envoyer', ['class' => 'btn btn-success pull-center']) !!}
                             </div>
                         </div>
 
@@ -166,5 +173,9 @@ Créer son profil
             </div>
         </div>
     </div>
+<!-- @endforeach -->
 {!! Form::close() !!}
 @endsection
+
+
+
