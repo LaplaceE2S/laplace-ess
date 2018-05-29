@@ -3,24 +3,25 @@
 Créer son profil
 @endsection
 @section('content')
-<?php $element = 'demande'; ?>
+<?php $element = 'offre'; ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1>{{ __("Créer une proposition") }}</h1></div>
+                <div class="card-header"><h1>{{ __("Créer une Offre") }}</h1></div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('home') }}">
+                    <form method="POST" action="{{ route('store_offre') }}">
                         @csrf
                         <div class="row justify-content-left"><h4>Renseignements sur la proposition<h4></div>
                         <!-- label type -->
                         <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('type', 'type :') !!}
+                        {!! Form::label('typeL', 'type :') !!}
                         </div>
                         <div class="col-md-6">
-                        {!! Form::label('type2', $element) !!}
+                        {!! Form::label('type2L', $element) !!}
+                        {!! Form::hidden('type', $element) !!}
                         </div>
                         </div>
 
@@ -50,6 +51,17 @@ Créer son profil
                             'Informatique' => array('Informatique' => "Hébergement sécurisé","Achat groupé","Négociation de contrat","Appui informatique")
                         ), ['class' => 'form-control']) !!}
 
+                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        </div>
+                        </div>
+
+                         <!-- label description -->
+                         <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class='col-md-4 col-form-label text-md-right'>
+                        {!! Form::label('descriptionL', "Description de l'annonce: ") !!}
+                        </div>
+                        <div class="col-md-6">
+                        {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -97,9 +109,9 @@ Créer son profil
                         </div>
                         <div class="col-md-6">
                         {!! Form::label('semaineL', 'semaine : ') !!}
-                        {!! Form::radio('frequence', 'value', ['class' => 'form-control']) !!}
+                        {!! Form::radio('frequence', 0, ['class' => 'form-control']) !!}
                         {!! Form::label('moisL', 'mois : ') !!}
-                        {!! Form::radio('frequence', 'value', ['class' => 'form-control']) !!}
+                        {!! Form::radio('frequence', 1, ['class' => 'form-control']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -110,7 +122,7 @@ Créer son profil
                         {!! Form::label('heureL', "Entrez le nombre d'heure :" ) !!}
                         </div>
                         <div class="col-md-6">
-                        {!! Form::number('heure', null, ['class' => 'form-control']) !!}
+                        {!! Form::number('heure', null, ['class' => 'form-control','step'=>'any']) !!}
 
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
@@ -123,9 +135,9 @@ Créer son profil
                         </div>
                         <div class="col-md-6">
                         {!! Form::label('ponctuelL', 'ponctuel : ') !!}
-                        {!! Form::radio('besoin', 'value', ['class' => 'form-control']) !!}
+                        {!! Form::radio('besoin', 0, ['class' => 'form-control']) !!}
                         {!! Form::label('permanentL', 'permanent : ') !!}
-                        {!! Form::radio('besoin', 'value', ['class' => 'form-control']) !!}
+                        {!! Form::radio('besoin', 1, ['class' => 'form-control']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -154,7 +166,6 @@ Créer son profil
                         </div>
                         </div>
                         
-                        @if ($element == 'offre')
                                                     <!-- label service -->
                             <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
@@ -162,9 +173,9 @@ Créer son profil
                             </div>
                             <div class="col-md-6">
                             {!! Form::label('prestationL', 'prestation : ') !!}
-                            {!! Form::radio('service', 'value', ['class' => 'form-control']) !!}
+                            {!! Form::radio('service', 0, ['class' => 'form-control']) !!}
                             {!! Form::label('dispositionL', 'mis a disposition : ') !!}
-                            {!! Form::radio('service', 'value', ['class' => 'form-control']) !!}
+                            {!! Form::radio('service', 1, ['class' => 'form-control']) !!}
                             {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                             </div>
                             </div>
@@ -176,25 +187,14 @@ Créer son profil
                             {!! Form::label('coutL', 'Entrer le prix de la prestation (ou le cout horaire de la mise a disposition):') !!}
                             </div>
                             <div class="col-md-6">
-                            {!! Form::number('cout', null, ['class' => 'form-control']) !!}
+                            {!! Form::number('cout', null, ['class' => 'form-control','step'=>'any']) !!}
 
                             {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                             </div>
                             </div>
-                        @else
-                                                    <!-- label localisation -->
-                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
-                            <div class='col-md-4 col-form-label text-md-right'>
-                            {!! Form::label('materielL', 'Description du context matériel: ') !!}
-                            </div>
-                            <div class="col-md-6">
-                            {!! Form::textarea('materiel', null, ['class' => 'form-control']) !!}
-                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
-                            </div>
-                            </div>
-                        @endif
+                        
 
-
+                            {{ Form::submit('Envoyer!', ['class' => 'btn btn-outline-success my-2 my-sm-0 href']) }}
                         
 
                     </form>

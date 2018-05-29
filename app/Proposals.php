@@ -9,6 +9,7 @@ class Proposals extends Model
 
     protected $table = 'proposals';
     public $timestamps = true;
+    protected $fillable = ['titre', 'type', 'description', 'companies_id', 'frequence', 'heure', 'debut', 'fin', 'sub_skills_id', 'is_valid', 'expiration', 'besoin', 'cout', 'lieu', 'materiel', 'deplacement', 'service'];
 
     public function subSkills()
     {

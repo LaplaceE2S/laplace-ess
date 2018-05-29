@@ -69,10 +69,20 @@ Route::get('/editProfil', 'UsersController@edit')->name('editProfil');
 Route::post('/editProfil', 'UsersController@update');
 
 // recherche par compétence
-Route::get('proposal', function (Request $request) 
-{
-    $priorityID = $request->get('comp');
-    dd($priorityID);
-    return 'id comp: '.$priorityID;
-})->name('proposalBySkill');
+Route::get('proposalBySkill/proposal', 'ProposalsController@searchRewrite');
+Route::get('proposalBySkill/{id}', [
+    'as' => 'proposal.bySkill',
+    'uses' => 'ProposalsController@showBySkill',
+]);
+Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySkill');
+
+
+// création annonce
+Route::get('proposal/new_offre', 'ProposalsController@formOffre');
+
+Route::post('proposal/new_offre', 'ProposalsController@store')->name('store_offre');
+
+Route::get('proposal/new_demande', 'ProposalsController@formDemande');
+
+Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
 

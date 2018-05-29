@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="{{ route('welcome') }}">
             <img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
-        <form class="form-inline" action="./proposal">
+        <form method="GET" action="{{ route('proposalBySkill') }}">
          <?php
          echo Form::select('comp', $comps);
          ?>

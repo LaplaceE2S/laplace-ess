@@ -11,14 +11,14 @@ Créer son profil
 <p> ofre 1</p>
 <p> ofre 2</p>
 <p> ofre 3</p>
-<button> je propose une ofre</button>
+<a class='btn btn-outline-success my-2 my-sm-0 href' href ='../proposal/new_offre'> je propose une offre</a>
 </div>
 <div class="col-6">
 <h2>Demande</h2>
 <p> Demande 1</p>
 <p> Demande 2</p>
 <p> Demande 3</p>
-<button> je demande une ofre</button>
+<a class='btn btn-outline-success my-2 my-sm-0 href' href ='../proposal/new_demande'> je demande une offre</a>
 </div>
 </div>
 @endsection
