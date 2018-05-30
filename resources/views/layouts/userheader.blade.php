@@ -1,12 +1,14 @@
 <header>
      <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand" href="{{ route('welcome') }}">
-            <img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
+            <img src="/laplace-ess/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
         <form method="GET" action="{{ route('proposalBySkill') }}">
-            {!! Form::select('comp', $comps);!!}
+         <?php
+         echo Form::select('comp', $comps);
+         ?>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-        {{ Form::close() }}
+            {{ Form::close() }}
         <ul class="">
             <li class="nav-item dropdown right-item-nav">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ Auth::user()->name }} <img class="avatarProfil" src="{{ Auth::user()->avatar }}" alt""></a>

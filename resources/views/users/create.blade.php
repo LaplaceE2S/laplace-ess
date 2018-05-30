@@ -144,7 +144,7 @@ Créer son profil
                             {!! Form::label('url', 'Site internet') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::url('url', null, ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
+                            {!! Form::url('url', 'http://www.', ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
                             {!! $errors->first('url', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>

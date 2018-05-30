@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Companies;
 use App\User;
 use Auth;
-
+use Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 
 
@@ -115,7 +116,6 @@ class UsersController extends Controller
               ->get();
    
               return view('users.editProfil', compact('utilisateurs')); 
-
     }
 
   /**
@@ -125,12 +125,52 @@ class UsersController extends Controller
    * @return Response
    */
 
-  public function update(Request $request, Companies $utilisateurs)
-    {
-      
-    }
-     
+  public function update(Request $request)
+  {
+    //référence table users
+    $userId = Auth::id();
+    $userId = User::find($userId = Auth::id());
 
+    $userId->email= request('email');
+    $userId->name = request('name');
+
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+
+        Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+
+        $user = Auth::user();
+        $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
+        $user->save();
+      }
+
+
+    //Référence table companies
+    $companieId = CompaniesController::WhoAmI();
+    $companie = Companies::find($companieId = CompaniesController::WhoAmI());
+
+    $companie->structure = request('structure');
+    $companie->statut = request('statut');
+    $companie->budget = request('budget');
+    $companie->siret = request('siret');
+    $companie->rue = request('rue');
+    $companie->postal = request('postal');
+    $companie->ville = request('ville');
+    $companie->nom = request('name');
+    $companie->prenom = request('prenom');
+    $companie->telephone = request('telephone');
+    $companie->url = request('url');
+
+    //update data
+    $userId->save();
+    $companie->save();
+
+    return redirect ('/lireprofil');
+  }
+   
+    
   /**
    * Remove the specified resource from storage.
    *

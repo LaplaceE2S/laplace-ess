@@ -7,7 +7,7 @@ Modifiez votre profil
 
 @section('content')
 
-<!-- @foreach($utilisateurs as $utilisateur) -->
+@foreach($utilisateurs as $utilisateur)
 
 <div class="container">
     <div class="row justify-content-center">
@@ -15,7 +15,7 @@ Modifiez votre profil
             <div class="card">
                 <div class="card-header"><h1 class="text-center">Modifier votre profil</h1></div>
                 <div class="card-body">
-                {!! Form::open(['route' => 'editProfil', $utilisateurs]) !!} 
+                {!! Form::open([ 'route' => 'editProfil', 'files' => true ]) !!} 
                 @csrf
                 
                     <div class="row justify-content-left"><h5>Renseignements sur la structure<h5></div>
@@ -100,13 +100,13 @@ Modifiez votre profil
                         <div class="row justify-content-left"><h5>Renseignements sur le responsable de la structure</h5></div>
 
                         <!-- label NOM-->
-                        <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
-                            {!! Form::label('nom', 'Nom') !!}
+                            {!! Form::label('name', 'Nom') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('nom', "$utilisateur->nom", ['class' => 'form-control',  'placeholder' => "Le nom du responsable de la structure"]) !!}          
-                            {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
+                            {!! Form::text('name', "$utilisateur->nom", ['class' => 'form-control',  'placeholder' => "Le nom du responsable de la structure"]) !!}          
+                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
@@ -155,13 +155,28 @@ Modifiez votre profil
                         </div>
 
                         <!-- Label PHOTO-->
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Photo</label>
-                            <img class="btn-md" src="{{ Auth::user()->avatar }}" alt="photo de profil par défaut">
-                            <input type="file" name="avatar">
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="form-group {!! $errors->has('photo') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('photo', 'Photo') !!}
+                            </div>
+                        <div class="col-md-6">
+                            <img class="btn-md" src="{{ $utilisateur->avatar}}" alt="photo de profil par défaut">  
+                            {!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
                         </div>
-             
+                        </div>
+
+                        <!-- Label changer de PHOTO-->
+                        <div class="form-group {!! $errors->has('avatar') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('avatar', 'Changer votre photo') !!}
+                            </div>
+                        <div class="col-md-6">
+                            {!! Form::file('avatar') !!}
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            {!! $errors->first('avatar', '<small class="help-block">:message</small>') !!}
+                        </div>
+                        </div>
+
                         <!-- bouton CREER SON PROFIL -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
@@ -173,7 +188,7 @@ Modifiez votre profil
             </div>
         </div>
     </div>
-<!-- @endforeach -->
+@endforeach
 {!! Form::close() !!}
 @endsection
 

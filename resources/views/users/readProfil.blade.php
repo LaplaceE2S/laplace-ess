@@ -16,14 +16,15 @@ Les informations de votre profil
     <!-- info STRUCTURE -->
     <div class="row">
         <div class="col-md-4 col-sm-4">
-            <h2 id="structureTitle" class="card-title text-left">Structure</h2>
+            <h2 id="structureTitle" class="card-title text-left">{{  $utilisateur->structure }}</h2>
                 <h5 class="card-text text-left"><strong>Statut: </strong> {{  $utilisateur->statut }}</h5>
                 <h5 class="card-text text-left"><strong>Budget: </strong> {{  $utilisateur->budget}}<span> € </span> </h5>
                 <h5 class="card-text text-left"><strong>N° SIRET: </strong> {{  $utilisateur->siret}}</h5>
         </div>
         <!-- info STRUCTURE adresse -->
         <div class="col-md-4 col-sm-4">
-            <h2 id="structureTitle" class="card-title text-left">{{  $utilisateur->structure }}</h2>
+                <br />
+                <br />
                 <h5 class="card-text text-left"><strong>Adresse: </strong>{{  $utilisateur->rue}}</h5>
                 <h5 class="card-text text-left"><strong>Code postal: </strong> {{  $utilisateur->postal}}</h5>
                 <h5 class="card-text text-left"><strong>Ville: </strong> {{  $utilisateur->ville}}</h5>
