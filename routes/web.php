@@ -78,11 +78,11 @@ Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySki
 
 
 // création annonce
-Route::get('proposal/new_offre', 'ProposalsController@formOffre');
+Route::get('proposal/new_offre/skill/{comp}', 'ProposalsController@formOffre');
 
-Route::post('proposal/new_offre', 'ProposalsController@store')->name('store_offre');
+Route::post('proposal/new_offre/', 'ProposalsController@store')->name('store_offre');
 
-Route::get('proposal/new_demande', 'ProposalsController@formDemande');
+Route::get('proposal/new_demande/skill/{comp}', 'ProposalsController@formDemande');
 
 Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Proposals;
+use App\Http\Requests\ProposalRequest;
+use Validator;
 
 class ProposalsController extends Controller 
 {
@@ -41,7 +43,7 @@ class ProposalsController extends Controller
     ->select('proposals.*')
     ->where('sub_skills.skills_id', '=', $comp)
     ->get();
-    return view('proposals.searchByComp');
+    return view('proposals.searchByComp', compact('comp'));
   }
 
   /**
@@ -71,9 +73,13 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
-  public function formOffre()
+  public function formOffre($comp)
   {
-    return view('proposals.createOffre');
+    $companieId= CompaniesController::WhoAmI();
+    $skillData =  Sub_skillsController::getListWithSkill($comp);
+    $liste = $skillData[0];
+    $compName = $skillData[1];
+    return view('proposals.createOffre', compact('compName','liste','companieId'));
   }
 
       /**
@@ -81,10 +87,14 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
-  public function formDemande()
+  public function formDemande($comp)
   {
-
-    return view('proposals.createDemande');
+    
+    $companieId= CompaniesController::WhoAmI();
+    $skillData =  Sub_skillsController::getListWithSkill($comp);
+    $liste = $skillData[0];
+    $compName = $skillData[1];
+    return view('proposals.createDemande', compact('compName','liste','companieId'));
   }
 
   /**
@@ -92,9 +102,28 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
-  {
+  public function store(ProposalRequest $request)
+  { 
+
+    
+    $deplacement = request('deplacement');
+    if($deplacement == NULL){
+      $deplacement = 0;
+    }
+    
+
     if(request('type')=='demande'){
+
+      $validator = Validator::make($request->all(), [
+        'materiel' => 'required|alpha'
+    ]);
+
+    if ($validator->fails()) {
+        return redirect(url()->previous())
+                    ->withErrors($validator)
+                    ->withInput();
+    }
+
     $proposal = Proposals::create([
       'titre' => request('titre'),
       'type' => request('type'),
@@ -106,11 +135,11 @@ class ProposalsController extends Controller
       'heure' => request('heure'),
       'besoin' => request('besoin'),
       'lieu' => request('localisation'),
-      'deplacement' => request('deplacement'), 
+      'deplacement' => $deplacement,
       'materiel' => request('materiel'), 
       'is_valid' => 0,
-      'sub_skills_id' => 6,
-      'companies_id' => 1,
+      'sub_skills_id' => request('comp'),
+      'companies_id' => request('companieId'),
       'cout' => 0,
       'service' => 0,
       ]);
@@ -119,6 +148,20 @@ class ProposalsController extends Controller
       $msg = "Merci , nous avons bien reçu votre demande de création d'annonce, elle est en attente de validation.";
     }
     else if(request('type')=='offre'){
+
+      $validator = Validator::make($request->all(), [
+        'service' => 'required|numeric|max:1',
+        'cout' => 'required|numeric|min:0'
+    ]);
+
+    if ($validator->fails()) {
+        return redirect(url()->previous())
+                    ->withErrors($validator)
+                    ->withInput();
+    }
+
+     
+
       $proposal = Proposals::create([
         'titre' => request('titre'),
         'type' => request('type'),
@@ -130,11 +173,11 @@ class ProposalsController extends Controller
         'heure' => request('heure'),
         'besoin' => request('besoin'),
         'lieu' => request('localisation'),
-        'deplacement' => request('deplacement'), 
+        'deplacement' => $deplacement, 
         'materiel' => '', 
         'is_valid' => 0,
-        'sub_skills_id' => 6,
-        'companies_id' => 1,
+        'sub_skills_id' => request('comp'),
+        'companies_id' => request('companieId'),
         'cout' => request('cout'),
         'service' => request('service'),
         ]);

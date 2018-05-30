@@ -13,9 +13,10 @@ Créer son profil
                 <div class="card-body">
                     <form method="POST" action="{{ route('store_demande') }}">
                         @csrf
+                        {!! Form::hidden('companieId', $companieId) !!}
                         <div class="row justify-content-left"><h4>Renseignements sur la proposition<h4></div>
                         <!-- label type -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('type') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('typeL', 'type :') !!}
                         </div>
@@ -26,7 +27,7 @@ Créer son profil
                         </div>
 
                         <!-- label Titre -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('titre') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('titreL', 'Entrez un titre : ') !!}
                         </div>
@@ -37,37 +38,42 @@ Créer son profil
                         </div>
                         </div>
 
-                        <!-- label Compétence -->
+                        <!-- label cat -->
                         <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class='col-md-4 col-form-label text-md-right'>
+                        {!! Form::label('catL', 'Catégorie :') !!}
+                        </div>
+                        <div class="col-md-6">
+                        {!! Form::label('catL', $compName) !!}
+                        </div>
+                        </div>
+                        
+
+                        <!-- label Compétence -->
+                        <div class="form-group {!! $errors->has('comp') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('competenceL', 'choisssez une competence') !!}
                         </div>
                         <div class="col-md-6">
-                        {!! Form::select('competence', array(
-                            'Communication externe' => array('com' => 'Stratégie de communication externe','Gestion du site internet','Réalisation de supports de communication','Gestion des réseaux sociaux','Organisation d’événements','Gestion des mailing','Relation presse'),
-                            'Stratégie et développement' => array('Strat' => 'La construction du budget en cohérence avec le projet de la structure','Méthodologie de création de nouvelles activités','Maîtriser les dispositifs d’aide financière',"Répondre à des appels d'offre","Veille sur les appels d'offre",'Rechercher des sources de financement', 'monter un dossier','Etablir un budget prévisionnel', 'un plan de trésorerie', "un plan de financement d’investissement"),
-                            'Gestion administrative et financière' => array('Gestion' => "Gestion de la comptabilité générale ou analytique","Les assurances","Veille sur la réglementation"),
-                            'Ressources humaines' => array('rh' =>"Gestion de la convention collective","Paie et contrat de travail","La formation professionnelle des équipes en place","Le recrutement et procédure de licenciement de personnels","Le management / encadrement, suivi des salariés","Les relations entre bénévoles et salariés","Gestion de conflits","Le recours aux stagiaires", "L’accompagnement à la retraite","Les risques psycho sociaux, la sécurité , le bien-être au travail"),
-                            'Informatique' => array('Informatique' => "Hébergement sécurisé","Achat groupé","Négociation de contrat","Appui informatique")
-                        ), ['class' => 'form-control']) !!}
+                         {!! Form::select('comp', $liste);!!}
 
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('comp', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
                         
                         <!-- label description -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('description') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('descriptionL', "Description de l'annonce: ") !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('description', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
                         <!-- label debut -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('debut') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('debutL', 'Selectionnez la date de début de mission: ') !!}
                         </div>
@@ -79,7 +85,7 @@ Créer son profil
                         </div>
 
                         <!-- label fin -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('fin') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('finL', 'Selectionnez la date de fin de mission: ') !!}
                         </div>
@@ -91,7 +97,7 @@ Créer son profil
                         </div>
 
                         <!-- label archivage -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('archivage') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('archivageL', "Selectionnez la date d'expiration de l'annonce:" ) !!}
                         </div>
@@ -103,7 +109,7 @@ Créer son profil
                         </div>
 
                         <!-- label fréquence -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('frequence') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('frequenceL', 'fréquence : ') !!}
                         </div>
@@ -112,24 +118,24 @@ Créer son profil
                         {!! Form::radio('frequence', 0, ['class' => 'form-control']) !!}
                         {!! Form::label('moisL', 'mois : ') !!}
                         {!! Form::radio('frequence', 1, ['class' => 'form-control']) !!}
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('frequence', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
                         <!-- label heure -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('heure') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('heureL', "Entrez le nombre d'heure :" ) !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::number('heure', null, ['class' => 'form-control']) !!}
 
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('heure', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
                         <!-- label besoin -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('besoin') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('besoinL', 'besoin : ') !!}
                         </div>
@@ -138,43 +144,43 @@ Créer son profil
                         {!! Form::radio('besoin', 0, ['class' => 'form-control']) !!}
                         {!! Form::label('permanentL', 'permanent : ') !!}
                         {!! Form::radio('besoin', 1, ['class' => 'form-control']) !!}
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('besoin', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
                         <!-- label localisation -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('localisation') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('localisationL', 'Entrez le lieux de travail : ') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::text('localisation', null, ['class' => 'form-control']) !!}
 
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('localisation', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
                         <!-- label deplacement -->
-                        <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                        <div class="form-group {!! $errors->has('deplacement') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
                         {!! Form::label('deplacementL', "distance déplacement :" ) !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::number('deplacement', null, ['class' => 'form-control']) !!}
 
-                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                        {!! $errors->first('deplacement', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
                         
 
                                                     <!-- label matériel -->
-                            <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
+                            <div class="form-group {!! $errors->has('materiel') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('materielL', 'Description du context matériel: ') !!}
                             </div>
                             <div class="col-md-6">
                             {!! Form::textarea('materiel', null, ['class' => 'form-control']) !!}
-                            {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+                            {!! $errors->first('materiel', '<small class="help-block">:message</small>') !!}
                             </div>
                             </div>
                 

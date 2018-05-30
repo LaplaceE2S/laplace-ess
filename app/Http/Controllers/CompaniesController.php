@@ -1,7 +1,8 @@
 <?php 
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use Auth;
 use Illuminate\Http\Request;
 
 class CompaniesController extends Controller 
@@ -15,6 +16,27 @@ class CompaniesController extends Controller
   public function index()
   {
     
+  }
+
+
+  /**
+   * give id for auth user.
+   *
+   * @return Response
+   */
+  static public function WhoAmI()
+  {
+    $userId = Auth::id();
+    $companieId = DB::table('companies')
+    
+    ->join('users', 'users.id', '=', 'companies.users_id')
+    ->select('companies.id')
+    ->where('users.id', '=', $userId)
+    ->get();
+
+    $companieId = $companieId[0]->id;
+    return $companieId;
+
   }
 
   /**

@@ -1,7 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class Sub_skillsController extends Controller 
@@ -14,6 +14,31 @@ class Sub_skillsController extends Controller
    */
   public function index()
   {
+    
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   *
+   * @return Response
+   */
+  static public function getListWithSkill($comp)
+  {
+    $subSkills = DB::table('sub_skills')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->select('sub_skills.*' , 'skills.nom as cat')
+    ->where('sub_skills.skills_id', '=', $comp)
+    ->get();
+    $compName;
+    $liste= array();
+    foreach($subSkills as $subSkill){
+    $liste[$subSkill->id] = $subSkill->nom;
+    $compName = $subSkill->cat;
+    }
+    $data = array();
+    $data[0] = $liste;
+    $data[1] = $compName;
+    return $data;
     
   }
 
