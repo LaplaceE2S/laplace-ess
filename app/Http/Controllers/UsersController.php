@@ -6,10 +6,11 @@ use App\Companies;
 use App\User;
 use Auth;
 use Image;
-use Validator;
-use App\Http\Requests\UserCreateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+
+
 
 class UsersController extends Controller 
 {
@@ -36,7 +37,7 @@ class UsersController extends Controller
 
 
   /**
-   * Show the form for creating a new profil companie.
+   * Show the form for creating a new resource.
    *
    * @return Response
    */
@@ -53,9 +54,8 @@ class UsersController extends Controller
    * @return Response
    */
 
-  public function store(UserCreateRequest $request)
+  public function store(Request $request)
   {
-     
     $structure = Companies::create([
     'siret' => request('siret'),
     'nom' => request('nom'),
@@ -70,8 +70,6 @@ class UsersController extends Controller
     'budget' => request('budget'), 
     'users_id' => $request->user()->id, 
     ]);
-
-    
 
     $title = "Confirmation de création de profil";
     $msg = "Merci " . request('prenom') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
@@ -127,33 +125,9 @@ class UsersController extends Controller
    * @return Response
    */
 
-  public function update(UserCreateRequest $request)
+  public function update(Request $request)
   {
-    //control validation
-    $validator = Validator::make($request->all(), [
-      'structure' => 'required',
-      'statut' => 'required',
-      'budget' => 'required',
-      'siret' => 'required',
-      'rue' => 'required',
-      'postal' => 'required',
-      'ville' => 'required',
-      'statut' => 'required',
-      'nom' => 'required',
-      'prenom' => 'required',
-      'telephone' => 'required',
-      'email' => 'required',
-      'url' => 'required',
-      'avatar' => 'required'
-  ]);
-
-  if ($validator->fails()) {
-      return redirect('/editProfil')
-                  ->withErrors($validator)
-                  ->withInput();
-  }
-
-    //update data table users
+    //référence table users
     $userId = Auth::id();
     $userId = User::find($userId = Auth::id());
 
@@ -173,7 +147,7 @@ class UsersController extends Controller
       }
 
 
-    //update data table companies
+    //Référence table companies
     $companieId = CompaniesController::WhoAmI();
     $companie = Companies::find($companieId = CompaniesController::WhoAmI());
 

@@ -6,7 +6,6 @@ accueil
 
 @section('content')
  
-<!-- Encart actu-->
  <div id="encart" class="pageheader-content row">
             <div class="col-full">
 
@@ -61,7 +60,11 @@ accueil
             </div> <!-- end col-full -->
         </div> <!-- end pageheader-content row -->
 
-<br />
+    </section> <!-- end s-pageheader -->
+
+
+
+</br>
 <!-- Accordion -->
 <div class="container">
   <!-- Title Competences -->
@@ -259,13 +262,13 @@ accueil
 </table>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
 <!-- /.container -->
 
-<br />
+</br>
 
 <div id="infosEss" class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -275,12 +278,10 @@ accueil
   </div>
 </div>
 
-</div>
-
 <!-- LOGO SLIDER -->
 <div class="container">  
-  <h3 class="title">Nos partenaires</h3>
-  <br />
+  <h2 class="sliderTitle">Nos partenaires</h2>
+      </br>
   <section class="customer-logos slider" id='fcontainer'>
     
     <div class="slide">

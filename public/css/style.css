@@ -155,6 +155,7 @@ header .right-item-nav-end{
 .pageheader-content {
     padding: 0;
     overflow: hidden;
+    max-width: 1000px;
 }
 
 .row {
@@ -471,6 +472,11 @@ h3.display-4{
 
 /*** SLIDER logo ***
 *******************/
+
+.sliderTitle h2{
+    text-align:center;
+    padding: 20px;
+}
   
 .slick-slide {
       margin: 0px 20px;
@@ -599,12 +605,17 @@ footer{
     color: white;
 }
 
-a.text-color-footer{
+footer .text-color-footer{
     color: rgba(255,255,255,.5);
 }
 
-a.text-color-footer:hover{
+footer .text-color-footer:hover{
     color: rgba(255,255,255,.75);
+}
+
+#footer{
+    display:flex;
+    justify-content:center;
 }
 
 .footer-title{

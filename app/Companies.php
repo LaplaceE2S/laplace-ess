@@ -22,6 +22,6 @@ class Companies extends Model
 
     public function users()
     {
-        return $this->hasOne('App\Users', 'users_id');
+        return $this->hasOne('App\Users');
     }
 }
