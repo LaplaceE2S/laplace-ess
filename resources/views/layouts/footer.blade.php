@@ -1,12 +1,8 @@
-<footer>
+
     <!-- Footer -->
-
-<!-- Include the above in your HEAD tag -->
-
-<!-- footer -->
-<div class="footer">
+    <footer>
   <div class="container">
-    <div id="footer" class="row ">
+    <div class="row">
       <!-- footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
           <div class="footer-widget ">
@@ -84,5 +80,5 @@
       <!-- /. tiny-footer -->
     </div>
   </div>
-</div>
 </footer>
+
