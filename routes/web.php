@@ -75,7 +75,18 @@ Route::get('proposalBySkill/{id}', [
     'uses' => 'ProposalsController@showBySkill',
 ]);
 Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySkill');
+// recherche par souscompétence
 
+Route::get('proposalBySubSkill/proposal', 'ProposalsController@searchSubRewrite')->name('proposalBySubSkill');;
+Route::get('proposalBySubSkill/{id}', [
+    'as' => 'proposal.bySkill',
+    'uses' => 'ProposalsController@showBySubSkill',
+]);
+
+// Consultation d'une annonce
+
+Route::get('proposal/voir_offre/{proposalId}', 'ProposalsController@voir_offre');
+Route::get('proposal/voir_demande/{proposalId}', 'ProposalsController@voir_demande');
 
 // création annonce
 Route::get('proposal/new_offre/skill/{comp}', 'ProposalsController@formOffre');

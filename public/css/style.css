@@ -627,3 +627,60 @@ footer .text-color-footer:hover{
 .ssTitre{
     color:#f49712;
 }
+
+.erreur{
+    width: 100%;
+    text-align: center;
+    padding: auto;
+}
+
+
+/***Billet annonce ***
+**********************/
+.subSearch{
+    margin: auto;
+    padding: auto;
+}
+
+.cadreBillet{
+    background-color: #EEEEEE;
+    margin:15px 0px;
+
+}
+
+.cadreBillet h3{
+    text-align: center;
+
+}
+
+.cadreBillet a{
+    width: 100%;
+    margin : auto;
+
+}
+
+.cadreBillet p {
+    background-color: #EEEEEE;
+    line-height: 150%;
+    text-align: left;
+    padding:0;
+    margin:0;
+    border-bottom: 1px black solid;
+
+}
+
+.billet {
+    border: #f49712 5px solid;
+}
+
+.billet td{
+    border: #f49712 5px solid;
+}
+
+/***lecture d'une annonce ***
+**********************/
+
+.readannonce{
+    margin: auto;
+    background-color: #EEEEEE;
+}

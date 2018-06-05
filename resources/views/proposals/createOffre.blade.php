@@ -1,6 +1,6 @@
 @extends('layouts.userLayout')
 @section('title')
-Créer son profil
+Créer une offre
 @endsection
 @section('content')
 <?php $element = 'offre'; ?>
@@ -52,7 +52,7 @@ Créer son profil
                         <!-- label Compétence -->
                         <div class="form-group {!! $errors->has('comp') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('competenceL', 'choisssez une competence') !!}
+                        {!! Form::label('competenceL', 'choisssez une compétence') !!}
                         </div>
                         <div class="col-md-6">
                          {!! Form::select('comp', $liste);!!}
@@ -75,7 +75,7 @@ Créer son profil
                         <!-- label debut -->
                         <div class="form-group {!! $errors->has('debut') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('debutL', 'Selectionnez la date de début de mission: ') !!}
+                        {!! Form::label('debutL', 'Sélectionnez la date de début de mission: ') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::date('debut', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
@@ -87,7 +87,7 @@ Créer son profil
                         <!-- label fin -->
                         <div class="form-group {!! $errors->has('fin') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('finL', 'Selectionnez la date de fin de mission: ') !!}
+                        {!! Form::label('finL', 'Sélectionnez la date de fin de mission: ') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::date('fin', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
@@ -99,7 +99,7 @@ Créer son profil
                         <!-- label archivage -->
                         <div class="form-group {!! $errors->has('archivage') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('archivageL', "Selectionnez la date d'expiration de l'annonce:" ) !!}
+                        {!! Form::label('archivageL', "Sélectionnez la date d'expiration de l'annonce:" ) !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::date('archivage', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}

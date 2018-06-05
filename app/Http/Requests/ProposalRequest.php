@@ -22,20 +22,20 @@ class ProposalRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {   
         return [
             'companieId' => 'required|numeric',
             'type' => 'required|alpha',
-            'titre' => 'required|alpha|max:180',
+            'titre' => 'required|string|max:180',
             'comp' => 'required|numeric',
-            'description' => 'required|alpha',
+            'description' => 'required|string',
             'debut' => 'required|date',
             'fin' => 'required|date',
             'archivage' => 'required|date',
             'frequence' => 'required|numeric|max:1',
             'heure' => 'required|numeric|max:744|min:1',
             'besoin' => 'required|numeric|max:1',
-            'localisation' => 'required|alpha'
+            'localisation' => 'required|string'
         ];
     }
 }

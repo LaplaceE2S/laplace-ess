@@ -7,9 +7,9 @@ Créer son profil
 <div class ="col-4 subSearch">
   <form method="GET" action="{{ route('proposalBySubSkill') }}">
          <?php
-         echo Form::select('subSkillSearch', $subSkillSearch);
-         ?>
          
+         echo Form::select('subSkillSearch',$subSkillSearch);
+         ?>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
   {{ Form::close() }}
 </div>
@@ -42,7 +42,7 @@ Créer son profil
 
 @endforeach
 @endif
-<a class='btn btn-outline-warning my-2 my-sm-0 href col-12' href ='../proposal/new_offre/skill/{{$comp}}'> je propose une offre</a>
+<a class='btn btn-outline-warning my-2 my-sm-0 href col-12' href ='../proposal/new_offre/skill/{{$subcomp}}'> je propose une offre</a>
 </div>
 <div class="col-12 col-sm-6">
 <h2>Demandes</h2>
@@ -71,7 +71,7 @@ Créer son profil
 
 @endforeach
 @endif
-<a class='btn btn-outline-warning my-2 my-sm-0 href col-12' href ='../proposal/new_demande/skill/{{$comp}}'> je crée une demande</a>
+<a class='btn btn-outline-warning my-2 my-sm-0 href col-12' href ='../proposal/new_demande/skill/{{$subcomp}}'> je crée une demande</a>
 </div>
 </div>
 @endsection
