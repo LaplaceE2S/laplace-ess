@@ -36,7 +36,7 @@ class User extends Authenticatable
     ];
 
     public function companies(){
-        return $this->belongsTo('App\Companies', 'users_id', 'id');     
+        return $this->belongsTo('App\Companies', 'users_id');     
     }
 
     /**

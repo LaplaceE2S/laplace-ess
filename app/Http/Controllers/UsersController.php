@@ -6,11 +6,10 @@ use App\Companies;
 use App\User;
 use Auth;
 use Image;
+use Validator;
+use App\Http\Requests\UserCreateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
-
 
 class UsersController extends Controller 
 {
@@ -19,6 +18,8 @@ class UsersController extends Controller
   {
       $this->middleware('auth');
   }
+
+  
 
   /**
    * Display a listing of the resource.
@@ -146,7 +147,6 @@ class UsersController extends Controller
         $user->save();
       }
 
-
     //Référence table companies
     $companieId = CompaniesController::WhoAmI();
     $companie = Companies::find($companieId = CompaniesController::WhoAmI());
@@ -169,7 +169,26 @@ class UsersController extends Controller
 
     return redirect ('/lireprofil');
   }
-   
+
+  /**
+   * View delete profile
+   *
+   * 
+   * 
+   */
+  public function users()
+  {
+    
+    $id = Auth::user()->id;
+
+    $utilisateurs = DB::table('companies')
+            ->where('companies.users_id', '=', $id )
+            ->join('users', 'users.id', '=', 'companies.users_id')
+            ->select('companies.*', 'users.email', 'users.avatar')
+            ->get();
+ 
+            return view('users.deleteProfil', compact('utilisateurs')); 
+  }
     
   /**
    * Remove the specified resource from storage.
@@ -178,10 +197,16 @@ class UsersController extends Controller
    * @return Response
    */
   public function destroy($id)
-  {
+    {
+      if($id != Auth::user()->id)
+      {
+        return redirect('welcome');
+      }
+
+      DB::table('users')->where('id', $id)->delete();
+        return redirect()->route('welcome')->with('ok', __('La suppression de votre compte à bien été prise en compte.'));
+    }
     
-  }
-  
 }
 
 ?>

@@ -35,6 +35,7 @@
             <a class="dropdown-item" href="#tab3Id">Suivi de votre abonnement</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#tab4Id">Charte d'engagement</a>
+            <a class="dropdown-item" href="{{url('/supprimerProfil') }}">Supprimer votre compte</a>
         </div>
     </li>
 </ul>

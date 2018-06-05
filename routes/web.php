@@ -68,6 +68,12 @@ Route::get('/editProfil', 'UsersController@edit')->name('editProfil');
 //mise à jour du profil de l'utilisateur
 Route::post('/editProfil', 'UsersController@update');
 
+//vue supprimer le profil
+Route::get('/supprimerProfil', 'UsersController@users');
+
+//supprimer le profil
+Route::post('supprimerCompte/{id}/profil', ['uses' => 'UsersController@destroy', 'as' => 'supprimerCompte.profil']);
+
 // recherche par compétence
 Route::get('proposalBySkill/proposal', 'ProposalsController@searchRewrite');
 Route::get('proposalBySkill/{id}', [

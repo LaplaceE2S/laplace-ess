@@ -10,7 +10,7 @@ class CreateForeignKeys extends Migration {
 	{
 		Schema::table('companies', function(Blueprint $table) {
 			$table->foreign('users_id')->references('id')->on('users')
-						->onDelete('restrict')
+						->onDelete('cascade')
 						->onUpdate('restrict');
 		});
 		Schema::table('sub_skills', function(Blueprint $table) {

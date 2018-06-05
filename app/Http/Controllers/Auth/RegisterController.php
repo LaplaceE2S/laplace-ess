@@ -70,13 +70,29 @@ class RegisterController extends Controller
     {
         $avatar = "./uploads/avatars/avatar_utilisateur.png";
 
-        return User::create([
-            'name' => $data['name'],
-            'avatar' => $avatar,
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'type' => User::DEFAULT_TYPE, 
-        ]);
+        $user = new User;
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->avatar = $avatar;
+        $user->password = Hash::make(request('password'));
+        $user->type = User::DEFAULT_TYPE;
+        $user->save();
+        
+        $companie = new Companies;
+        $companie->structure = request('structure');
+        $companie->statut = request('statut');
+        $companie->siret = 0;
+        $companie->nom = request('name');
+        $companie->prenom = '';
+        $companie->url = '';
+        $companie->ville = '';
+        $companie->postal = 0;
+        $companie->rue = '';
+        $companie->telephone = 0;
+        $companie->budget = 0;
+        $companie->users_id = $user->id;
+        $companie->save();
 
+        return $user;
     }
 }

@@ -1,12 +1,14 @@
 @extends('layouts.userLayout')
 
 @section('title')
-Les informations de votre profil
+Supprimer votre profil
 @endsection
 
 @section('content')
-
 @foreach($utilisateurs as $utilisateur)
+
+        <form method="POST" action="{{ route('supprimerCompte.profil', $utilisateur->id) }}">
+            {{ csrf_field() }}
          
 <div class="container-fluid">
     <div class="row" >
@@ -51,8 +53,8 @@ Les informations de votre profil
         </div>
         <!-- info site -->
         <div class="col-md-4 col-sm-4 text-center">  
-            <h5 class="card-text">{{  $utilisateur->url}}</h5>  
-            <a href="{{ route('editProfil') }}" class="btn btn-warning btn-block" role="button">Modifier votre profil</a>            
+            <h5 class="card-text">{{  $utilisateur->url }}</h5>  
+            {!! Form::submit('Supprimer votre profil', ['class' => 'btn btn-danger pull-center']) !!}
         </div>
 
 </div>
@@ -62,6 +64,7 @@ Les informations de votre profil
 </div> 
 </div>
 @endforeach
+{!! Form::close() !!}
 @endsection
 
 
