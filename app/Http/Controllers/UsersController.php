@@ -90,13 +90,34 @@ class UsersController extends Controller
   {
     $id = Auth::user()->id;
 
-    $utilisateurs = DB::table('companies')
+    $utilisateur = DB::table('companies')
             ->where('companies.users_id', '=', $id )
             ->join('users', 'users.id', '=', 'companies.users_id')
             ->select('companies.*', 'users.email', 'users.avatar')
             ->get();
+
+            $utilisateur = $utilisateur[0];
+
+            if($utilisateur->budget == 0)
+            {
+              $utilisateur->budget = '';
+            }
+
+            if ($utilisateur->siret == 0) {
+                $utilisateur->siret = '';
+            }
+
+            if($utilisateur->postal == 0)
+            {
+              $utilisateur->postal = '';
+            }
+
+            if($utilisateur->telephone == 0)
+            {
+              $utilisateur->telephone = '';
+            }
  
-            return view('users.readProfil', compact('utilisateurs')); 
+            return view('users.readProfil', compact('utilisateur')); 
             /* la fonction compact équivaut à array('posts' => $posts) */
 }
 
@@ -110,13 +131,35 @@ class UsersController extends Controller
     {   
       $id = Auth::user()->id;
 
-      $utilisateurs = DB::table('companies')
+      $utilisateur = DB::table('companies')
               ->where('companies.users_id', '=', $id )
               ->join('users', 'users.id', '=', 'companies.users_id')
               ->select('companies.*', 'users.email', 'users.avatar')
               ->get();
+
+              $utilisateur = $utilisateur[0];
+
+            if($utilisateur->budget == 0)
+            {
+              $utilisateur->budget = NULL;
+            }
+
+              if ($utilisateur->siret == 0) {
+                $utilisateur->siret = NULL;
+            }
+
+            if($utilisateur->postal == 0)
+            {
+              $utilisateur->postal = NULL;
+            }
+
+            if($utilisateur->telephone == 0)
+            {
+              $utilisateur->telephone = '';
+            }
+
    
-              return view('users.editProfil', compact('utilisateurs')); 
+              return view('users.editProfil', compact('utilisateur')); 
     }
 
   /**
@@ -198,13 +241,15 @@ class UsersController extends Controller
    */
   public function destroy($id)
     {
+      
       if($id != Auth::user()->id)
       {
         return redirect('welcome');
       }
-
+      
       DB::table('users')->where('id', $id)->delete();
-        return redirect()->route('welcome')->with('ok', __('La suppression de votre compte à bien été prise en compte.'));
+      
+        return redirect('welcome');
     }
     
 }

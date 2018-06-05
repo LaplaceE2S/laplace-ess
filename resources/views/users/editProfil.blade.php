@@ -7,8 +7,6 @@ Modifiez votre profil
 
 @section('content')
 
-@foreach($utilisateurs as $utilisateur)
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -48,7 +46,7 @@ Modifiez votre profil
                             {!! Form::label('budget', 'Budget') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('budget', "$utilisateur->budget", ['class' => 'form-control', 'placeholder' => 'Le budget de votre structure']) !!}
+                            {!! Form::text('budget', $utilisateur->budget, ['class' => 'form-control', 'placeholder' => 'Le budget de votre structure']) !!}
                             {!! $errors->first('budget', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
@@ -188,7 +186,6 @@ Modifiez votre profil
             </div>
         </div>
     </div>
-@endforeach
 {!! Form::close() !!}
 @endsection
 

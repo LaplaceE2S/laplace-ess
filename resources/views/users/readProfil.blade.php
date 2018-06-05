@@ -6,7 +6,6 @@ Les informations de votre profil
 
 @section('content')
 
-@foreach($utilisateurs as $utilisateur)
          
 <div class="container-fluid">
     <div class="row" >
@@ -61,7 +60,6 @@ Les informations de votre profil
 </div>
 </div> 
 </div>
-@endforeach
 @endsection
 
 

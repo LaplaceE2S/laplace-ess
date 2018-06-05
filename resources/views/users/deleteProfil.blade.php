@@ -7,7 +7,7 @@ Supprimer votre profil
 @section('content')
 @foreach($utilisateurs as $utilisateur)
 
-        <form method="POST" action="{{ route('supprimerCompte.profil', $utilisateur->id) }}">
+        <form method="POST" action="{{ route('supprimerCompte.profil', $utilisateur->users_id) }}">
             {{ csrf_field() }}
          
 <div class="container-fluid">
@@ -54,7 +54,7 @@ Supprimer votre profil
         <!-- info site -->
         <div class="col-md-4 col-sm-4 text-center">  
             <h5 class="card-text">{{  $utilisateur->url }}</h5>  
-            {!! Form::submit('Supprimer votre profil', ['class' => 'btn btn-danger pull-center']) !!}
+            {!! Form::submit('Supprimer votre compte', ['class' => 'btn btn-danger pull-center']) !!}
         </div>
 
 </div>
