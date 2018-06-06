@@ -3,13 +3,9 @@
 Voir une demande
 @endsection
 @section('content')
-<?php 
-use App\User;
-$type = Auth::user()->type;
-?>
 <div class='col-12'>
 <div class='col col-md-8  readannonce'>
-@if ($type > 0)</h2>{{$demande->structNom}}</h2>@endif 
+@if (Auth::user()->type > 0)</h2>{{$demande->structNom}}</h2>@endif 
 <h3>{{$demande->titre}}</h3>
 <p>{{$demande->compNom}}</p>
 <p>{{$demande->subName}}</p>
@@ -19,7 +15,7 @@ $type = Auth::user()->type;
 <p>terminant le {{date('d-m-Y', $demande->fin)}}<p>
 <p> les heures demandés sont de {{$demande->heure}} heure(s) par {{$demande->frequence}}<p>
 <p> Les besoins pour cette mission  sont {{$demande->besoin}}<p>
-@if ($type > 0)<p> Lieu: {{$demande->lieu}}<p>@endif 
+@if (Auth::user()->type > 0)<p> Lieu: {{$demande->lieu}}<p>@endif 
 @if ($demande->deplacement)
 <p> des déplacements peuvent être prévue jusqu'a {{$demande->deplacement}} kilomètres<p>
 @else

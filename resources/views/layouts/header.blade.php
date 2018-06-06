@@ -1,3 +1,4 @@
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark essbg1">
         <a class="navbar-brand" href="{{ route('welcome') }}">
@@ -37,12 +38,17 @@
             <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
             </li>
             @else
+            
             <li class="nav-item dropdown right-item-nav">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour 
             {{ Auth::user()->name }}</a>
 
             <div class="dropdown-menu essbg2">
+            @if (Auth::user()->type == 2)
+              <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Tableau de bord') }}</a>
+            @else
               <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
+            @endif
               <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('se déconnecter') }}</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf
               </form>

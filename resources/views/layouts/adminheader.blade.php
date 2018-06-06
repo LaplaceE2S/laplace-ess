@@ -15,9 +15,9 @@
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Annonces publiées') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Message') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Les annonces') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Les structures') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes messages') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('profil') }}">{{ __('Profil') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>

@@ -32,17 +32,6 @@ Auth::routes();
 // dashboard user
 Route::get('/home', 'HomeController@index')->name('home');
 
-// dashboard admin
-Route::get('/admin', 'AdminController@index')    
-    ->middleware('is_admin')    
-    ->name('admin');
-    
-// dashboard admin actu
-//index
-Route::get('/adminActu', 'ActuCatController@index')    
-    ->middleware('is_admin')    
-    ->name('adminCatActu');
-
 // soumission du formulaire de création de catégorie d'actualités
 Route::post('/catActu', 'ActuCatController@store')->name('catActu');
 
@@ -103,3 +92,13 @@ Route::get('proposal/new_demande/skill/{comp}', 'ProposalsController@formDemande
 
 Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
 
+
+// ADMIN
+Route::group(['middleware' => ['is_admin']], function() {
+// dashboard admin
+Route::get('/admin', 'AdminController@index')->name('admin');
+    
+// dashboard admin actu
+//index
+Route::get('/adminActu', 'ActuCatController@index')->name('adminCatActu');
+});

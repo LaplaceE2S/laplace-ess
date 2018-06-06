@@ -3,10 +3,6 @@
 Voir une offre
 @endsection
 @section('content')
-<?php 
-use App\User;
-$type = Auth::user()->type;
-?>
 <div class='col-12'>
 <div class='col col-md-8  readannonce'>
 </h2>{{$offre->structNom}}</h2>
@@ -19,7 +15,7 @@ $type = Auth::user()->type;
 <p>terminant le {{date('d-m-Y', $offre->fin)}}<p>
 <p> les heures demandés sont de {{$offre->heure}} heure(s) par {{$offre->frequence}}<p>
 <p> Les besoins pour cette mission  sont {{$offre->besoin}}<p>
-@if ($type > 0)<p> Lieu: {{$offre->lieu}}<p>@endif 
+@if (Auth::user()->type > 0)<p> Lieu: {{$offre->lieu}}<p>@endif 
 <p>Ce contrat entre dans le cadre d'une {{$offre->service}} pour {{$offre->cout}}<p>
 @if ($offre->deplacement)
 <p> des déplacements peuvent être prévue jusqu'a {{$offre->deplacement}} kilomètres<p>
