@@ -54,6 +54,7 @@ class ProposalsController extends Controller
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
     ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
     ->where('sub_skills.skills_id', '=', $comp)
+    ->where('proposals.is_valid', '=', 1)
     ->get();
 
     $comps= array();
@@ -113,6 +114,7 @@ class ProposalsController extends Controller
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
     ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
     ->where('sub_skills.id', '=', $subcomp)
+    ->where('proposals.is_valid', '=', 1)
     ->get();
 
     $subSkillSearch= array();
@@ -135,7 +137,7 @@ class ProposalsController extends Controller
         array_push($offres, $proposal);
       }
     }
-    return view('proposals.searchBySubComp', compact('subcomp','demandes','offres','subSkillSearch'));
+    return view('proposals.searchBySubComp', compact('comp','demandes','offres','subSkillSearch'));
   }
 
     /**
