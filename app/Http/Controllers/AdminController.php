@@ -12,7 +12,14 @@ class AdminController extends Controller
     }
     
     public function index()
-    {
-        return view('admin');
+    {   
+        $menu = 'adminMenu';
+        return view('admin.admin', compact('menu'));
+    }
+
+    public function indexProposals()
+    {   
+        $menu = 'menuAdminProposals';
+        return view('admin.admin', compact('menu'));
     }
 }

@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('userWelcome');
+        $menu = 'menuUser';
+        return view('userWelcome', compact('menu'));
     }
 }

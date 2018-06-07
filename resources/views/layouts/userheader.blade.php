@@ -16,9 +16,13 @@
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
-            <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Message') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('profil') }}">{{ __('Profil') }}</a>
+            <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes favoris') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('UserProposalsIndex') }}">{{ __('Mes annonces') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('profil') }}">{{ __('Mon profil') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes contributions') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes messages') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes contributions') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mon abonnement') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
         </div>

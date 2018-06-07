@@ -32,8 +32,10 @@ Auth::routes();
 // dashboard user
 Route::get('/home', 'HomeController@index')->name('home');
 
-// soumission du formulaire de création de catégorie d'actualités
-Route::post('/catActu', 'ActuCatController@store')->name('catActu');
+// section annonces
+// view annonce index
+Route::get('/annonces', 'ProposalsController@index')->name('UserProposalsIndex');
+
 
 // view structures
 Route::get('structures', 'WelcomeController@structure')->name('structures');
@@ -95,10 +97,17 @@ Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_de
 
 // ADMIN
 Route::group(['middleware' => ['is_admin']], function() {
-// dashboard admin
-Route::get('/admin', 'AdminController@index')->name('admin');
+    // dashboard admin
+    Route::get('/admin', 'AdminController@index')->name('admin');
     
-// dashboard admin actu
-//index
-Route::get('/adminActu', 'ActuCatController@index')->name('adminCatActu');
-});
+    // dashboard admin
+    Route::get('/adminProposals', 'AdminController@indexProposals')->name('adminProposals');
+        
+    // dashboard admin actu
+    //index
+    Route::get('/adminActu', 'ActuCatController@index')->name('adminCatActu');
+    
+    // soumission du formulaire de création de catégorie d'actualités
+    Route::post('/catActu', 'ActuCatController@store')->name('catActu');
+    });
+    
