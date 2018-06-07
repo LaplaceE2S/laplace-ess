@@ -1,7 +1,5 @@
 @extends('layouts.adminLayout')
-@section('title')
-administration
-@endsection
+@section('title', 'Tableau de bord admin')
 @section('content')
 
 Bienvenue dans l'espace d'administration

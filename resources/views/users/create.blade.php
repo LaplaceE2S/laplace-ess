@@ -1,7 +1,5 @@
 @extends('layouts.userLayout')
-@section('title')
-Créer son profil
-@endsection
+@section('title', 'Créer votre profil')
 @section('content')
 
 

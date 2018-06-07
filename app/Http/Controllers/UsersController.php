@@ -247,8 +247,7 @@ class UsersController extends Controller
         return redirect('welcome');
       }
       
-      DB::table('users')->where('id', $id)->delete();
-      
+     DB::table('users')->where('id', $id)->delete();
         return redirect('welcome');
     }
     

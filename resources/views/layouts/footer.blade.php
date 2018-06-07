@@ -1,8 +1,4 @@
 <footer>
-    <!-- Footer -->
-
-<!-- Include the above in your HEAD tag -->
-
 <!-- footer -->
 <div class="footer">
   <div class="container">

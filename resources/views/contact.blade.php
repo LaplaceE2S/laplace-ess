@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
-@section('title')
-contact
-@endsection
+@section('title', 'Contactez-nous')
 
 @section('content')
 

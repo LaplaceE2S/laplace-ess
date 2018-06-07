@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
-@section('title')
-connexion
-@endsection
+@section('title', 'Connexion')
 
 @section('content')
 <div class="container">

@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
-@section('title')
-inscription
-@endsection
+@section('title', 'Inscription')
 
 @section('content')
 <div class="container">

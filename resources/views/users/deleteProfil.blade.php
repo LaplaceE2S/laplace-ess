@@ -1,8 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title')
-Supprimer votre profil
-@endsection
+@section('title', 'Supprimez votre profil')
 
 @section('content')
 @foreach($utilisateurs as $utilisateur)

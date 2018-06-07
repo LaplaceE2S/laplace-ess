@@ -1,9 +1,9 @@
 @extends('layouts.userLayout')
-@section('title')
-administration
-@endsection
+@section('title', 'Accueil')
 @section('content')
 
-Bienvenue dans votre espace administratif (pour les structures) 
+<div class="row">
+Bienvenue sur La place, recherchez les annonces.
+</div>
 
 @endsection

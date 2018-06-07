@@ -1,8 +1,6 @@
 @extends('layouts.adminLayout')
 
-@section('title')
-Liste des utilisateurs
-@endsection
+@section('title', 'Liste des utilisateurs')
 
 @section('content')
 

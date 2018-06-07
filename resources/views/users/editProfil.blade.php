@@ -1,17 +1,19 @@
 
 @extends('layouts.userLayout')
 
-@section('title')
-Modifiez votre profil
-@endsection
+@section('title', 'Complétez votre profil')
 
 @section('content')
+
+<?php
+use App\Http\Controllers\VerifsiretApi;
+?>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1 class="text-center">Modifier votre profil</h1></div>
+                <div class="card-header"><h1 class="text-center">Complétez votre profil</h1></div>
                 <div class="card-body">
                 {!! Form::open([ 'route' => 'editProfil', 'files' => true ]) !!} 
                 @csrf
@@ -186,6 +188,10 @@ Modifiez votre profil
             </div>
         </div>
     </div>
+    <?php 
+    $reponse = file_get_contents("https://www.verif-siret.com/api/siret", $var);
+    dd($var);
+    ?>
 {!! Form::close() !!}
 @endsection
 

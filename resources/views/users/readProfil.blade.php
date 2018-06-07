@@ -1,8 +1,6 @@
 @extends('layouts.userLayout')
 
-@section('title')
-Les informations de votre profil
-@endsection
+@section('title', 'Votre profil')
 
 @section('content')
 
