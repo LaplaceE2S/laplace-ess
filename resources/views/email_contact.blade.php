@@ -5,9 +5,10 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <h2>Prise de contact sur La Place</h2>
-    <p>Réception d'une prise de contact avec les éléments suivants :</p>
+    <h2>Nous contacter</h2>
+    <p>Réception du message avec les éléments suivants :</p>
     <ul>
+      <li><strong>Objet</strong> : {{ $objet }}</li>
       <li><strong>Nom</strong> : {{ $nom }}</li>
       <li><strong>Structure</strong> : {{ $structure }}</li>
       <li><strong>Email</strong> : {{ $email }}</li>

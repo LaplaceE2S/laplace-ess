@@ -19,43 +19,59 @@
                 <h3>Par message</h3>
                     <div class="panel-body clearfix">
     
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 no-padding-bottom">
-        <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!}">
+                        <div class="row">
+                            <!-- label Structure -->
+                            <div class="col-xs-12 col-sm-6 no-padding-bottom">
+                            <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!}">
+                                {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Structure']) !!}
 
-            {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Votre nom']) !!}
+                                {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+                            <!-- label Nom -->
+                            <div class="col-xs-12 col-sm-6 no-padding-bottom">
+                            <div class="form-group {!! $errors->has('nom') ? 'has-error' : '' !!}">
 
-            {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
+                            {!! Form::text('nom', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
 
-        </div>
-        </div>
-    </div>
+                            {!! $errors->first('nom', '<small class="help-block">:message</small>') !!}
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 no-padding-bottom">
-        <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!}">
+                            </div>
+                            </div>
+                        </div> <!-- ./row -->
 
-            {!! Form::text('structure', null, ['class' => 'form-control', 'placeholder' => 'Votre structure']) !!}
+                        <div class="row">
+                            <!-- label Objet -->
+                            <div class="col-xs-12 col-sm-6 no-padding-bottom">
+                            <div class="form-group {!! $errors->has('objet') ? 'has-error' : '' !!}">
+                            <?php
+                            $data['Prenez contact avec nous'] = 'Prenez contact avec nous';
+                            $data['Votre avis nous intéresse'] = 'Votre avis nous intéresse';
+                            $data['Vous rencontrez un problème'] = 'Vous rencontrez un problème';
+                            $data['Autres'] = 'Autres';
+                            ?>
+                            {{ Form::select('objet', array(
+                                'Objet' => $data), '$data', ['class' => 'form-control', ] ) }}
 
-            {!! $errors->first('structure', '<small class="help-block">:message</small>') !!}
+                            {!! $errors->first('objet', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+                            
+                            <!-- label Email -->
+                            <div class="col-xs-12 col-sm-6 no-padding-bottom">
+                            <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
 
-        </div>
-        </div>
+                                {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
 
-        <div class="col-xs-12 col-sm-6 no-padding-bottom">
-        <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
+                                {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
 
-            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Votre email']) !!}
-
-            {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
-
-        </div>
-        </div>
-    </div>
-
+                            </div>
+                            </div>
+                    </div>
+    <!-- Textarea -->
     <div class="form-group {!! $errors->has('texte') ? 'has-error' : '' !!}">
 
-        {!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Votre message']) !!}
+        {!! Form::textarea ('texte', null, ['class' => 'form-control', 'placeholder' => 'Message']) !!}
 
         {!! $errors->first('texte', '<small class="help-block">:message</small>') !!}
 
@@ -77,7 +93,7 @@
 
     {!! Form::open(['url' => 'tel_contact']) !!}            
     <div class="input-group {!! $errors->has('tel') ? 'has-error' : '' !!}">
-    {!! Form::tel('telephone', null, ['class' => 'form-control', 'placeholder' => 'Votre téléphone']) !!}
+    {!! Form::tel('telephone', null, ['class' => 'form-control', 'placeholder' => 'Téléphone']) !!}
 
     {!! $errors->first('telephone', '<small class="help-block">:message</small>') !!}
 
