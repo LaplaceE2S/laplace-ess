@@ -4,8 +4,8 @@
 
 @section('content')
  
- <div id="encart" class="pageheader-content row">
-            <div class="col-full">
+ <div id="encart" class="pageheader-content">
+            <div class="col-full welcomeBloc">
 
                 <div class="featured">
 
@@ -34,24 +34,77 @@
                         <div class="entry" style="background-image:url('./images/img3.jpg');">
                             
                             <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Offres</a></span>
+                                <span class="entry__category"><a href="#0">La place</a></span>
 
-                                <p class="actu"><a href="#0" title="">The Pomodoro Technique Really Works.</a></p>
+                                <p class="actu"><a href="#0" title="">Venez découvrir le service.</a></p>
 
                             </div> <!-- end entry__content -->
                           
                         </div> <!-- end entry -->
-
-                        <div class="entry" style="background-image:url('./images/img2.jpg');">
-
-                            <div class="entry__content">
-                                <span class="entry__category"><a href="#0">Actu</a></span>
-
-                                <p class="actu"><a href="#0" title="">Throwback To The Good Old Days.</a></p>
-                            </div> <!-- end entry__content -->
-
-                        </div> <!-- end entry -->
-
+                        @if(isset($$annonce))
+                        <div class="entry">
+                          <div id="carouseloffres" class="col-12 carousel slide" data-ride="carousel">
+                          <ol class="carousel-indicators">
+                            <li data-target="#carouseloffres" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouseloffres" data-slide-to="1"></li>
+                            <li data-target="#carouseloffres" data-slide-to="2"></li>
+                          </ol>
+                          <div class="carousel-inner carouOffre">
+                            <div class="carousel-item carouOffre active">
+                              <img class="d-block w-100" src="./images/cadre.jpg" alt="First slide">
+                              <div class="carousel-caption d-none d-md-block text-left">
+                              <div class='row no-gutters'>
+                              <h5 class="col-6">{{$annonce[0]['titre']}}</h5>
+                              <p class="col-6">{{$annonce[0]['duree']->format('%a jour(s)')}}</p>
+                              </div>
+                              <p>{{$annonce[0]['type']}}</p>
+                              <p>{{$annonce[0]['competence']}}</p>
+                              <p>{{$annonce[0]['sousCompetence']}}</p>
+                              <p>{{$annonce[0]['description']}}</p>
+                              </div>
+                            </div>
+                            @if(isset($$annonce[1]))
+                            <div class="carousel-item carouOffre">
+                              <img class="d-block w-100 carouOffre" src="./images/cadre.jpg" alt="Second slide">
+                              <div class="carousel-caption d-none d-md-block text-left">
+                              <div class='row no-gutters'>
+                              <h5 class="col-6">{{$annonce[1]['titre']}}</h5>
+                              <p class="col-6">{{$annonce[1]['duree']->format('%a jour(s)')}}</p>
+                              </div>
+                              <p>{{$annonce[1]['type']}}</p>
+                              <p>{{$annonce[1]['competence']}}</p>
+                              <p>{{$annonce[1]['sousCompetence']}}</p>
+                              <p>{{$annonce[1]['description']}}</p>
+                              </div>
+                            </div>
+                            @endif
+                            @if(isset($$annonce[2]))
+                            <div class="carousel-item carouOffre">
+                              <img class="d-block w-100 carouOffre" src="./images/cadre.jpg" alt="Third slide">
+                              <div class="carousel-caption d-none d-md-block text-left">
+                              <div class='row no-gutters'>
+                              <h5 class="col-6">{{$annonce[2]['titre']}}</h5>
+                              <p class="col-6">{{$annonce[2]['duree']->format('%a jour(s)')}}</p>
+                              </div>
+                              <p>{{$annonce[2]['type']}}</p>
+                              <p>{{$annonce[2]['competence']}}</p>
+                              <p>{{$annonce[2]['sousCompetence']}}</p>
+                              <p>{{$annonce[2]['description']}}</p>
+                              </div>
+                            </div>
+                            @endif
+                          </div>
+                          <a class="carousel-control-prev" href="#carouseloffres" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouseloffres" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+                        </div>
+                        @endif
                     </div> <!-- end featured__small -->
                 </div> <!-- end featured -->
 
@@ -64,7 +117,7 @@
 
 </br>
 <!-- Accordion -->
-<div class="container">
+<div class="container col-11">
   <!-- Title Competences -->
   <div class="accordion-option">
     <h3 class="title">Compétences</h3>
@@ -268,10 +321,14 @@
 
 </br>
 
-<div id="infosEss" class="jumbotron jumbotron-fluid">
+<div id="infosEss" class="jumbotron jumbotron-fluid mx-0">
   <div class="container">
-    <h5 class="h5">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités.</h5>
-    <p class="lead">Vous recherchez une compétence particulière pour développer votre activité et/ou vous souhaitez vous consacrer à votre projet associatif, coopératif, mutualiste. Ou vous disposez de compétences à partager et/ou de temps salarié disponible. Vous souhaitez déposer une annonce pour mutualiser une compétence ou un emploi. Inscrivez-vous au service La Place, plate-forme innovante de mutualisation de compétences et d'échanges entre les structures de l'ESS.</p>
+    <h5 class="h5">Vous êtes une structure de l'économie sociale et solidaire...</h5>
+    <p class="lead">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous     les secteurs d'activités.
+      Vous recherchez une compétence particulière pour développer votre activité et/ou vous souhaitez vous consacrer à votre projet associatif, coopératif, mutualiste.
+      Ou vous disposez de compétences à partager et/ou de temps salarié disponible.
+      Vous souhaitez déposer une annonce pour mutualiser une compétence ou un emploi.
+      Inscrivez-vous au service La Place, plate-forme innovante de mutualisation de compétences et d'échanges entre les structures de l'ESS.</p>
     <a href="{{ route('structures') }}" class="btn btn-warning">Découvrez comment ça marche</a>
   </div>
 </div>
@@ -302,9 +359,6 @@
     </div>
     <div class="slide">
       <a href="https://www.maif.fr/"><img src="./images/logo_partenaires/7.Maif.jpg" height="80" width="80" alt=""></a>
-    </div>
-    <div class="slide">
-      <img src="./images/logo_partenaires/Logo_Copil.png" height="80" width="80" alt="">
     </div>
   </section>
 </div>

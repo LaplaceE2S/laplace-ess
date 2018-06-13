@@ -25,7 +25,7 @@ class ProposalsController extends Controller
 
   public function index()
   {
-    $menu = 'menuUserProposals';
+    $menu = 'annonces';
     $message = "Bienvenue dans l'espace d'administration de vos annonces";
     return view('proposals.index', compact('message','menu'));
     
@@ -78,7 +78,7 @@ class ProposalsController extends Controller
         array_push($offres, $proposal);
       }
     }
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('proposals.searchByComp', compact('comp','demandes','offres','subSkillSearch','menu'));
   }
 
@@ -140,7 +140,7 @@ class ProposalsController extends Controller
         array_push($offres, $proposal);
       }
     }
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('proposals.searchBySubComp', compact('comp','demandes','offres','subSkillSearch','menu'));
   }
 
@@ -164,7 +164,7 @@ class ProposalsController extends Controller
   public function create()
 
   {
-    $menu = 'menuUserProposals';
+    $menu = 'annonces';
     return view('proposals.create','menu');
   }
 
@@ -179,7 +179,7 @@ class ProposalsController extends Controller
     $skillData =  Sub_skillsController::getListWithSkill($comp);
     $liste = $skillData[0];
     $compName = $skillData[1];
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('proposals.createOffre', compact('compName','liste','companieId','menu'));
   }
 
@@ -195,7 +195,7 @@ class ProposalsController extends Controller
     $skillData =  Sub_skillsController::getListWithSkill($comp);
     $liste = $skillData[0];
     $compName = $skillData[1];
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('proposals.createDemande', compact('compName','liste','companieId','menu'));
   }
 
@@ -295,7 +295,7 @@ class ProposalsController extends Controller
     }
   
 
-      $menu = 'menuUserProposals';
+      $menu = '';
       return view('users.confirmCreate', compact('title', 'msg','menu')); 
   }
 
@@ -353,12 +353,12 @@ class ProposalsController extends Controller
         $offre->service = 'mis a disposition';
         $offre->cout = $offre->cout . "euros de l'heure";
       }
-      $menu = 'menuUserProposals';
+      $menu = '';
       return view('proposals.voirOffre', compact('offre','menu'));
    
   }else{
     $erreur = "Une erreur a été détectée dans le numéro de l'offre, elle n'est pas encore en cours de publication ou n'existe pas";
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('companies.erreur', compact('erreur','menu'));
   }
 
@@ -407,12 +407,12 @@ class ProposalsController extends Controller
         $demande->service = 'mis a disposition';
         $demande->cout = $demande->cout . "euros de l'heure";
       }
-      $menu = 'menuUserProposals';
+      $menu = '';
       return view('proposals.voirDemande', compact('demande','menu'));
    
   }else{
     $erreur = "Une erreur a été détectée dans le numéro de la demande, elle n'est pas encore en cours de publication ou n'existe pas";
-    $menu = 'menuUserProposals';
+    $menu = '';
     return view('companies.erreur', compact('erreur','menu'));
     
   }

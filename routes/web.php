@@ -15,8 +15,7 @@
 Route::get('welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/', 'WelcomeController@index');
 
-// raccourci affiche vue
-Route::view('/', 'welcome');
+
 
 // demande du formulaire
 Route::get('contact', 'ContactController@getForm')->name('contact');
@@ -36,7 +35,36 @@ Route::get('/home', 'HomeController@index')->name('home');
 // view annonce index
 Route::get('/annonces', 'ProposalsController@index')->name('UserProposalsIndex');
 
+// Consultation d'une annonce
 
+Route::get('proposal/voir_offre/{proposalId}', 'ProposalsController@voir_offre');
+Route::get('proposal/voir_demande/{proposalId}', 'ProposalsController@voir_demande');
+
+// recherche par compétence
+Route::get('proposalBySkill/proposal', 'ProposalsController@searchRewrite');
+Route::get('proposalBySkill/{id}', [
+    'as' => 'proposal.bySkill',
+    'uses' => 'ProposalsController@showBySkill',
+]);
+Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySkill');
+// recherche par souscompétence
+
+Route::get('proposalBySubSkill/proposal', 'ProposalsController@searchSubRewrite')->name('proposalBySubSkill');;
+Route::get('proposalBySubSkill/{id}', [
+    'as' => 'proposal.bySkill',
+    'uses' => 'ProposalsController@showBySubSkill',
+]);
+
+// création annonce
+Route::get('proposal/new_offre/skill/{comp}', 'ProposalsController@formOffre');
+
+Route::post('proposal/new_offre/', 'ProposalsController@store')->name('store_offre');
+
+Route::get('proposal/new_demande/skill/{comp}', 'ProposalsController@formDemande');
+
+Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
+
+// section utilisateurs-structures
 // view structures
 Route::get('structures', 'WelcomeController@structure')->name('structures');
 
@@ -60,39 +88,10 @@ Route::get('/editProfil', 'UsersController@edit')->name('editProfil');
 Route::post('/editProfil', 'UsersController@update');
 
 //vue supprimer le profil
-Route::get('/supprimerProfil', 'UsersController@users');
+Route::get('/supprimerProfil', 'UsersController@users')->name('deleteView');
 
 //supprimer le profil
 Route::post('supprimerCompte/{id}/profil', ['uses' => 'UsersController@destroy', 'as' => 'supprimerCompte.profil']);
-
-// recherche par compétence
-Route::get('proposalBySkill/proposal', 'ProposalsController@searchRewrite');
-Route::get('proposalBySkill/{id}', [
-    'as' => 'proposal.bySkill',
-    'uses' => 'ProposalsController@showBySkill',
-]);
-Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySkill');
-// recherche par souscompétence
-
-Route::get('proposalBySubSkill/proposal', 'ProposalsController@searchSubRewrite')->name('proposalBySubSkill');;
-Route::get('proposalBySubSkill/{id}', [
-    'as' => 'proposal.bySkill',
-    'uses' => 'ProposalsController@showBySubSkill',
-]);
-
-// Consultation d'une annonce
-
-Route::get('proposal/voir_offre/{proposalId}', 'ProposalsController@voir_offre');
-Route::get('proposal/voir_demande/{proposalId}', 'ProposalsController@voir_demande');
-
-// création annonce
-Route::get('proposal/new_offre/skill/{comp}', 'ProposalsController@formOffre');
-
-Route::post('proposal/new_offre/', 'ProposalsController@store')->name('store_offre');
-
-Route::get('proposal/new_demande/skill/{comp}', 'ProposalsController@formDemande');
-
-Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
 
 
 // ADMIN

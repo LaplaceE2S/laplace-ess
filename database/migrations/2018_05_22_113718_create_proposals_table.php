@@ -26,6 +26,7 @@ class CreateProposalsTable extends Migration {
 			$table->string('lieu');
 			$table->string('materiel');
 			$table->integer('deplacement');
+			$table->string('service');
 		});
 	}
 

@@ -14,7 +14,14 @@ $comps[$skill->id] = $skill->nom;
 <body>
 
   @include('layouts.userheader')
-  @include('layouts.'.$menu)
+  @if(isset($menu))
+  @include('layouts.menu.user.main')
+  @if($menu != '')
+  </br>
+  @include('layouts.menu.user.'.$menu)
+  
+  @endif
+  @endif
   @yield('content')
   </div>
   </section>

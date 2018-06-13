@@ -5,8 +5,9 @@
             <img src="/laplace-ess/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
         <form method="GET" action="{{ route('proposalBySkill') }}">
+        {{ Form::open() }}
          <?php
-         echo Form::select('comp', $comps);
+         echo Form::select('comp', $comps,NULL, array('class' => 'form-control'));
          ?>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
             {{ Form::close() }}
@@ -16,13 +17,12 @@
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
-            <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes favoris') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('UserProposalsIndex') }}">{{ __('Mes annonces') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('profil') }}">{{ __('Mon profil') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes contributions') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes messages') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mes contributions') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Mon abonnement') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('UserProposalsIndex') }}">{{ __('Annonces') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Proposition') }}</a>
+            <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Document') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Messages') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('lireprofil') }}">{{ __('Profil') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>
         </div>

@@ -6,31 +6,39 @@
       <!-- footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
           <div class="footer-widget ">
-            <div class="footer-title ">Qui sommes nous?</div>
+            <div class="footer-title ">A propos</div>
             <ul class="list-unstyled">
               <li>
-                <a href="#" class="text-color-footer">Actualités</a>
+                <a href="#" class="text-color-footer">La place</a>
               </li>
               <li>
-                <a href="#" class="text-color-footer">La Place Tuto</a>
+                <a href="{{ route('contact') }}" class="text-color-footer">Le pôle ess</a>
               </li>
               <li>
-                <a href="{{ route('contact') }}" class="text-color-footer">Contactez-nous</a>
+                <a href="{{ route('contact') }}" class="text-color-footer">Nos partenaires</a>
               </li>
+              <li>
+              <a href="#" class="text-color-footer">La mutualisation pour nous</a>
+            </li>
             </ul>
           </div>
         </div>
+     
          <!-- /.footer-about -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
         <div class="footer-widget ">
-          <div class="footer-title">Besoin d'aide?</div>
+          <div class="footer-title">Besoin d'aide</div>
           <ul class="list-unstyled">
           <li>
-              <a href="#" class="text-color-footer">La mutualisation pour nous</a>
-            </li>
+                <a href="#" class="text-color-footer">La Place Tuto</a>
+              </li>
+         
             <li>
               <a href="#" class="text-color-footer">FAQ structures</a>
             </li>
+            <li>
+                <a href="{{ route('contact') }}" class="text-color-footer">Contactez-nous</a>
+              </li>
           </ul>
         </div>
       </div>
@@ -38,13 +46,16 @@
       <!-- footer-links -->
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
           <div class="footer-widget ">
-            <div class="footer-title">Mentions légales</div>
+            <div class="footer-title">Informations légales</div>
             <ul class="list-unstyled">
               <li>
                 <a href="#" class="text-color-footer">Conditions Générales d'utilisation</a>
               </li>
               <li>
                 <a href="#" class="text-color-footer">Politique de confidentialité</a>
+              </li>
+              <li>
+                <a href="#" class="text-color-footer">Mentions légales</a>
               </li>
             </ul>
           </div>

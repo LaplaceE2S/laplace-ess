@@ -116,8 +116,8 @@ class UsersController extends Controller
             {
               $utilisateur->telephone = '';
             }
- 
-            return view('users.readProfil', compact('utilisateur')); 
+            $menu ='profil';
+            return view('users.readProfil', compact('utilisateur','menu')); 
             /* la fonction compact équivaut à array('posts' => $posts) */
 }
 
@@ -205,12 +205,11 @@ class UsersController extends Controller
     $companie->prenom = request('prenom');
     $companie->telephone = request('telephone');
     $companie->url = request('url');
-
+    
     //update data
     $userId->save();
     $companie->save();
-
-    return redirect ('/lireprofil');
+    return redirect('/lireprofil');
   }
 
   /**
@@ -229,8 +228,8 @@ class UsersController extends Controller
             ->join('users', 'users.id', '=', 'companies.users_id')
             ->select('companies.*', 'users.email', 'users.avatar')
             ->get();
- 
-            return view('users.deleteProfil', compact('utilisateurs')); 
+            $menu = 'profil';
+            return view('users.deleteProfil', compact('utilisateurs','menu')); 
   }
     
   /**

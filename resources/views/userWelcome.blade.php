@@ -6,4 +6,6 @@
 Bienvenue sur La place, recherchez les annonces.
 </div>
 
+
+
 @endsection

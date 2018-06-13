@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', 'Structure de l'ESS)
+@section('title', "Structure de l'ESS")
 
 @section('content')
 <br />

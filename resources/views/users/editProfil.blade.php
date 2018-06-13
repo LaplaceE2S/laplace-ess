@@ -188,10 +188,7 @@ use App\Http\Controllers\VerifsiretApi;
             </div>
         </div>
     </div>
-    <?php 
-    $reponse = file_get_contents("https://www.verif-siret.com/api/siret", $var);
-    dd($var);
-    ?>
+
 {!! Form::close() !!}
 @endsection
 
