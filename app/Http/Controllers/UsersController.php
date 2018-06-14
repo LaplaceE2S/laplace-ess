@@ -19,8 +19,6 @@ class UsersController extends Controller
       $this->middleware('auth');
   }
 
-  
-
   /**
    * Display a listing of the resource.
    *
@@ -213,7 +211,7 @@ class UsersController extends Controller
   }
 
   /**
-   * View delete profile
+   * 
    *
    * 
    * 
@@ -248,6 +246,13 @@ class UsersController extends Controller
       
      DB::table('users')->where('id', $id)->delete();
         return redirect('welcome');
+    }
+
+    // view charte engagement
+    public function charte()
+    {
+      $menu = 'profil';
+      return view('users.charteEngagement', compact('menu'));
     }
     
 }

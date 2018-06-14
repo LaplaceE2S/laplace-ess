@@ -1,4 +1,4 @@
-
+<?php use App\Http\Controllers\CompaniesController; ?>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark essbg1">
         <a class="navbar-brand" href="{{ route('welcome') }}">
@@ -18,8 +18,7 @@
             @else
             
             <li class="nav-item dropdown right-item-nav">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Bonjour 
-            {{ Auth::user()->name }}</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ CompaniesController::WhoIsMyStruct() }}</a>
 
             <div class="dropdown-menu essbg2">
             @if (Auth::user()->type == 2)

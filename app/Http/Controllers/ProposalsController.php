@@ -217,7 +217,7 @@ class ProposalsController extends Controller
     if(request('type')=='demande'){
 
       $validator = Validator::make($request->all(), [
-        'materiel' => 'required|alpha'
+        'materiel' => 'required|string'
     ]);
 
     if ($validator->fails()) {

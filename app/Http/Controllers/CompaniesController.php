@@ -18,7 +18,6 @@ class CompaniesController extends Controller
     
   }
 
-
   /**
    * give id for auth user.
    *
@@ -36,6 +35,26 @@ class CompaniesController extends Controller
 
     $companieId = $companieId[0]->id;
     return $companieId;
+
+  }
+
+  /**
+   * give structure name for auth user.
+   *
+   * @return Response
+   */
+  static public function WhoIsMyStruct()
+  {
+    $userId = Auth::id();
+    $companieStructure = DB::table('companies')
+
+    ->join('users', 'users.id', '=', 'companies.users_id')
+    ->select('companies.structure')
+    ->where('users.id', '=', $userId)
+    ->get();
+
+    $companieStructure = $companieStructure[0]->structure;
+    return $companieStructure;
 
   }
 
