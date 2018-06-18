@@ -1,3 +1,3 @@
 <?php
 
-return ['path' => 'images'];
+return ['path' => 'uploads'];

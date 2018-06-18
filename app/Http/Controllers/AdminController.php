@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\Companies;
+use App\User;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -13,13 +17,28 @@ class AdminController extends Controller
     
     public function index()
     {   
-        $menu = 'adminMenu';
-        return view('admin.admin', compact('menu'));
+        $menu = '';
+        return view('admins.admin', compact('menu'));
     }
 
-    public function indexProposals()
+    public function showProfil()
     {   
-        $menu = 'menuAdminProposals';
-        return view('admin.admin', compact('menu'));
+        $menu = 'donnee';
+        return view('admins.admin', compact('menu'));
     }
+
+    public function indexUtilisateurs()
+    {
+        $id = Auth::user()->id;
+
+        $utilisateurs = DB::table('companies')
+        ->select('companies.*', 'users.*')
+        ->join('users', 'users.id', '=', 'companies.users_id')
+        ->get();
+
+        $menu = 'structures';
+        return view('admins.utilisateurs', compact('utilisateurs', 'menu'));
+       
+    }
+
 }

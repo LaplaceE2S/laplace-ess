@@ -5,10 +5,6 @@
 
 @section('content')
 
-<?php
-use App\Http\Controllers\VerifsiretApi;
-?>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">

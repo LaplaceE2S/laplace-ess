@@ -15,8 +15,6 @@
 Route::get('welcome', 'WelcomeController@index')->name('welcome');
 Route::get('/', 'WelcomeController@index');
 
-
-
 // demande du formulaire
 Route::get('contact', 'ContactController@getForm')->name('contact');
 
@@ -47,9 +45,10 @@ Route::get('proposalBySkill/{id}', [
     'uses' => 'ProposalsController@showBySkill',
 ]);
 Route::get('proposal', 'ProposalsController@searchRewrite')->name('proposalBySkill');
-// recherche par souscompétence
 
-Route::get('proposalBySubSkill/proposal', 'ProposalsController@searchSubRewrite')->name('proposalBySubSkill');;
+// recherche par souscompétence
+Route::get('proposalBySubSkill/proposal', 'ProposalsController@searchSubRewrite')->name('proposalBySubSkill');
+
 Route::get('proposalBySubSkill/{id}', [
     'as' => 'proposal.bySkill',
     'uses' => 'ProposalsController@showBySubSkill',
@@ -75,9 +74,6 @@ Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 Route::get('/profil', 'UsersController@create')->name('profil');
 Route::post('/profil', 'UsersController@store');
 
-// liste les utilisateurs
-Route::get('utilisateurs', 'UsersController@index')->name('utilisateurs');
-
 // affiche le profil de l'utilisateur
 Route::get('/lireprofil', 'UsersController@show')->name('lireprofil');
 
@@ -93,20 +89,22 @@ Route::get('/supprimerProfil', 'UsersController@users')->name('deleteView');
 //supprimer le profil
 Route::post('supprimerCompte/{id}/profil', ['uses' => 'UsersController@destroy', 'as' => 'supprimerCompte.profil']);
 
+// vue charte engagement
+Route::get('/charte', 'UsersController@charte')->name('charte');
 
 // ADMIN
 Route::group(['middleware' => ['is_admin']], function() {
     // dashboard admin
     Route::get('/admin', 'AdminController@index')->name('admin');
     
-    // dashboard admin
-    Route::get('/adminProposals', 'AdminController@indexProposals')->name('adminProposals');
-        
-    // dashboard admin actu
-    //index
-    Route::get('/adminActu', 'ActuCatController@index')->name('adminCatActu');
-    
-    // soumission du formulaire de création de catégorie d'actualités
-    Route::post('/catActu', 'ActuCatController@store')->name('catActu');
+    // liste les utilisateurs
+    Route::get('utilisateurs', 'AdminController@indexUtilisateurs')->name('utilisateurs');
+
+    // profil structure admin
+    Route::get('profil/{id}/structure', ['uses' => 'AdminController@showUtilisateur', 'as' => 'voir.profilStructure']);
+
+    //view profil admin
+    Route::get('profilAdmin', 'AdminController@showProfil')->name('profilAdmin');
+
     });
     

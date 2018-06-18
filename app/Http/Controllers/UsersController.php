@@ -27,11 +27,7 @@ class UsersController extends Controller
 
   public function index()
   {
-    $utilisateurs = Companies::all();
-
-    return view('utilisateurs', [
-        'utilisateurs' => $utilisateurs,
-    ]);
+    
   }
 
 
@@ -156,7 +152,6 @@ class UsersController extends Controller
               $utilisateur->telephone = '';
             }
 
-   
               return view('users.editProfil', compact('utilisateur')); 
     }
 

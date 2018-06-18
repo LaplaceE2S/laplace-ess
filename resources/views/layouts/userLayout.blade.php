@@ -2,8 +2,6 @@
 use App\User;
 use App\Skills;
 
-
-
 $type = Auth::user()->type;
 $skills = Skills::all();
 $comps= array();
