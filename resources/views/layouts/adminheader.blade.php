@@ -2,7 +2,7 @@
 <header>
      <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand" href="{{ route('welcome') }}">
-            <img src="./images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
+            <img src="/laplace-ess/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
     
         <ul>
@@ -12,7 +12,7 @@
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Tableau de bord') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Annonces') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('utilisateurs') }}">{{ __(' Structures') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('inscrits') }}">{{ __(' Structures') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Messages') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('profilAdmin') }}">{{ __('Mes données') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>

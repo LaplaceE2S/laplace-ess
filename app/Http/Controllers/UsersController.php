@@ -208,7 +208,7 @@ class UsersController extends Controller
   /**
    * 
    *
-   * 
+   * View delete profil user
    * 
    */
   public function users()
@@ -248,6 +248,20 @@ class UsersController extends Controller
     {
       $menu = 'profil';
       return view('users.charteEngagement', compact('menu'));
+    }
+
+    // demande d'abonnement pour user
+    public function askSubscription()
+    {
+      $id = Auth::user()->id;
+      DB::table('users')->where('id', $id)->update(['demande' => 1]);
+                      
+      $menu = 'profil';
+      
+      $title = "Confirmation de votre demande d'abonnement";
+      $msg = "Merci, nous avons bien reçu votre demande d'abonnement au service La Place, vous recevrez un message de confirmation, dans les plus brefs délais.";
+
+      return view('users.confirmCreate', compact('title', 'msg', 'menu'));   
     }
     
 }

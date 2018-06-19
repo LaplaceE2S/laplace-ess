@@ -1,14 +1,28 @@
 @extends('layouts.userLayout')
 
-@section('title', "Charte d'engagement")
+@section('title', "Mon abonnement")
 
 @section('content')
 
-<div class="col-12">
-<object data="./uploads/pdf/badge.pdf" type="application/pdf" width="100%" height="auto">
-  <param name="filename" value="./uploads/pdf/badge.pdf" /> 
-  <a href="./uploads/pdf/badge.pdf" title="le fichier">Téléchargez le fichier</a>
-</object>
-</div>
+<br>
 
+  <div class="row justify-content-center">
+      <img src="/laplace-ess/public/uploads/pdf/badge.jpg" alt="charte d'engagment" width="75%"/>
+  </div>
+
+<br>
+
+  <div class="row justify-content-center">
+
+    <div class="col-3">
+      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/badge.pdf" role="button" target="_blank">Télécharger la charte</a>
+    </div>
+
+    <div class="col-3">
+      <a href="{{ route('souscription') }}" class="btn btn-warning btn-block" role="button">Je m'abonne au service</a>  
+    </div>
+
+  </div>
+
+</br>
 @endsection

@@ -90,16 +90,29 @@ Route::get('/supprimerProfil', 'UsersController@users')->name('deleteView');
 Route::post('supprimerCompte/{id}/profil', ['uses' => 'UsersController@destroy', 'as' => 'supprimerCompte.profil']);
 
 // vue charte engagement
-Route::get('/charte', 'UsersController@charte')->name('charte');
+Route::get('/abonnement', 'UsersController@charte')->name('abonnement');
+
+// demande d'abonnement
+Route::get('/souscription', 'UsersController@askSubscription')->name('souscription');
+
 
 // ADMIN
 Route::group(['middleware' => ['is_admin']], function() {
     // dashboard admin
     Route::get('/admin', 'AdminController@index')->name('admin');
     
-    // liste les utilisateurs
-    Route::get('utilisateurs', 'AdminController@indexUtilisateurs')->name('utilisateurs');
+    // liste des inscrits
+    Route::get('inscrits', 'AdminController@indexInscrits')->name('inscrits');
 
+    // liste des abonnés
+    Route::get('abonnes', 'AdminController@indexAbonnes')->name('abonnes');
+
+    // liste des demandes d'abonnements
+    Route::get('demandes', 'AdminController@indexDemandes')->name('demandes');
+
+    // user devient abonne
+    Route::get('demandes/{id}/Abonne', ['uses' => 'AdminController@updateRole', 'as' => 'voir.demandesAbonne']);
+    
     // profil structure admin
     Route::get('profil/{id}/structure', ['uses' => 'AdminController@showUtilisateur', 'as' => 'voir.profilStructure']);
 

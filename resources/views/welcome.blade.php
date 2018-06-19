@@ -168,6 +168,12 @@
     <!-- ./button Ressources humaines -->
     </div>
   </div>
+    <!-- Info générale -->
+    <div class="card card-inverse p-6 text-center">
+    <blockquote class="card-blockquote">
+      <h2 style="color:#f49712;">Découvrez les Compétences et <br />Sous-compétence du service La Place</h2>
+    </blockquote>
+  </div>
   <!-- Stratégie et développement -->
   <div class="card">
     <div class="card-block">
@@ -191,12 +197,7 @@
     <!-- ./button Stratégie et développement -->
     </div>
   </div>
-  <!-- Info générale -->
-  <div class="card card-inverse p-3 text-center">
-    <blockquote class="card-blockquote">
-      <h2 style="color:#f49712;">Découvrez les Compétences et <br />Sous-compétence du service La Place</h2>
-    </blockquote>
-  </div>
+
   <!-- Gestion administrative et financière -->
   <div class="card">
     <div class="card-block">
@@ -208,7 +209,7 @@
       <div class="collapse" id="4">
         <div class="card card-block">          
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Gestion de la comptabilité générale ou analytique</li>
+            <li class="list-group-item">Aide administrative</li>
             <li class="list-group-item">Les assurances</li>
             <li class="list-group-item">Veille sur la réglementation</li>
           </ul>
