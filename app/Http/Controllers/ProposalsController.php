@@ -25,7 +25,7 @@ class ProposalsController extends Controller
 
   public function index()
   {
-    $menu = 'annonces';
+    $menu = 'message';
     $message = "Bienvenue dans l'espace d'administration de vos annonces";
     return view('proposals.index', compact('message','menu'));
     

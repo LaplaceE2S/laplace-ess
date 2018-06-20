@@ -26,7 +26,7 @@
             <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Proposition') }}</a>
             <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Document') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Messages') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('allMessages') }}">{{ __('Messages') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('lireprofil') }}">{{ __('Profil') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>

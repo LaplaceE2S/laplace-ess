@@ -29,6 +29,23 @@ Auth::routes();
 // dashboard user
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+// section messages
+// vue boite de reception
+Route::get('/boiteDeReception', 'MessagerieController@index')->name('allMessages');
+// vue boite d'envoie
+Route::get('/boiteDenvoi', 'MessagerieController@sendBox')->name('allMessagesSend');
+// form nouveau message
+Route::get('/nouveauMessage', 'MessagerieController@create')->name('formNewMessage');
+// envoie message
+Route::post('/store_new_message', 'MessagerieController@newStore')->name('store_new_message');
+// Lire message 
+Route::post('/read_message', 'MessagerieController@read')->name('read_message');
+// form réponse
+Route::post('/Form_answer_message', 'MessagerieController@formAnswer')->name('answer_form_message');
+// envoie réponse
+Route::post('/store_answer_message', 'MessagerieController@storeAnswer')->name('answer_message');
+
 // section annonces
 // view annonce index
 Route::get('/annonces', 'ProposalsController@index')->name('UserProposalsIndex');
