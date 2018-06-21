@@ -4,7 +4,7 @@
 
 @section('content')
     <br>
-    <div class="col-sm-offset-4 col-sm-4">
+    <div class="col-sm-offset-4 col-sm-6">
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
@@ -30,9 +30,10 @@
 						</tr>
 			
 				@endforeach
+				
 	  			</tbody>
 			</table>
 		</div>
-	
+		{{ $utilisateurs->links() }}
 	</div>
 @endsection

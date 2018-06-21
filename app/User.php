@@ -12,7 +12,7 @@ class User extends Authenticatable
     const ADMIN_TYPE = 2;
     const ABONNE_TYPE = 1;
     const DEFAULT_TYPE = 0;
-
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -21,7 +21,7 @@ class User extends Authenticatable
     protected $table = 'users';
     
     protected $fillable = [
-        'name', 'avatar', 'email', 'type', 'demande', 'password',
+        'name', 'avatar', 'email', 'type', 'demande', 'password', 'finabo',
     ];
 
 

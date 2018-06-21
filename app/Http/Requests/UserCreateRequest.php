@@ -37,7 +37,9 @@ class UserCreateRequest extends FormRequest
             'prenom' => 'bail|required|min:3|max:20|alpha',
             'telephone' => 'bail|required|min:11|max:0989999999|numeric',
             'email' => 'bail|required|email|unique:users,email',
-            'url' => 'url'
+            'url' => 'url',
+            'etp' => 'bail|required|numeric'
+
         ];
     }
 }

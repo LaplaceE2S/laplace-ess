@@ -12,11 +12,11 @@ Nouveau message
                 <div class="card-body">
                     <form method="POST" action="{{ route('store_new_message') }}" id='newMessage'>
                         @csrf
-                        <div class="row justify-content-left"><h4>Renseignements sur la proposition<h4></div>
+                        <div class="row justify-content-left"><h4>Renseignements sur la proposition<h4></div><hr>
                         <!-- label destinataire -->
                         <div class="form-group {!! $errors->has('type') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('destinataireL', 'destinataire :') !!}
+                        {!! Form::label('destinataireL', 'Destinataire :') !!}
                         </div>
                         <div class="col-md-6">
                         
@@ -46,14 +46,14 @@ Nouveau message
                         <!-- label cat -->
                         <div class="form-group {!! $errors->has('catL') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('messageL', 'message :') !!}
+                        {!! Form::label('messageL', 'Message :') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::textarea('message', null, ['class' => 'form-control']) !!}
                         {!! $errors->first('message', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
-                            {{ Form::submit('Envoyer!', ['class' => 'btn btn-outline-success my-2 my-sm-0 href']) }}
+                            {{ Form::submit('Envoyer', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
                         
 
                     </form>

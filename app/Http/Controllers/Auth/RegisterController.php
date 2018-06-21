@@ -90,6 +90,7 @@ class RegisterController extends Controller
         $companie->rue = '';
         $companie->telephone = 0;
         $companie->budget = 0;
+        $companie->etp = 0;
         $companie->users_id = $user->id;
         $companie->save();
 

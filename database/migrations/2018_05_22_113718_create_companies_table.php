@@ -20,6 +20,7 @@ class CreateCompaniesTable extends Migration {
 			$table->string('telephone');
 			$table->string('statut');
 			$table->integer('budget');
+			$table->integer('etp');
 			$table->timestamps();
 			$table->integer('users_id')->unsigned();
 		});

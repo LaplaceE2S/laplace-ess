@@ -1,21 +1,20 @@
 
-@extends('layouts.userLayout')
+@extends('layouts.adminLayout')
 
-@section('title', 'Complétez votre profil')
+@section('title', 'Modifiez le profil adminsitrateur')
 
 @section('content')
 
-<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1 class="text-center">Compléter le profil</h1></div>
+                <div class="card-header"><h1 class="text-center">Complétez votre profil</h1></div>
                 <div class="card-body">
-                {!! Form::open([ 'route' => 'editProfil', 'files' => true ]) !!} 
+                {!! Form::open([ 'route' => 'editAdmin', 'files' => true ]) !!} 
                 @csrf
                 
-                    <div class="row justify-content-left"><h5>Renseignements sur votre structure<h5></div><hr>
+                    <div class="row justify-content-left"><h5>Renseignements sur la structure<h5></div>
 
                         <!-- label STRUCTURE -->
                         <div class="form-group {!! $errors->has('structure') ? 'has-error' : '' !!} row">
@@ -56,8 +55,8 @@
                             {!! Form::label('etp', 'Nombre ETP') !!}
                             </div>
                         <div class="col-md-6">
-                            {!! Form::text('etp', $utilisateur->etp, ['class' => 'form-control', 'placeholder' => "Le Nombre d'Equivalent temps pleins"]) !!}
-                            {!! $errors->first('etp', '<small class="help-block">:message</small>') !!}
+                            {!! Form::text('etp', "$utilisateur->etp", ['class' => 'form-control', 'placeholder' => "Le Nombre d'Equivalent temps pleins"]) !!}
+                            {!! $errors->first('etpt', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
 
@@ -105,7 +104,7 @@
                         </div>
                         </div>
                         
-                        <div class="row justify-content-left"><h5>Renseignements sur le responsable de la structure</h5></div><hr>
+                        <div class="row justify-content-left"><h5>Renseignements sur le responsable de la structure</h5></div>
 
                         <!-- label NOM-->
                         <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!} row">
@@ -196,7 +195,7 @@
             </div>
         </div>
     </div>
-    <br>
+
 {!! Form::close() !!}
 @endsection
 

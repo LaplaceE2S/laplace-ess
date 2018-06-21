@@ -1,6 +1,6 @@
 @extends('layouts.adminLayout')
 
-@section('title', 'Profil de la structure')
+@section('title', 'Profil administrateur')
 
 @section('content')
 
@@ -55,9 +55,7 @@
         </div>
                 </div>
             </div>
-            <a href="javascript:history.back()" class="btn btn-primary">
-            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
-        </a>
+
         </div>
    
     </div> 

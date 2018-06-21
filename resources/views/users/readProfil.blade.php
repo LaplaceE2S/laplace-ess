@@ -17,6 +17,7 @@
                 <h5 class="card-text text-left"><strong>Statut: </strong> {{  $utilisateur->statut }}</h5>
                 <h5 class="card-text text-left"><strong>Budget: </strong> {{  $utilisateur->budget}}<span> € </span> </h5>
                 <h5 class="card-text text-left"><strong>N° SIRET: </strong> {{  $utilisateur->siret}}</h5>
+                <h5 class="card-text text-left"><strong>Nb ETP: </strong> {{  $utilisateur->etp}}</h5>
         </div>
         <!-- info STRUCTURE adresse -->
         <div class="col-md-4 col-sm-4">

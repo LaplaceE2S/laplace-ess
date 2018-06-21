@@ -37,10 +37,10 @@ class UsersController extends Controller
    * @return Response
    */
 
-  public function create()
-  {
-    return view('users.create');
-  }
+  // public function create()
+  // {
+  //   return view('users.create');
+  // }
 
 
   /**
@@ -49,28 +49,28 @@ class UsersController extends Controller
    * @return Response
    */
 
-  public function store(Request $request)
-  {
-    $structure = Companies::create([
-    'siret' => request('siret'),
-    'nom' => request('nom'),
-    'prenom' => request('prenom'),       
-    'structure' => request('structure'),
-    'url' => request('url'),
-    'ville' => request('ville'),
-    'postal' => request('postal'),
-    'rue' => request('rue'),
-    'telephone' => request('telephone'),
-    'statut' => request('statut'),
-    'budget' => request('budget'), 
-    'users_id' => $request->user()->id, 
-    ]);
+  // public function store(Request $request)
+  // {
+  //   $structure = Companies::create([
+  //   'siret' => request('siret'),
+  //   'nom' => request('nom'),
+  //   'prenom' => request('prenom'),       
+  //   'structure' => request('structure'),
+  //   'url' => request('url'),
+  //   'ville' => request('ville'),
+  //   'postal' => request('postal'),
+  //   'rue' => request('rue'),
+  //   'telephone' => request('telephone'),
+  //   'statut' => request('statut'),
+  //   'budget' => request('budget'), 
+  //   'users_id' => $request->user()->id, 
+  //   ]);
 
-    $title = "Confirmation de création de profil";
-    $msg = "Merci " . request('prenom') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
+  //   $title = "Confirmation de création de profil";
+  //   $msg = "Merci " . request('structure') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
 
-    return view('users.confirmCreate', compact('title', 'msg'));     
-   }
+  //   return view('users.confirmCreate', compact('title', 'msg'));     
+  //  }
     
 
   /**
@@ -110,6 +110,12 @@ class UsersController extends Controller
             {
               $utilisateur->telephone = '';
             }
+
+            if($utilisateur->etp == 0)
+            {
+              $utilisateur->etp = '';
+            }
+
             $menu ='profil';
             return view('users.readProfil', compact('utilisateur','menu')); 
             /* la fonction compact équivaut à array('posts' => $posts) */
@@ -152,7 +158,14 @@ class UsersController extends Controller
               $utilisateur->telephone = '';
             }
 
-              return view('users.editProfil', compact('utilisateur')); 
+            if($utilisateur->etp == 0)
+            {
+              $utilisateur->etp = NULL;
+            }
+
+            $menu ='profil';
+
+            return view('users.editProfil', compact('utilisateur','menu')); 
     }
 
   /**
@@ -198,6 +211,7 @@ class UsersController extends Controller
     $companie->prenom = request('prenom');
     $companie->telephone = request('telephone');
     $companie->url = request('url');
+    $companie->etp = request('etp');
     
     //update data
     $userId->save();

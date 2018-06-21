@@ -13,7 +13,7 @@
             <h4 class="border border-warning">Comment ça marche pour bénéficier du service La Place ?</h4>
         </div>
             <div class="row">
-                <div class="col-4"><span>Inscription</span>
+                <div class="col-4"><img src="./uploads/avatars/avatar_utilisateur.png"/>
                     <p>Inscrivez-vous gratuitement, vous recevrez les infos du service La Place.
                     Nous vous contacterons rapidement pour une présentation du service La Place. 
                     Vous visualiserez les annonces partiellement.</p>

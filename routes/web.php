@@ -87,10 +87,6 @@ Route::get('structures', 'WelcomeController@structure')->name('structures');
 // afficher les utilisateurs
 Route::get('/utilisateurs', 'UsersController@index')->name('utilisateurs');
 
-// créer un profil user
-Route::get('/profil', 'UsersController@create')->name('profil');
-Route::post('/profil', 'UsersController@store');
-
 // affiche le profil de l'utilisateur
 Route::get('/lireprofil', 'UsersController@show')->name('lireprofil');
 
@@ -127,14 +123,28 @@ Route::group(['middleware' => ['is_admin']], function() {
     // liste des demandes d'abonnements
     Route::get('demandes', 'AdminController@indexDemandes')->name('demandes');
 
+    // vérification des abonnements
+    Route::get('abonnements', 'AdminController@verifAbonnement')->name('abonnements');
+
+    // renouvelement de l'abonnement d'une structure
+    Route::get('renouvelement/{id}/Abonnement', ['uses' => 'AdminController@renewAbonnement', 'as' => 'voir.renouvelementAbonnement']);
+
     // user devient abonne
     Route::get('demandes/{id}/Abonne', ['uses' => 'AdminController@updateRole', 'as' => 'voir.demandesAbonne']);
     
     // profil structure admin
     Route::get('profil/{id}/structure', ['uses' => 'AdminController@showUtilisateur', 'as' => 'voir.profilStructure']);
 
-    //view profil admin
+    //Menu admin
     Route::get('profilAdmin', 'AdminController@showProfil')->name('profilAdmin');
 
+    //view profil admin
+    Route::get('/profilAdministrateur', 'AdminController@showAdmin')->name('profilAdministrateur');
+
+    //view modifiez profil admin 
+    Route::get('editAdmin', 'AdminController@editProfil')->name('editAdmin');
+
+    //Update profil admin
+    Route::post('/editAdmin', 'AdminController@update');
     });
     

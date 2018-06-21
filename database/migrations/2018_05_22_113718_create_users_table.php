@@ -15,6 +15,7 @@ class CreateUsersTable extends Migration {
             $table->boolean('type')->default(false);
             $table->boolean('demande')->default(false);
             $table->string('password');
+            $table->integer('finabo')->default(0);;
             $table->rememberToken();
             $table->timestamps();
         });
