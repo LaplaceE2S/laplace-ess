@@ -22,6 +22,25 @@ Voir une demande
 <p> Aucun déplacement prévue<p>
 @endif
 <p> descriptif matériel:{{$demande->materiel}}<p>
+
+@if($proprietaire)
+<form method="POST" action="{{ route('update_demande_form') }}">
+@csrf
+{!! Form::hidden('proposalId', $demande->proposalId) !!}
+{{ Form::submit('Modifier', ['class' => 'btn btn-warning my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+<form method="POST" action="{{ route('destroy_demande') }}">
+@csrf
+{!! Form::hidden('proposalId', $demande->proposalId) !!}
+{{ Form::submit('Suprimer', ['class' => 'btn btn-danger my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+@elseif(Auth::user()->type > 0)
+<form method="POST" action="{{ route('update_demande_form') }}">
+@csrf
+{!! Form::hidden('proposalId', $demande->proposalId) !!}
+{{ Form::submit('Envoyer', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+@endif
 </div>
 </div>
 @endsection

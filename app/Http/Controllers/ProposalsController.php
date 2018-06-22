@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Auth;
 use App\Proposals;
 use App\Sub_skills;
+use App\Skills;
 use App\Http\Requests\ProposalRequest;
 use Validator;
 
@@ -25,7 +27,7 @@ class ProposalsController extends Controller
 
   public function index()
   {
-    $menu = 'message';
+    $menu = 'annonces';
     $message = "Bienvenue dans l'espace d'administration de vos annonces";
     return view('proposals.index', compact('message','menu'));
     
@@ -39,7 +41,7 @@ class ProposalsController extends Controller
    */
   public function showBySkill($comp)
   {
-
+    $today = date("Y-m-d");
 
     $subSkills = DB::table('sub_skills')
     
@@ -56,6 +58,7 @@ class ProposalsController extends Controller
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
     ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
     ->where('sub_skills.skills_id', '=', $comp)
+    ->whereDate('proposals.expiration','>', $today)
     ->where('proposals.is_valid', '=', 1)
     ->get();
 
@@ -102,6 +105,7 @@ class ProposalsController extends Controller
    */
   public function showBySubSkill($subcomp)
   {
+    $today = date("Y-m-d");
     $subSkills = Sub_skills::find($subcomp);
     $comp = $subSkills->skills_id;
     $subSkills = DB::table('sub_skills')
@@ -117,6 +121,7 @@ class ProposalsController extends Controller
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
     ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
     ->where('sub_skills.id', '=', $subcomp)
+    ->whereDate('proposals.expiration','>', $today)
     ->where('proposals.is_valid', '=', 1)
     ->get();
 
@@ -299,6 +304,235 @@ class ProposalsController extends Controller
       return view('users.confirmCreate', compact('title', 'msg','menu')); 
   }
 
+
+
+    /**
+   * Display the specified resource.
+   *
+   * @param  request $request
+   * @return View
+   */
+  public function updateFormOffre(request $request)
+  {
+    
+    $id=$request->proposalId;
+    $proposition = Proposals::find($id);
+    $subSkills = Sub_skills::find($proposition->sub_skills_id);
+    $comp = $subSkills->skills_id;
+    $sCompID = $subSkills->id;
+    $subSkills = DB::table('sub_skills')
+    ->select('sub_skills.id','sub_skills.nom')
+    ->where('sub_skills.skills_id', '=', $comp)
+    ->get();
+    $select=array();
+    $liste =array();
+    foreach($subSkills as $subSkill){
+      if($sCompID == $subSkill->id){
+        $select[$subSkill->id]= $subSkill->nom;
+      }
+      else{
+        $liste[$subSkill->id]= $subSkill->nom;
+      }
+    }
+    $liste = $select + $liste;
+   
+    $comp = Skills::find($comp);
+    $compName = $comp->nom;
+    
+    if($proposition->frequence == 0){
+      $frequence['semaine']=true;
+      $frequence['mois']=false;
+    }
+    else{
+      $frequence['semaine']=false;
+      $frequence['mois']=true;
+    }
+    
+    if($proposition->besoin == 0){
+      $besoin['ponctuel']=true;
+      $besoin['permanent']=false;
+    }
+    else{
+      $besoin['ponctuel']=false;
+      $besoin['permanent']=true;
+    }
+
+    if($proposition->service == 0){
+      $service['prestation']=true;
+      $service['disposition']=false;
+    }
+    else{
+      $service['prestation']=false;
+      $service['disposition']=true;
+    }
+    
+    return view('proposals.updateFormOffre', compact( 'proposition','menu','compName','liste','frequence','besoin','service','id'));
+
+  }
+
+      /**
+   * Display the specified resource.
+   *
+   * @param  request $request
+   * @return View
+   */
+  public function updateFormDemande(request $request)
+  {
+    $id=$request->proposalId;
+    $proposition = Proposals::find($id);
+    $subSkills = Sub_skills::find($proposition->sub_skills_id);
+    $comp = $subSkills->skills_id;
+    $sCompID = $subSkills->id;
+    $subSkills = DB::table('sub_skills')
+    ->select('sub_skills.id','sub_skills.nom')
+    ->where('sub_skills.skills_id', '=', $comp)
+    ->get();
+    $select=array();
+    $liste =array();
+    foreach($subSkills as $subSkill){
+      if($sCompID == $subSkill->id){
+        $select[$subSkill->id]= $subSkill->nom;
+      }
+      else{
+        $liste[$subSkill->id]= $subSkill->nom;
+      }
+    }
+    $liste = $select + $liste;
+   
+    $comp = Skills::find($comp);
+    $compName = $comp->nom;
+    
+    if($proposition->frequence == 0){
+      $frequence['semaine']=true;
+      $frequence['mois']=false;
+    }
+    else{
+      $frequence['semaine']=false;
+      $frequence['mois']=true;
+    }
+    
+    if($proposition->besoin == 0){
+      $besoin['ponctuel']=true;
+      $besoin['permanent']=false;
+    }
+    else{
+      $besoin['ponctuel']=false;
+      $besoin['permanent']=true;
+    }
+
+
+    
+    return view('proposals.updateFormDemande', compact( 'proposition','menu','compName','liste','frequence','besoin','service','id'));
+
+  }
+
+  public function updateOffre(Request $request){
+
+    
+    $validator = Validator::make($request->all(), [
+      'proposalId' => 'required|numeric',
+      'companieId' => 'required|numeric',
+      'type' => 'required|alpha',
+      'titre' => 'required|string|max:180',
+      'comp' => 'required|numeric',
+      'description' => 'required|string',
+      'debut' => 'required|date',
+      'fin' => 'required|date',
+      'archivage' => 'required|date',
+      'frequence' => 'required|numeric|max:1',
+      'heure' => 'required|numeric|max:744|min:1',
+      'besoin' => 'required|numeric|max:1',
+      'localisation' => 'required|string',
+      'service' => 'required|numeric|max:1',
+      'cout' => 'required|numeric|min:0'
+       ]);
+
+       
+      if ($validator->fails()) {  
+
+        $menu = 'annonces';
+        $message = "Une erreur a été détecté faite preuve de cohérence";
+        return view('proposals.index', compact('message','menu'));
+    }else{
+
+
+      $proposal = Proposals::find($request->proposalId);
+      $proposal->titre = $request->titre;
+      $proposal->type = $request->type;
+      $proposal->description = $request->description;
+      $proposal->frequence = $request->frequence;
+      $proposal->heure = $request->heure;
+      $proposal->debut = $request->debut;
+      $proposal->fin = $request->fin;
+      $proposal->sub_skills_id = $request->comp;
+      $proposal->is_valid = 0;
+      $proposal->expiration = $request->archivage;
+      $proposal->besoin = $request->besoin;
+      $proposal->cout = $request->cout;
+      $proposal->lieu = $request->localisation;
+      $proposal->materiel = '';
+      $proposal->deplacement = $request->deplacement;
+      $proposal->service = $request->service;
+
+      $proposal->save();
+
+      $menu = 'annonces';
+      return redirect()->route('proposalAttente');
+    }  
+  }
+  public function updateDemande(Request $request){
+
+    
+    $validator = Validator::make($request->all(), [
+      'proposalId' => 'required|numeric',
+      'companieId' => 'required|numeric',
+      'type' => 'required|alpha',
+      'titre' => 'required|string|max:180',
+      'comp' => 'required|numeric',
+      'description' => 'required|string',
+      'debut' => 'required|date',
+      'fin' => 'required|date',
+      'archivage' => 'required|date',
+      'frequence' => 'required|numeric|max:1',
+      'heure' => 'required|numeric|max:744|min:1',
+      'besoin' => 'required|numeric|max:1',
+      'localisation' => 'required|string',
+      'materiel' => 'required|string'
+       ]);
+
+       
+      if ($validator->fails()) {  
+
+        $menu = 'annonces';
+        $message = "Une erreur a été détecté faite preuve de cohérence ou remplissez tous les champs";
+        return view('proposals.index', compact('message','menu'));
+    }else{
+
+
+      $proposal = Proposals::find($request->proposalId);
+      $proposal->titre = $request->titre;
+      $proposal->type = $request->type;
+      $proposal->description = $request->description;
+      $proposal->frequence = $request->frequence;
+      $proposal->heure = $request->heure;
+      $proposal->debut = $request->debut;
+      $proposal->fin = $request->fin;
+      $proposal->sub_skills_id = $request->comp;
+      $proposal->is_valid = 0;
+      $proposal->expiration = $request->archivage;
+      $proposal->besoin = 0;
+      $proposal->cout = 0;
+      $proposal->lieu = $request->localisation;
+      $proposal->materiel = $request->materiel;
+      $proposal->deplacement = $request->deplacement;
+      $proposal->service = 0;
+
+      $proposal->save();
+
+      $menu = 'annonces';
+      return redirect()->route('proposalAttente');
+    }
+  }
   /**
    * Display the specified resource.
    *
@@ -317,20 +551,25 @@ class ProposalsController extends Controller
    * @return Response
    */
   public function voir_offre($id)
-  {
+  { $proprietaire = false;
+    $idUser = Auth::user()->id;
     $offre = DB::table('proposals')
     
     ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
     ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
-    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','companies.users_id as userId','skills.nom as compNom','sub_skills.nom as subName')
     ->where('proposals.id', '=', $id)
     ->get();
     if($offre != NULL){
     $offre=$offre[0];
-  }
+      if ($offre->userId == $idUser){
+        $proprietaire = true;
+      }
+    }
+
     
-    if($offre != NULL and $offre->is_valid > 0 and $offre->type == 'offre'){
+    if($offre != NULL and $offre->is_valid > 0 or $offre->userId == $idUser  and $offre->type == 'offre'){
       $offre->updated_at = strtotime($offre->updated_at);
       $offre->debut = strtotime($offre->debut);
       $offre->fin = strtotime($offre->fin);
@@ -354,7 +593,8 @@ class ProposalsController extends Controller
         $offre->cout = $offre->cout . "euros de l'heure";
       }
       $menu = '';
-      return view('proposals.voirOffre', compact('offre','menu'));
+      
+      return view('proposals.voirOffre', compact('offre','menu','proprietaire'));
    
   }else{
     $erreur = "Une erreur a été détectée dans le numéro de l'offre, elle n'est pas encore en cours de publication ou n'existe pas";
@@ -372,19 +612,24 @@ class ProposalsController extends Controller
    */
   public function voir_demande($id)
   {
+    $proprietaire = 0;
+    $idUser = Auth::user()->id;
     $demande = DB::table('proposals')
     
     ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
     ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
     ->join('companies', 'companies.id', '=', 'proposals.companies_id')
-    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','companies.users_id as userId','skills.nom as compNom','sub_skills.nom as subName')
     ->where('proposals.id', '=', $id)
     ->get();
     if($demande != NULL){
     $demande=$demande[0];
+    if ($demande->userId == $idUser){
+      $proprietaire = 1;
+    }
   }
-    
-    if($demande != NULL and $demande->is_valid > 0 and $demande->type == 'demande'){
+     
+    if($demande != NULL and $demande->is_valid > 0 or $demande->userId == $idUser and $demande->type == 'demande'){
       $demande->updated_at = strtotime($demande->updated_at);
       $demande->debut = strtotime($demande->debut);
       $demande->fin = strtotime($demande->fin);
@@ -408,7 +653,7 @@ class ProposalsController extends Controller
         $demande->cout = $demande->cout . "euros de l'heure";
       }
       $menu = '';
-      return view('proposals.voirDemande', compact('demande','menu'));
+      return view('proposals.voirDemande', compact('demande','menu','proprietaire'));
    
   }else{
     $erreur = "Une erreur a été détectée dans le numéro de la demande, elle n'est pas encore en cours de publication ou n'existe pas";
@@ -446,10 +691,112 @@ class ProposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function destroy($id)
+  public function destroy(request $request)
   {
-    
+    $id=$request->proposalId;
+    $proposition = Proposals::find($id);
+    $proposition->delete();
+    $menu = 'annonces';
+    $message = "Votre annonce a été suprimé";
+    return view('proposals.index', compact('message','menu'));
   }
+
+
+  public function  attente(){
+
+    $id = Auth::user()->id;
+    $proposals = DB::table('proposals')
+    
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->where([['companies.users_id', '=', $id],['proposals.is_valid', '=', 0]])
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
+    
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+  }
+
+  public function  publie(){
+    $id = Auth::user()->id;
+    $today = date("Y-m-d");
+    $proposals = DB::table('proposals')
+    
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->where([['companies.users_id', '=', $id],['proposals.is_valid', '=', 1]])
+    ->whereDate('proposals.expiration','>', $today)
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
+    
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+  }
+
+  public function  archive(){
+    $id = Auth::user()->id;
+    $today = date("Y-m-d");
+    $proposals = DB::table('proposals')
+    
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->where([['companies.users_id', '=', $id]])
+    ->whereDate('proposals.expiration','<', $today)
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
+    
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+  }
+
   
 }
 

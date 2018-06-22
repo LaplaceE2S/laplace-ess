@@ -79,6 +79,22 @@ Route::post('proposal/new_offre/', 'ProposalsController@store')->name('store_off
 Route::get('proposal/new_demande/skill/{comp}', 'ProposalsController@formDemande');
 
 Route::post('proposal/new_demande', 'ProposalsController@store')->name('store_demande');
+// form de mise a jour des annonce
+Route::post('proposal/update_form_offre', 'ProposalsController@updateFormOffre')->name('update_offre_form');
+Route::post('proposal/update_form_demande', 'ProposalsController@updateFormDemande')->name('update_demande_form');
+//mise a jour des annonce
+Route::post('proposal/update_offre', 'ProposalsController@updateOffre')->name('update_offre');
+Route::post('proposal/update_demande', 'ProposalsController@updateDemande')->name('update_demande');
+//Supression
+Route::post('proposal/destroy_offre', 'ProposalsController@destroy')->name('destroy_offre');
+Route::post('proposal/destroy_demande', 'ProposalsController@destroy')->name('destroy_demande');
+//vue gestion annonce
+//en attente
+Route::get('proposal/en_attente', 'ProposalsController@attente')->name('proposalAttente');
+//publié
+Route::get('proposal/publie', 'ProposalsController@publie')->name('proposalPublie');
+//archivé
+Route::get('proposal/archive', 'ProposalsController@archive')->name('proposalArchive');
 
 // section utilisateurs-structures
 // view structures
