@@ -23,6 +23,21 @@ Voir une demande
 @endif
 <p> descriptif matériel:{{$demande->materiel}}<p>
 
+@if(Auth::user()->type == 2)
+@if($demande->is_valid == 1)
+<form method="POST" action="{{ route('valid') }}">
+@csrf
+{!! Form::hidden('proposalId', $demande->proposalId) !!}
+{{ Form::submit('deValider', ['class' => 'btn btn-danger my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+@else
+<form method="POST" action="{{ route('unvalid') }}">
+@csrf
+{!! Form::hidden('proposalId', $demande->proposalId) !!}
+{{ Form::submit('Valider', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+@endif
+@else
 @if($proprietaire)
 <form method="POST" action="{{ route('update_demande_form') }}">
 @csrf
@@ -40,6 +55,7 @@ Voir une demande
 {!! Form::hidden('proposalId', $demande->proposalId) !!}
 {{ Form::submit('Envoyer', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
 {{ Form::close() }}
+@endif
 @endif
 </div>
 </div>

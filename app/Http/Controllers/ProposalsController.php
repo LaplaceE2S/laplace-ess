@@ -426,6 +426,22 @@ class ProposalsController extends Controller
 
   }
 
+  public function valid(Request $request){
+    $proposal = Proposals::find($request->proposalId);
+    $proposal->is_valid = 0;
+    $proposal->save();
+    $menu = 'annonces';
+    return redirect()->route('proposalUnvalidAdmin');
+  }
+
+  public function unvalid(Request $request){
+    $proposal = Proposals::find($request->proposalId);
+    $proposal->is_valid = 1;
+    $proposal->save();
+    $menu = 'annonces';
+
+    return redirect()->route('proposalUnvalidAdmin');
+  }
   public function updateOffre(Request $request){
 
     
@@ -733,6 +749,37 @@ class ProposalsController extends Controller
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
 
+  public function  adminWait(){
+
+    $proposals = DB::table('proposals')
+    
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->where([['proposals.is_valid', '=', 0]])
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
+    
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+
+  }
+
   public function  publie(){
     $id = Auth::user()->id;
     $today = date("Y-m-d");
@@ -764,6 +811,7 @@ class ProposalsController extends Controller
     $menu = 'annonces';
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
+  
 
   public function  archive(){
     $id = Auth::user()->id;
@@ -775,6 +823,37 @@ class ProposalsController extends Controller
     ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
     ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
     ->where([['companies.users_id', '=', $id]])
+    ->whereDate('proposals.expiration','<', $today)
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
+    
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+  }
+
+  public function  adminArchive(){
+    $id = Auth::user()->id;
+    $today = date("Y-m-d");
+    $proposals = DB::table('proposals')
+    
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
     ->whereDate('proposals.expiration','<', $today)
     ->orderBy('proposals.created_at', 'desc')
     ->get();

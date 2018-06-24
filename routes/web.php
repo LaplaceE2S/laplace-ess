@@ -52,8 +52,8 @@ Route::get('/annonces', 'ProposalsController@index')->name('UserProposalsIndex')
 
 // Consultation d'une annonce
 
-Route::get('proposal/voir_offre/{proposalId}', 'ProposalsController@voir_offre');
-Route::get('proposal/voir_demande/{proposalId}', 'ProposalsController@voir_demande');
+Route::get('proposal/voir_offre/{proposalId}', 'ProposalsController@voir_offre')->name('voir_offre');;
+Route::get('proposal/voir_demande/{proposalId}', 'ProposalsController@voir_demande')->name('voir_demande');;
 
 // recherche par compétence
 Route::get('proposalBySkill/proposal', 'ProposalsController@searchRewrite');
@@ -162,5 +162,16 @@ Route::group(['middleware' => ['is_admin']], function() {
 
     //Update profil admin
     Route::post('/editAdmin', 'AdminController@update');
+
+
+    //espace annonce
+    //annonce en attente de validation
+    Route::get('/proposalUnvalidAdmin', 'ProposalsController@adminWait')->name('proposalUnvalidAdmin');
+    //annonce en archivé
+    Route::get('/proposalArchiveAdmin', 'ProposalsController@adminArchive')->name('proposalArchiveAdmin');
+    //validation d'annone
+    Route::post('/validProposal', 'ProposalsController@valid')->name('valid');
+    //dévalidation d'annonce
+    Route::post('/unvalidProposal', 'ProposalsController@unvalid')->name('unvalid');
     });
     

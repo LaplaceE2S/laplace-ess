@@ -24,7 +24,7 @@ Consultation de ses annonces
   <p>{{ $offre->duree->format('%a jour(s)') }}</p>
   <p>{{ $offre->lieu }}</p>
   </div>
-  <a class='btn btn-outline-success my-2 my-sm-0 href ' href ='../proposal/voir_offre/{{$offre->proposalId}}'> Voir les détails de l'offre</a>
+  <a class='btn btn-outline-success my-2 my-sm-0 href ' href ='{{route('voir_offre', ['id' => $offre->proposalId])}}'> Voir les détails de l'offre</a>
 </div>
 
 @endforeach
@@ -51,7 +51,7 @@ Consultation de ses annonces
   <p>{{ $demande->duree->format('%a jour(s)') }}</p>
   <p>{{ $demande->lieu }}</p> 
   </div>
-  <a class='btn btn-outline-success my-2 my-sm-0 href ' href ='../proposal/voir_demande/{{$demande->proposalId}}'> Voir les détails de la demande</a>
+  <a class='btn btn-outline-success my-2 my-sm-0 href ' href ="{{route('voir_demande', ['id' => $demande->proposalId])}}"> Voir les détails de la demande</a>
 </div>
 
 @endforeach
