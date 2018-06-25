@@ -13,11 +13,10 @@
                         <div class="entry" style="background-image:url('./images/img1.png');">
                             
                             <div class="entry__content">
-                                <h1>Mutualisation, mise en réseau et mises à disposition, en toute simplicité</h1>
+                                <h1>« Échangez des compétences et partagez des emplois, en toute simplicité. »</h1>
 
                                 <div class="entry__info">
-                                    <p>La Place est la solution pour rechercher des annonces, mutualiser des compétences et des emplois, que
-                                    les structures de l'économie sociale et solidaire du Pays de Vannes ont choisi(e).</p>
+                                    <p>La Place est la solution à vos besoins de mutualisation.<br>Offrez et demandez des compétences dans l'économie sociale et solidaire.<br>Recherchez des annonces dès votre première inscription.</p>
 
                                     <span class="entry__category"><a href="{{ route('register')}}">Inscrivez-vous gratuitement</a></span>
                                 </div>
@@ -108,147 +107,53 @@
         </div> <!-- end pageheader-content row -->
 
 <br />
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Communication externe:</h4>
+      <p>vous souhaitez communiquer sur votre projet et vous n'en avez pas le temps</p>
+      <p>OU</p> 
+      <p>vous disposez de compétences pour élaborer une stratégie de communication, créer des flyers, affiches, etc.</p>
+    </div>
 
-<!-- COMPETENCES -->
+    <div class="col-md-12">
+      <h4>Ressources humaines:</h4>
+      <p>vous souhaitez améliorer votre gestion des ressources humaines,</p>
+      <p>OU</p> 
+      <p>vous êtes spécialisés dans les relations entre bénévoles et salariés, dans le domaine de la santé au travail, etc.</p>
+    </div>
 
-<div class="card-columns">
-  <!-- Communication externe -->
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Communication externe</h4>
-      <p class="card-text">vous préparez un événement, vous n'avez pas le temps de gérer votre communication,
-      ou vous disposez de compétences pour élaborer une stratégie de communication, créer des flyers, affiches, etc.</p>
-      <!-- button Communication externe -->
-      <p>
-    <button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#1" aria-expanded="false" aria-controls="1">
-    Sous-compétences
-  </button>
-</p>
-<div class="collapse" id="1">
-  <div class="card card-block">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Stratégie de communication externe</li>
-    <li class="list-group-item">Gestion du site internet</li>
-    <li class="list-group-item">Réalisation de supports de communication</li>
-    <li class="list-group-item">Gestion des réseaux sociaux</li>
-    <li class="list-group-item">Organisation d’événements</li>
-    <li class="list-group-item">Gestion des mailing</li>
-    <li class="list-group-item">Relation presse</li>
-  </ul>
-  </div>
+    <div class="col-md-12">
+      <h4>Stratégie et développement:</h4>
+      <p>vous développez une nouvelle activité, vous avez besoin d'aide dans votre recherche de financement,</p>
+      <p>OU</p> 
+      <p>vous accompagnez les structures dans le développement de nouvelles activités.</p>
+    </div>
+
+    <div class="col-md-12">
+      <h4>Gestion administrative et financière:</h4>
+      <p>vous souhaitez vous concentrer sur votre cœur d'activité</p>
+      <p>OU</p> 
+      <p>vous bénéficiez de temps disponible sur de l'aide administrative</p>
+    </div>
+
+    <div class="col-md-12">
+      <h4>Informatique:</h4>
+      <p>vous souhaitez développer vos compétences numériques,</p>
+      <p>OU</p> 
+      <p>vous proposez un appui en informatique.</p>
+    </div>
+
+
+  </div> <!-- ./row -->
 </div>
-    <!-- ./button Communication externe -->
-    </div>
-  </div>
-
-  <!-- Ressource Humaine -->
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Ressources humaines</h4>
-      <p class="card-text">vous souhaitez améliorer votre gestion des ressources humaines, déléguer certaines procédures,
-      ou vous êtes spécialisés dans les relations entre bénévoles et salariés, dans le domaine de la santé au travail, etc</p>
-           <!-- button Ressources humaines -->
-           <p><button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#2" aria-expanded="false" aria-controls="2">Sous-compétences</button></p>
-      <div class="collapse" id="2">
-        <div class="card card-block"> 
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Gestion de la convention collective</li>
-            <li class="list-group-item">Paie et contrat de travail</li>
-            <li class="list-group-item">La formation professionnelle des équipes en place</li>
-            <li class="list-group-item">Le recrutement et procédure de licenciement de personnels</li>
-            <li class="list-group-item">Le management / encadrement, suivi des salariés</li>
-            <li class="list-group-item">Les relations entre bénévoles et salariés</li>
-            <li class="list-group-item">Gestion de conflits</li>
-            <li class="list-group-item">Le recours aux stagiaires</li>
-            <li class="list-group-item">L’accompagnement à la retraite</li>
-            <li class="list-group-item">Les risques psycho sociaux, la sécurité, le bien-être au travail</li>
-          </ul>
-        </div>
-      </div>
-    <!-- ./button Ressources humaines -->
-    </div>
-  </div>
-    <!-- Info générale -->
-    <div class="card card-inverse p-6 text-center">
-    <blockquote class="card-blockquote">
-      <h2 style="color:#f49712;">Découvrez les Compétences et <br />Sous-compétence du service La Place</h2>
-    </blockquote>
-  </div>
-  <!-- Stratégie et développement -->
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Stratégie et développement</h4>
-      <p class="card-text">vous développez une nouvelle activité, vous avez besoin d'aide sur de la méthodologie de projet, dans votre recherche de financement, ou vous accompagnez les structures dans le développement de nouvelles activités, vous proposez des formations.</p>
-<!-- button Stratégie et développement -->
-<p><button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#3" aria-expanded="false" aria-controls="3">Sous-compétences</button></p>
-      <div class="collapse" id="3">
-        <div class="card card-block"> 
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">La construction du budget en cohérence avec le projet de la structure</li>
-            <li class="list-group-item">Méthodologie de création de nouvelles activités</li>
-            <li class="list-group-item">Maîtriser les dispositifs d’aide financière</li>
-            <li class="list-group-item">Répondre à des appels d’offre</li>
-            <li class="list-group-item">Veille sur les appels d'offre</li>
-            <li class="list-group-item">Rechercher des sources de financement, monter un dossier (en particulier fonds européens)</li>
-            <li class="list-group-item">Etablir un budget prévisionnel, un plan de trésorerie, un plan de financement d’investissement</li>
-          </ul>
-        </div>
-      </div>
-    <!-- ./button Stratégie et développement -->
-    </div>
-  </div>
-
-  <!-- Gestion administrative et financière -->
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Gestion administrative et financière</h4>
-      <p class="card-text">vous souhaitez vous concentrer sur votre cœur d'activité
-      ou vous bénéficiez de temps disponible sur de l'aide administrative.</p>
-      <!-- button Gestion administrative et financière -->
-<p><button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#4" aria-expanded="false" aria-controls="4">Sous-compétences</button></p>
-      <div class="collapse" id="4">
-        <div class="card card-block">          
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Aide administrative</li>
-            <li class="list-group-item">Les assurances</li>
-            <li class="list-group-item">Veille sur la réglementation</li>
-          </ul>
-        </div>
-      </div>
-    <!-- ./button Gestion administrative et financière -->
-    </div>
-  </div>
-  <!-- Informatique -->
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Informatique</h4>
-      <p class="card-text">vous souhaitez développer vos compétences numériques,
-      ou vous proposez un appui en informatique.</p>
-    </div>
-    <!-- button Informatique -->
-<p><button class="btn btn-secondary btn-lg btn-block" type="button" data-toggle="collapse" data-target="#5" aria-expanded="false" aria-controls="5">Sous-compétences</button></p>
-      <div class="collapse" id="5">
-        <div class="card card-block">          
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Hébergement sécurisé</li>
-            <li class="list-group-item">Négociation de contrat</li>
-            <li class="list-group-item">Appui informatique</li>
-          </ul>
-        </div>
-      </div>
-    <!-- ./button Informatique -->
-  </div>
-</div>
-<!-- ./ COMPETENCES -->
 
 </br>
 
 <div id="infosEss" class="jumbotron jumbotron-fluid mx-0">
   <div class="container">
-    <h5 class="h5">Vous êtes une structure de l'économie sociale et solidaire...</h5>
-    <p class="lead">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs
-    d'activités.
-      Vous recherchez une compétence particulière pour développer votre activité et/ou vous souhaitez vous consacrer à votre projet associatif, coopératif, mutualiste.</p>
+    <h5 class="h5">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités.</h5>
+    <p class="lead">Vous recherchez une compétence particulière pour développer votre activité, de manière ponctuelle ou continue mais à temps partiel.<br> Vous souhaitez améliorer l'efficacité de votre structure, en allégeant la charge de travail des salarié-e-s sur les fonctions supports.</p><p class="lead">Vous disposez de compétences à partager et/ou de temps salarié disponible.<br>Vous souhaitez consolider ou pérenniser l'emploi dans votre structure.</p><p class="lead"><mark>" Déposez une annonce !"</mark></p>
     <a href="{{ route('structures') }}" class="btn btn-warning">Comment ça marche</a>
   </div>
 </div>
@@ -260,25 +165,28 @@
   <section class="customer-logos slider" id='fcontainer'>
     
     <div class="slide">
-      <a href="https://www.pays-vannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="80" width="80" alt=""></a>
+      <a href="https://www.pays-vannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="50" width="50" alt="pays-vannes"></a>
     </div>
     <div class="slide">
-    <a href="https://europa.eu/european-union/index_fr"><img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="80" width="80" alt=""></a>
+    <a href="https://europa.eu/european-union/index_fr"><img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="50" width="50" alt="europe"></a>
     </div>
     <div class="slide">
-      <a href="http://www.bretagne.bzh/"><img src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="80" width="80" alt=""></a>
+      <a href="http://www.bretagne.bzh/jcms/l_22662/fr/promouvoir-une-economie-sociale-et-solidaire"><img src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="50" width="50" alt="bretagne"></a>
     </div>
     <div class="slide">
-      <a href="http://direccte.gouv.fr/"><img src="./images/logo_partenaires/4.Logo_direccte.jpg" height="80" width="80" alt=""></a>
+      <a href="http://bretagne.direccte.gouv.fr/l-Economie-sociale-et-solidaire-ESS-en-Bretagne"><img src="./images/logo_partenaires/4.Logo_direccte.jpg" height="50" width="50" alt="direccte"></a>
     </div>
     <div class="slide">
-      <a href="https://www.ess-bretagne.org/"><img src="./images/logo_partenaires/5.Cress-bretagne.jpg" height="80" width="80" alt=""></a>
+      <a href="https://www.ess-bretagne.org/demarche-regionale-qualite-de-lemploi-dans-less"><img src="./images/logo_partenaires/5.Cress-bretagne.jpg" height="50" width="50" alt="ess"></a>
     </div>
     <div class="slide">
-      <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/"><img src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="80" width="80" alt=""></a>
+      <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/actions-de-developpement-economique"><img src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="50" width="50" alt="golfedumorbihan"></a>
     </div>
     <div class="slide">
-      <a href="https://www.maif.fr/"><img src="./images/logo_partenaires/7.Maif.jpg" height="80" width="80" alt=""></a>
+      <a href="https://ess.maif.fr/ess-action"><img src="./images/logo_partenaires/7.Maif.jpg" height="50" width="50" alt="maif"></a>
+    </div>
+    <div class="slide">
+      <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/vannes"><img src="./images/logo_partenaires/greta.png" height="50" width="50" alt="greta bretagne sud"></a>
     </div>
   </section>
 </div>

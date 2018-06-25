@@ -163,6 +163,11 @@ Route::group(['middleware' => ['is_admin']], function() {
     //Update profil admin
     Route::post('/editAdmin', 'AdminController@update');
 
+    // vue convention
+    Route::get('/convention', 'AdminController@convention')->name('convention');
+
+    // vue avenant
+    Route::get('/avenant', 'AdminController@avenant')->name('avenant');
 
     //espace annonce
     //annonce en attente de validation
@@ -174,4 +179,19 @@ Route::group(['middleware' => ['is_admin']], function() {
     //dévalidation d'annonce
     Route::post('/unvalidProposal', 'ProposalsController@unvalid')->name('unvalid');
     });
+
+    // vue convention
+    Route::get('/convention', 'UsersController@convention')->name('convention');
+
+    // vue avenant
+    Route::get('/avenant', 'UsersController@avenant')->name('avenant');
+
+    // vue La Place
+    Route::get('/laplace', 'WelcomeController@service')->name('laplace');
+
+    // vue Le Pole
+    Route::get('/lepole', 'WelcomeController@assoc')->name('lepole');
+
+    // vue Partenaires
+    Route::get('/partenaires', 'WelcomeController@partenassoc')->name('partenaires');
     

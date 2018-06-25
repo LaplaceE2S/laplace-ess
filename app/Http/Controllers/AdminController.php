@@ -105,11 +105,35 @@ class AdminController extends Controller
          ->select('companies.*', 'users.email', 'users.avatar')
          ->first();
 
+            if($utilisateur->budget == 0)
+            {
+              $utilisateur->budget = '';
+            }
+
+            if ($utilisateur->siret == 0) {
+                $utilisateur->siret = '';
+            }
+
+            if($utilisateur->postal == 0)
+            {
+              $utilisateur->postal = '';
+            }
+
+            if($utilisateur->telephone == 0)
+            {
+              $utilisateur->telephone = '';
+            }
+
+            if($utilisateur->etp == 0)
+            {
+              $utilisateur->etp = '';
+            }
+
          $menu ='donnee';
          return view('admins.showAdmin', compact('utilisateur', 'menu'));
     }
 
-    // Modifier le profil de l'admin
+    // View le profil de l'admin
     public function editProfil()
     {
         $id = Auth::user()->id;
@@ -127,8 +151,8 @@ class AdminController extends Controller
                 $utilisateur->budget = NULL;
               }
   
-                if ($utilisateur->siret == 0) {
-                  $utilisateur->siret = NULL;
+            if ($utilisateur->siret == 0) {
+                $utilisateur->siret = NULL;
               }
   
               if($utilisateur->postal == 0)
@@ -145,7 +169,8 @@ class AdminController extends Controller
               {
                 $utilisateur->etp = NULL;
               }
-  
+
+
         $menu ='donnee';
         return view('admins.editProfil', compact('utilisateur', 'menu')); 
     }
@@ -187,8 +212,9 @@ class AdminController extends Controller
     $companie->nom = request('name');
     $companie->prenom = request('prenom');
     $companie->telephone = request('telephone');
+    $companie->etp = request('etp');
     $companie->url = request('url');
-    $companie->url = request('etp');
+    
     
     //update data
     $userId->save();
@@ -246,7 +272,7 @@ class AdminController extends Controller
                 // après 31 mars
                 // vérification par rapport à l'année suivante
 
-                if ($expire->finabo < $yearjours and $expire->type > 0) {
+                if ($expire->finabo < $yearjours and $expire->type == 1) {
                     $push =  DB::table('users')->where('users.id', '=', $expire->id)->update(['type' => 0]);
                     $count++;
                 } 
@@ -254,7 +280,7 @@ class AdminController extends Controller
             else {
                 // avant le 31 mars de l'année en cours
                 // vérification par rapport à l'année en cours 
-                if ($expire->finabo < $yearjour and $expire->type > 0) {
+                if ($expire->finabo < $yearjour and $expire->type == 1) {
                     $push =  DB::table('users')->where('users.id', '=', $expire->id)->update(['type' => 0]);
                     $count++;
                 } 
@@ -285,5 +311,20 @@ class AdminController extends Controller
 
         return view('admins.confirme', compact('title', 'msg', 'menu'));  
     }
+
+    // view convention
+    public function convention()
+    {
+      $menu = 'document';
+      return view('admins.modeleconvention', compact('menu'));
+    }
+
+    // view avenant
+    public function avenant()
+    {
+      $menu = 'document';
+      return view('admins.modeleavenant', compact('menu'));
+    }
+
 
 }

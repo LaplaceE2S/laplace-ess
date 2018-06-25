@@ -87,7 +87,7 @@ class UsersController extends Controller
     $utilisateur = DB::table('companies')
             ->where('companies.users_id', '=', $id )
             ->join('users', 'users.id', '=', 'companies.users_id')
-            ->select('companies.*', 'users.email', 'users.avatar')
+            ->select('companies.*', 'users.email', 'users.avatar', 'users.finabo')
             ->get();
 
             $utilisateur = $utilisateur[0];
@@ -114,6 +114,11 @@ class UsersController extends Controller
             if($utilisateur->etp == 0)
             {
               $utilisateur->etp = '';
+            }
+
+            if($utilisateur->finabo == 0)
+            {
+              $utilisateur->finabo = '';
             }
 
             $menu ='profil';
@@ -276,6 +281,20 @@ class UsersController extends Controller
       $msg = "Merci, nous avons bien reçu votre demande d'abonnement au service La Place, vous recevrez un message de confirmation, dans les plus brefs délais.";
 
       return view('users.confirmCreate', compact('title', 'msg', 'menu'));   
+    }
+
+    // view convention
+    public function convention()
+    {
+      $menu = 'document';
+      return view('users.modeleconvention', compact('menu'));
+    }
+
+    // view avenant
+    public function avenant()
+    {
+      $menu = 'document';
+      return view('users.modeleavenant', compact('menu'));
     }
     
 }

@@ -50,6 +50,9 @@
         <!-- info site -->
         <div class="col-md-4 col-sm-4 text-center">  
             <h5 class="card-text">{{  $utilisateur->url}}</h5>  
+            @if (Auth::user()->type === 1 )
+            <h5 class="card-text text-left"><strong>Date de fin d'abonnement: </strong> {{  $utilisateur->finabo}}</h5>  
+            @endif
             <a href="{{ route('editProfil') }}" class="btn btn-warning btn-block" role="button">Modifier votre profil</a>            
         </div>
 

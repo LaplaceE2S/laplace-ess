@@ -38,7 +38,8 @@ class UserCreateRequest extends FormRequest
             'telephone' => 'bail|required|min:11|max:0989999999|numeric',
             'email' => 'bail|required|email|unique:users,email',
             'url' => 'url',
-            'etp' => 'bail|required|numeric'
+            'etp' => 'bail|required|numeric',
+            'finabo' => 'numeric'
 
         ];
     }

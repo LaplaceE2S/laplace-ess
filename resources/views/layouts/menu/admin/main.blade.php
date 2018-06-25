@@ -1,7 +1,7 @@
 <nav class='row'>
-<a class="nav-item btn btn-outline-primary col-2" href="{{ route('proposalUnvalidAdmin') }}">Annonces</a>
-<a class="nav-item btn btn-outline-primary col-2" href="{{ route('inscrits') }}">Structures</a>
-<a class="nav-item btn btn-outline-primary col-2" href="#">Documents</a>
-<a class="nav-item btn btn-outline-primary col-2" href="#">Messages</a>
+<a class="nav-item btn btn-outline-primary col-2" href="#">Les annonces</a>
+<a class="nav-item btn btn-outline-primary col-2" href="{{ route('inscrits') }}">Les structures</a>
+<a class="nav-item btn btn-outline-primary col-2" href="{{ route('convention') }}">Les documents</a>
+<a class="nav-item btn btn-outline-primary col-2" href="#">Mes Messages</a>
 <a class="nav-item btn btn-outline-primary col-2" href="{{ route('profilAdministrateur') }}">Mes données</a>
 </nav>

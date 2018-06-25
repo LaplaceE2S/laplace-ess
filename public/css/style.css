@@ -25,12 +25,12 @@ html{
     font-family: 'robotoregular';
 }
 
-h1 h2 h3 a{
+h1 h2 h3 h4 h5 h6 a{
 	font-family: 'robotobold';
 	font-weight: 900;
 }
 
-p{
+p li{
 	font-family: 'robotoregular';
 	font-weight: 300;
 }
@@ -223,10 +223,10 @@ header .right-item-nav-end{
 
 .featured .entry__content {
     position: absolute !important;
-    left: 40px;
+    left: 60px;
     bottom: 8rem;
     width: 100%;
-    padding: 0 20% 0 6rem;
+    padding: 0 20% 0 15%;
     display: block;
 }
 
@@ -260,10 +260,10 @@ header .right-item-nav-end{
     position: relative;
 }
 
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote {
+/* div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote {
     margin: 0;
     padding: 0;
-}
+} */
 
 .featured .entry__profile-pic {
     float: left;
@@ -623,9 +623,79 @@ footer .text-color-footer:hover{
 }
 
 /***lecture d'une annonce ***
-**********************/
+****************************/
 
 .readannonce{
     margin: auto;
     background-color: #EEEEEE;
+}
+
+/*** MODIF 22 juin ***
+****************************/
+/* Document CONVENTION */
+ .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+} 
+
+img#expandedImg
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* page LA PLACE */
+ol 
+{
+    font-family: 'robotoregular';
+}
+
+.blockquote-footer
+{
+    background-color:#c3e6cb;
+    font-weight:bold;
+}
+
+#linkPlaquette
+{
+    max-width:100%;
+}
+
+.card-body
+{
+    font-size:18px;
+}
+
+#logoess
+{
+    max-width:80%;
 }
