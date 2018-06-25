@@ -11,7 +11,7 @@
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Tableau de bord') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Les annonces') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('proposalUnvalidAdmin') }}">{{ __('Les annonces') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('inscrits') }}">{{ __(' Les structures') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('convention') }}">{{ __(' Les documents') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Mes messages') }}</a>
