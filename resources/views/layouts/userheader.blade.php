@@ -23,9 +23,8 @@
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('UserProposalsIndex') }}">{{ __('Annonces') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Proposition') }}</a>
-            <a id="toggler" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Favoris') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Document') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Propositions') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('convention') }}">{{ __('Documents') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('allMessages') }}">{{ __('Messages') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('lireprofil') }}">{{ __('Profil') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>

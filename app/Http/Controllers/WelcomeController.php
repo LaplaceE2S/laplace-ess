@@ -39,8 +39,27 @@ class WelcomeController extends Controller
         return view('welcome',compact('annonce'));
     }
 
+    //view structure
     public function structure()
     {
         return view('structures');
+    }
+
+    //view La Place
+    public function service()
+    {
+        return view('laplace');
+    }
+
+    //view Le Pole
+    public function assoc()
+    {
+        return view('lepole');
+    }
+
+    //view Nos partenaires
+    public function partenassoc()
+    {
+        return view('lespartenaires');
     }
 }

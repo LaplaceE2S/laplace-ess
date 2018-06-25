@@ -42,6 +42,7 @@
 <!-- Styles -->
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_back.css') }}">
+
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 
