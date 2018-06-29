@@ -3,7 +3,7 @@
 <header>
     <nav class="navbar navbar-light bg-light justify-content-arround">
         <a class="navbar-brand" href="{{ route('welcome') }}">
-            <img src="/laplace-ess/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
+            <img src="http://laplace-ess.fr/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
 
     <div class="form-inline">

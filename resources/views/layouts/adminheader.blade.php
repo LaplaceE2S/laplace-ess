@@ -2,7 +2,7 @@
 <header>
      <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand" href="{{ route('welcome') }}">
-            <img src="/laplace-ess/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
+            <img src="http://laplace-ess.fr/public/images/LaPlace-Transparent.png" width="200" height="100" class="d-inline-block align-top" alt="logo La Place ess">
         </a>
     
         <ul>
@@ -14,7 +14,7 @@
             <a class="dropdown-item essbg3" href="{{ route('proposalUnvalidAdmin') }}">{{ __('Les annonces') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('inscrits') }}">{{ __(' Les structures') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('convention') }}">{{ __(' Les documents') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Mes messages') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('allMessages') }}">{{ __('Mes messages') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('profilAdministrateur') }}">{{ __('Mes données') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"> @csrf </form>

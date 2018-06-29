@@ -1,4 +1,4 @@
-@extends('layouts.userLayout')
+@extends( Auth::user()->type == 2 ? 'layouts.adminLayout' : 'layouts.userLayout')
 @section('title')
 Messages reçus
 @endsection

@@ -16,7 +16,7 @@ $type = Auth::user()->type;
   <h1 class="text-center">Bienvenue sur votre espace de connexion</h1>
   </div>
   <div class="col-6" style="margin:auto;">
-  <img src="./images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
+  <img src="http://laplace-ess.fr/public/images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
   </div>
   <div class="col-4">
   <p>Recherchez des annonces par compétences.</p>
@@ -33,7 +33,7 @@ $type = Auth::user()->type;
   <h1 class="text-center">Bienvenue sur votre espace membre</h1>
   </div>
   <div class="col-6" style="margin:auto;">
-  <img src="./images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
+  <img src="http://laplace-ess.fr/public/images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
   </div>
   <div class="col-4">
   <p>Recherchez des annonces dans leur intégralité.</p>
@@ -54,7 +54,7 @@ $type = Auth::user()->type;
   <h1 class="text-center">Bienvenue dans ton espace d'administration !</h1>
   </div>
   <div class="col-6" style="margin:auto;">
-  <img src="./images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
+  <img src="http://laplace-ess.fr/public/images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
   </div>
   <div class="col-4">
   <p>Recherche des annonces.</p>

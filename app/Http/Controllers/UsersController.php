@@ -184,7 +184,7 @@ class UsersController extends Controller
             Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
 
             $user = Auth::user();
-            $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
+            $user->avatar = 'http://laplace-ess.fr/public/uploads/avatars/' . $filename;
             $user->save();
         }
 

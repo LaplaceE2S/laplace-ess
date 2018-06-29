@@ -12,22 +12,22 @@
             <h4 class="pb-3"><u>Comment ça marche ?</u></h4>
         </div>
             <div class="row no-gutter">
-                <div class="col"><img src="./images/labographieIcons/1-Inscription.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/1-Inscription.png" alt="inscription"/>
                     <p>Inscrivez-vous gratuitement. Nous vous contactons pour vous proposer <b>une démonstration du service La Place</b>. Vous visualiserez les annonces partiellement.</p>
                 </div>
-                <div class="col"><img src="./images/labographieIcons/2-AdhesionAbonnement.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/2-AdhesionAbonnement.png" alt="inscription"/>
                     <p>Adhérez au Pôle E2S et abonnez-vous au service La Place. Vous signez une <b>charte d'engagement</b> au service. Nous réalisons avec vous un  entretien d'analyse de vos besoins.</p>
                 </div>
-                <div class="col"><img src="./images/labographieIcons/3-Recherchebis.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/3-Recherchebis.png" alt="inscription"/>
                     <p><b>Recherchez</b> et visualisez les annonces dans leur intégralité.<b>Publiez</b> la vôtre sur le site depuis votre « espace membre ». Bénéficiez de notre<b> appui technique.</b></p>
                 </div>
-                <div class="col"><img src="./images/labographieIcons/4-MiseEnLienbis.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/4-MiseEnLienbis.png" alt="inscription"/>
                     <p>Lorsqu'une annonce vous intéresse,<b>échangez</b> via la messagerie interne avec la structure concernée. Finalisez votre accord grâce à une « fiche récapitulative de prêt ou prestation ».></p>
                 </div>
-                <div class="col"><img src="./images/labographieIcons/5-Juridique.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/5-Juridique.png" alt="inscription"/>
                     <p>Bénéficiez de notre <b>accompagnement juridique</b> pour vos démarches : <a href="{{ route('miseadisposition') }}">mise à disposition</a> de salarié, prestation, voire création de groupements d'employeurs.</p>
                 </div>
-                <div class="col"><img src="./images/labographieIcons/6-Contribution.png" alt="inscription"/>
+                <div class="col"><img src="http://laplace-ess.fr/public/images/labographieIcons/6-Contribution.png" alt="inscription"/>
                     <p>Depuis la « fiche récap », nous calculons une <b>contribution à l'acte</b>, au service La Place. Nous adressons la facture à la structure qui propose une compétence.</p>
                 </div>
                

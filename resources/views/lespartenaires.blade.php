@@ -12,7 +12,7 @@
 
         <!-- PAYS DE VANNES -->
         <div class="row">
-            <img id="logoess" src="./images/logo_partenaires/1.PaysdeVannes.jpg" alt="logo du Pays de Vannes" height="70" width="70">    
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/1.PaysdeVannes.jpg" alt="logo du Pays de Vannes" height="70" width="70">    
             <h4 class="mx-2 my-2">Pays de Vannes</h4>
             <div class="col-md-12 mt-4">
                 <p>Le Pays de Vannes œuvre au développement harmonieux du territoire. Il privilégie les complémentarités et les solidarités entre espaces ruraux et urbains et entre littoral et arrière-pays.</p>
@@ -31,7 +31,7 @@
 <hr>
         <!-- Région Bretagne -->
         <div class="row">
-            <img id="logoess" src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" alt="logo Région Bretagne" height="70" width="70">   
+            <img id="logoess" src=".http://laplace-ess.fr/public/images/logo_partenaires/3.Logo_region_bretagne.jpeg" alt="logo Région Bretagne" height="70" width="70">   
             <h4 class="mx-2">Région Bretagne</h4>
             <div class="col-md-12 mt-4">
                 <p>La Région Bretagne a choisi d’accompagner la démarche entrepreneuriale de l'ESS à travers trois axes d’intervention : la structuration des réseaux, le développement des activités et la promotion de l’innovation sociale.</p>
@@ -53,7 +53,7 @@
 <hr>
         <!-- GOLFE DU MORBIHAN -->
         <div class="row">
-            <img id="logoess" src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" alt="logo Golfe du Morbihan Vannes Agglomération" height="70" width="70">
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" alt="logo Golfe du Morbihan Vannes Agglomération" height="70" width="70">
             <h4 class="mx-2">Golfe du Morbihan Vannes Agglomération</h4>
             <div class="col-md-12 mt-4">
                 <p>Golfe du Morbihan – Vannes agglomération réunit 34 communes autour d’une ambition partagée : faire de la  fusion une opportunité pour le territoire, tout en assurant la continuité d’un haut niveau de services à la population. </p>
@@ -69,7 +69,7 @@
 <hr>
         <!-- CRESS -->
         <div class="row">
-            <img id="logoess" src="./images/logo_partenaires/5.Cress-bretagne.jpg" alt="logo Cress" height="70" width="70">
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/5.Cress-bretagne.jpg" alt="logo Cress" height="70" width="70">
             <h4 class="mx-2">Cress Bretagne</h4>
         </div>
             <i>Chambre Régionale de l’Économie Sociale et Solidaire</i>
@@ -113,7 +113,7 @@
 <hr>
         <!-- DIRECCTE -->
         <div class="row">
-            <img id="logoess" src="./images/logo_partenaires/4.Logo_direccte.jpg" alt="logo Direccte" height="70" width="70">
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/4.Logo_direccte.jpg" alt="logo Direccte" height="70" width="70">
             <h4 class="mx-2">Direccte</h4>
         </div>
             <i>Direction régionale des entreprises, de la concurrence, de la consommation, du travail et de l’emploi de Bretagne (Direccte)</i>
@@ -149,7 +149,7 @@
 <hr>
         <!-- GRETA -->
         <div class="row"> 
-            <img id="logoess" src="./images/logo_partenaires/greta.png" alt="logo Greta Bretagne Sud" height="70" width="70">
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/greta.png" alt="logo Greta Bretagne Sud" height="70" width="70">
             <h4 class="mx-2">Greta Bretagne Sud</h4>
         </div>
         <div class="row">

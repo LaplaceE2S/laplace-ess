@@ -9,15 +9,15 @@
  <div class="row justify-content-center">
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/convention-1.png" alt="modele de convention-1" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/convention-1.png" alt="modele de convention-1" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/convention-2.png" alt="modele de convention-2" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/convention-2.png" alt="modele de convention-2" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/convention-3.png" alt="modele de convention-3" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/convention-3.png" alt="modele de convention-3" onclick="openImg(this);">
   </div>
 
 </div>

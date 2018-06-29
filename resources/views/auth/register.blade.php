@@ -11,8 +11,8 @@
 
                 <div class="card-body">
 
-                    <div id="erreur" style="display:none; color:red;">
-                        <p>Vous n'avez pas rempli correctement les champs du formulaire !</p>
+                    <div id="erreur">
+                        
                     </div>
 
                     <form method="POST" action="{{ route('register') }}" onSubmit="return verif_formulaire()">
@@ -105,7 +105,14 @@
 
                         <!-- button CREATION utilisateur -->
                         <div class="form-group row mb-0">
+                        <div id="pop" style="display:none;">
+                    <!-- Button trigger modal -->
+                            <button id="submit" type="submit" class="btn btn-primary">
+                                    {{ __("S'enregistrer") }}
+                            </button>
+                        </div>
                             <div class="col-md-6 offset-md-6">
+
                                 <button id="submit" type="submit" class="btn btn-primary">
                                     {{ __("S'enregistrer") }}
                                 </button>
@@ -120,3 +127,6 @@
 </div>
 
 @endsection
+
+
+

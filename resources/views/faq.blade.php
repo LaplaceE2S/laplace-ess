@@ -6,7 +6,7 @@
 <br>
 <div class="container">
     <div class="row">
-        <img src="./images/FAQ.png" alt="Faq"/><h1 class="mx-3 my-2">FAQ</h1>
+        <img src="http://laplace-ess.fr/public/images/FAQ.png" alt="Faq"/><h1 class="mx-3 my-2">FAQ</h1>
         <div class="col-12 mt-3">
             <p>La Foire aux questions est une page en cours de construction.</p>
             <p>Au cours de la phase test du service La Place, nous relevons l'ensemble de vos questions pour pouvoir créer cette page.</p>

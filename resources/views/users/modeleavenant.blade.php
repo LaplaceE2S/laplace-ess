@@ -9,19 +9,19 @@
  <div class="row justify-content-center">
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant-1.png" alt="avant au contrat-1" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/avenant-1.png" alt="avant au contrat-1" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant-2.png" alt="avant au contrat-2" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/avenant-2.png" alt="avant au contrat-2" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant-3.png" alt="avant au contrat-3" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/avenant-3.png" alt="avant au contrat-3" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant-4.png" alt="avant au contrat-4" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/avenant-4.png" alt="avant au contrat-4" onclick="openImg(this);">
   </div>
 
 </div>

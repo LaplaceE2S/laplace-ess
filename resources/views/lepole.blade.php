@@ -9,7 +9,7 @@
     <div class="container">
         <!-- <section> -->
         <div class="row">
-            <img id="logoess" src="./images/e2s.png" alt="logo de l'E2S" height="70" width="70">
+            <img id="logoess" src="http://laplace-ess.fr/public/e2s.png" alt="logo de l'E2S" height="70" width="70">
             <h1 class="title-heading ml-3 pt-3">Le Pôle E2s</h1>
                 
             <h4 class="my-2">L'association E2S Pays de Vannes est un pôle de développement de l'économie sociale et solidaire.<br>Il en existe aujourd'hui 21 sur l'ensemble des Pays bretons.</h4>

@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
     <div id="pictEncart" class="col-sm-12 col-md-12 col-lg-12">
-        <img id="visuel" src="./images/accueilvisuel.png" alt="photo accueil" class="float-right" height="600" width="600"/>
+        <img id="visuel" src="http://laplace-ess.fr/public/images/accueilvisuel.png" alt="photo accueil" class="float-right" height="600" width="600"/>
         <div class="col-12">
             <div class="topleft">
               <div class="col-sm-12 col-lg-5">
@@ -38,7 +38,7 @@
 
   <div class="carousel-inner carouOffre">
     <div class="carousel-item carouOffre active">
-      <img src="./images/fond.jpg" alt="les annonces" width="1000" height="250">
+      <img src="http://laplace-ess.fr/public/images/fond.jpg" alt="les annonces" width="1000" height="250">
     <div class="carousel-caption"> 
       <div class='row no-gutters'>
         <h5 class="col-sm-8"><span style="color:#f49712;">{{$annonce[0]['titre']}}</span></h5>
@@ -54,7 +54,7 @@
 
   @if(isset($annonce[1]))
 <div class="carousel-item carouOffre">
-  <img src="./images/fond.jpg" alt="les annones" width="1000" height="250">
+  <img src="http://laplace-ess.fr/public/images/fond.jpg" alt="les annones" width="1000" height="250">
   <div class="carousel-caption">
     <div class='row no-gutters'>
       <h5 class="col-sm-8"><span style="color:#f49712;">{{$annonce[1]['titre']}}</span></h5>
@@ -70,7 +70,7 @@
 
   @if(isset($annonce[2]))
 <div class="carousel-item carouOffre">
-  <img src="./images/fond.jpg" alt="les annonces" width="1000" height="250">
+  <img src="http://laplace-ess.fr/public/images/fond.jpg" alt="les annonces" width="1000" height="250">
     <div class="carousel-caption">
       <div class='row no-gutters'>
         <h5 class="col-sm-8"><span style="color:#f49712;">{{$annonce[2]['titre']}}</span></h5>
@@ -241,28 +241,28 @@
   <section class="customer-logos slider" id='fcontainer'>
     
     <div class="slide">
-      <a href="https://www.pays-vannes.fr/"><img src="./images/logo_partenaires/1.PaysdeVannes.jpg" height="50" width="50" alt="pays-vannes"></a>
+      <a href="https://www.pays-vannes.fr/"><img src="http://laplace-ess.fr/public/images/logo_partenaires/1.PaysdeVannes.jpg" height="50" width="50" alt="pays-vannes"></a>
     </div>
     <div class="slide">
-    <a href="https://europa.eu/european-union/index_fr"><img src="./images/logo_partenaires/2.FESI_logoRVB.jpg" height="50" width="50" alt="europe"></a>
+    <a href="https://europa.eu/european-union/index_fr"><img src="http://laplace-ess.fr/public/images/logo_partenaires/2.FESI_logoRVB.jpg" height="50" width="50" alt="europe"></a>
     </div>
     <div class="slide">
-      <a href="http://www.bretagne.bzh/jcms/l_22662/fr/promouvoir-une-economie-sociale-et-solidaire"><img src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="50" width="50" alt="bretagne"></a>
+      <a href="http://www.bretagne.bzh/jcms/l_22662/fr/promouvoir-une-economie-sociale-et-solidaire"><img src=".http://laplace-ess.fr/public/images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="50" width="50" alt="bretagne"></a>
     </div>
     <div class="slide">
-      <a href="http://bretagne.direccte.gouv.fr/l-Economie-sociale-et-solidaire-ESS-en-Bretagne"><img src="./images/logo_partenaires/4.Logo_direccte.jpg" height="50" width="50" alt="direccte"></a>
+      <a href="http://bretagne.direccte.gouv.fr/l-Economie-sociale-et-solidaire-ESS-en-Bretagne"><img src="http://laplace-ess.fr/public/images/logo_partenaires/4.Logo_direccte.jpg" height="50" width="50" alt="direccte"></a>
     </div>
     <div class="slide">
-      <a href="https://www.ess-bretagne.org/demarche-regionale-qualite-de-lemploi-dans-less"><img src="./images/logo_partenaires/5.Cress-bretagne.jpg" height="50" width="50" alt="ess"></a>
+      <a href="https://www.ess-bretagne.org/demarche-regionale-qualite-de-lemploi-dans-less"><img src="http://laplace-ess.fr/public/images/logo_partenaires/5.Cress-bretagne.jpg" height="50" width="50" alt="ess"></a>
     </div>
     <div class="slide">
-      <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/actions-de-developpement-economique"><img src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="50" width="50" alt="golfedumorbihan"></a>
+      <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/actions-de-developpement-economique"><img src="http://laplace-ess.fr/public/images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" height="50" width="50" alt="golfedumorbihan"></a>
     </div>
     <div class="slide">
-      <a href="https://ess.maif.fr/ess-action"><img src="./images/logo_partenaires/7.Maif.jpg" height="50" width="50" alt="maif"></a>
+      <a href="https://ess.maif.fr/ess-action"><img src="http://laplace-ess.fr/public/images/logo_partenaires/7.Maif.jpg" height="50" width="50" alt="maif"></a>
     </div>
     <div class="slide">
-      <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/vannes"><img src="./images/logo_partenaires/greta.png" height="50" width="50" alt="greta bretagne sud"></a>
+      <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/vannes"><img src="http://laplace-ess.fr/public/images/logo_partenaires/greta.png" height="50" width="50" alt="greta bretagne sud"></a>
     </div>
   </section>
 

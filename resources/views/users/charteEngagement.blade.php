@@ -9,31 +9,31 @@
  <div class="row justify-content-center">
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-1.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-1.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-2.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-2.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-3.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-3.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-4.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-4.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-5.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-5.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-6.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-6.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/charte_laplace-7.png" alt="charte engagement" onclick="openImg(this);">
+    <img src="http://laplace-ess.fr/public/uploads/pdf/charte_laplace-7.png" alt="charte engagement" onclick="openImg(this);">
   </div>
 
 
@@ -57,7 +57,7 @@
   <div class="row">
   
     <div class="col">
-      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/charte_laplace.pdf" role="button" target="_blank">Télécharger la charte</a>
+      <a class="btn btn-primary btn-block" href="http://laplace-ess.fr/public/uploads/pdf/charte_laplace.pdf" role="button" target="_blank">Télécharger la charte</a>
     </div>
 
     <div class="col">
