@@ -51,10 +51,18 @@ Voir une offre
 {{ Form::submit('Suprimer', ['class' => 'btn btn-danger my-2 my-sm-0 href']) }}
 {{ Form::close() }}
 @elseif(Auth::user()->type > 0)
-<form method="POST" action="{{ route('store_demande') }}">
+<form method="POST" action="{{ route('negocier') }}">
 @csrf
 {!! Form::hidden('proposalId', $offre->proposalId) !!}
-{{ Form::submit('Envoyer', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
+{!! Form::hidden('dest', $offre->companies_id) !!}
+{{ Form::submit('Contacter', ['class' => 'btn btn-success my-2 my-sm-0 href']) }}
+{{ Form::close() }}
+<form method="POST" action="{{ route('proposer') }}">
+@csrf
+{!! Form::hidden('proposalId', $offre->proposalId) !!}
+{!! Form::hidden('dest', $offre->companies_id) !!}
+{!! Form::hidden('is_purpose', 1) !!}
+{{ Form::submit('demande de proposition', ['class' => 'btn btn-danger my-2 my-sm-0 href']) }}
 {{ Form::close() }}
 @endif
 @endif

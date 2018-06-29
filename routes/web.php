@@ -45,6 +45,12 @@ Route::post('/read_message', 'MessagerieController@read')->name('read_message');
 Route::post('/Form_answer_message', 'MessagerieController@formAnswer')->name('answer_form_message');
 // envoie réponse
 Route::post('/store_answer_message', 'MessagerieController@storeAnswer')->name('answer_message');
+//négocier
+Route::post('/negocier', 'MessagerieController@negocier')->name('negocier');
+//proposer
+Route::post('/proposer', 'MessagerieController@proposer')->name('proposer');
+//autauriser demande
+Route::post('/messagerieAuthorisation', 'MessagerieController@authorisation')->name('messagerieAuthorisation');
 
 // section annonces
 // view annonce index
@@ -95,6 +101,27 @@ Route::get('proposal/en_attente', 'ProposalsController@attente')->name('proposal
 Route::get('proposal/publie', 'ProposalsController@publie')->name('proposalPublie');
 //archivé
 Route::get('proposal/archive', 'ProposalsController@archive')->name('proposalArchive');
+
+//fiche recap
+//ficheWithOffre
+Route::post('proposal/FormFicheWithOffre', 'Companies_proposalsController@FormFicheWithOffre')->name('FormFicheWithOffre');
+//ficheWithDemande
+Route::post('proposal/FormFicheWitDemande', 'Companies_proposalsController@FormFicheWithDemande')->name('FormFicheWithDemande');
+//create racap with offre
+Route::post('proposal/createRecapOffre', 'Companies_proposalsController@create_recap_offre')->name('create_recap_offre');
+//create racap with demande
+Route::post('proposal/createRecapdemande', 'Companies_proposalsController@create_recap_demande')->name('create_recap_demande');
+//ConsultationdesFicherecap
+//envoyé
+Route::get('recap/envoi', 'Companies_proposalsController@envoi')->name('recap_envoi');
+//recu
+Route::get('recap/reception', 'Companies_proposalsController@reception')->name('recap_reception');
+//validé
+Route::get('recap/valide', 'Companies_proposalsController@valide')->name('recap_valide');
+//detail 
+Route::post('recap/voir_detail_propo', 'Companies_proposalsController@show')->name('voir_detail_propo');
+//detail 
+Route::post('recap/conclure_propo', 'Companies_proposalsController@conclure')->name('conclure');
 
 // section utilisateurs-structures
 // view structures
@@ -170,6 +197,8 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::get('/avenant', 'AdminController@avenant')->name('avenant');
 
     //espace annonce
+    // annonce publié 
+    Route::get('/publieAdmin', 'ProposalsController@publieAdmin')->name('publieAdmin');
     //annonce en attente de validation
     Route::get('/proposalUnvalidAdmin', 'ProposalsController@adminWait')->name('proposalUnvalidAdmin');
     //annonce en archivé
@@ -178,6 +207,14 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::post('/validProposal', 'ProposalsController@valid')->name('valid');
     //dévalidation d'annonce
     Route::post('/unvalidProposal', 'ProposalsController@unvalid')->name('unvalid');
+
+    //recap
+    //wait
+    Route::get('recap/wait', 'Companies_proposalsController@recap_wait')->name('recap_wait');
+    //recap
+    Route::get('recap/recap', 'Companies_proposalsController@recap')->name('recap_recap');
+    //valid
+    Route::post('recap/lastValid', 'Companies_proposalsController@lastValid')->name('lastValid');
     });
 
     // vue convention

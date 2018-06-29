@@ -8,10 +8,17 @@ metre a jour l'annonce
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+                @if(isset($recap) and $recap)
+                <div class="card-header"><h1>{{ __("créer une proposition") }}</h1></div>
+                 @else
                 <div class="card-header"><h1>{{ __("Mettre a jour une Demande") }}</h1></div>
-
+                @endif
                 <div class="card-body">
-                    <form method="POST" action="{{ route('update_demande') }}">
+                    @if(isset($recap) and $recap)
+                    <form method="POST" action="{{ route('create_recap_demande') }}">
+                    @else
+                    <form method="POST" action="{{ route('update_demande') }}">            
+                    @endif
                         @csrf
                         {!! Form::hidden('proposalId', $id) !!}
                         {!! Form::hidden('companieId', $proposition->companies_id) !!}
@@ -182,10 +189,42 @@ metre a jour l'annonce
                         {!! $errors->first('materiel', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
-     
 
+                        @if(isset($recap) and $recap)
+                            <!-- label service -->
+                            <div class="form-group {!! $errors->has('service') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('serviceL', 'service : ') !!}
+                            </div>
+                            <div class="col-md-6">
+                            {!! Form::label('prestationL', 'prestation : ') !!}
+                            {!! Form::radio('service', 0, ['class' => 'form-control']) !!}
+                            {!! Form::label('dispositionL', 'mis a disposition : ') !!}
+                            {!! Form::radio('service', 1, ['class' => 'form-control']) !!}
+                            {!! $errors->first('service', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+
+
+                                                    <!-- label localisation -->
+                            <div class="form-group {!! $errors->has('cout') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('coutL', 'Entrer le prix de la prestation (ou le cout horaire de la mise a disposition):') !!}
+                            </div>
+                            <div class="col-md-6">
+                            {!! Form::number('cout', null, ['class' => 'form-control','step'=>'any']) !!}
+
+                            {!! $errors->first('cout', '<small class="help-block">:message</small>') !!}
+                            </div>
+                            </div>
+                        @endif
+                            @if(isset($recap) and $recap)
+                            {{ Form::submit('envoie fiche recap', ['class' => 'btn btn-warning my-2 my-sm-0 href']) }}
+                            {{ Form::close() }}
+                             @else
                             {{ Form::submit('metre a jour', ['class' => 'btn btn-warning my-2 my-sm-0 href']) }}
                             {{ Form::close() }}
+                            @endif
 
                     </form>
                 </div>

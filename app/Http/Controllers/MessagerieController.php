@@ -7,6 +7,7 @@ use App\Http\Requests\MessagerieRequest;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use App\Messagerie;
+use App\Companies;
 
 class MessagerieController extends Controller 
 {
@@ -82,7 +83,6 @@ class MessagerieController extends Controller
     ->orWhere([['messagerie.id_dest', '=', $dest],['messagerie.id_user', '=', $id]])
     ->orderBy('messagerie.created_at', 'desc')
     ->get();
-
     
     $menu = 'message';
     return view('message.user.read', compact('messages','menu','dest'));
@@ -121,17 +121,33 @@ class MessagerieController extends Controller
 
     $id = Auth::user()->id;
     if(isset($verif[0])){
+      if(isset($request->is_purpose))
+      {
       $message = Messagerie::create([
         'id_user' => $id,
         'objet' => request('objet'),
         'message' => request('message'),       
         'id_dest' => $verif[0]->id,
-        'id_proposal' => NULL,
+        'id_proposal' => $request->proposalId,
         'is_view'=> 0,
-        'is_purpose'=> 0,
+        'is_purpose'=> $request->is_purpose,
         ]);
         $title = "Confirmation de l'envoie du message";
         $msg = "Merci , le message a bien été envoyé.";
+      }else{
+        $message = Messagerie::create([
+          'id_user' => $id,
+          'objet' => request('objet'),
+          'message' => request('message'),
+          'id_dest' => $verif[0]->id,
+          'id_proposal' => NULL,
+          'is_view'=> 0,
+          'is_purpose'=> 0,
+          ]);
+          $title = "Confirmation de l'envoie du message";
+          $msg = "Merci , le message a bien été envoyé.";
+
+      }
     }
     else{
       $title = "Erreur lors l'envoie du message";
@@ -140,6 +156,38 @@ class MessagerieController extends Controller
     $menu = 'message';
     return view('users.confirmCreate', compact('msg','menu','title'));
   
+  }
+
+  public function negocier(Request $request)
+  {
+    
+    $structure = Companies::find($request->dest);
+    $messages='';
+    $dest = $structure->structure;
+    $menu = 'message';
+    $proposalId = $request->proposalId;
+    return view('message.user.answer', compact('messages','menu','dest','proposalId'));
+  }
+  public function authorisation(Request $request){
+
+    $structure = Companies::find($request->dest);
+    $messages='';
+    $dest = $structure->structure;
+    $menu = 'message';
+    $proposalId = $request->proposal;
+    $is_purpose = 3;
+    return view('message.user.answer', compact('messages','menu','dest','is_purpose','proposalId'));
+  }
+  public function proposer(Request $request)
+  {
+    
+    $structure = Companies::find($request->dest);
+    $messages='';
+    $dest = $structure->structure;
+    $menu = 'message';
+    $proposalId = $request->proposalId;
+    $is_purpose = 1;
+    return view('message.user.answer', compact('messages','menu','dest','proposalId','is_purpose'));
   }
   /**
    * Show the form for creating a new resource.

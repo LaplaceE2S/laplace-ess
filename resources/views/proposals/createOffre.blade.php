@@ -201,7 +201,7 @@ Créer une offre
                         
 
                             {{ Form::submit('Envoyer!', ['class' => 'btn btn-outline-success my-2 my-sm-0 href']) }}
-                        
+                            {{ Form::close() }}
 
                     </form>
                 </div>

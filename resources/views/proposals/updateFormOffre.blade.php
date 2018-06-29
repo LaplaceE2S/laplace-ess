@@ -8,10 +8,18 @@ metre a jour l'annonce
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
+            @if(isset($recap) and $recap)
+            <div class="card-header"><h1>{{ __("créer une proposition") }}</h1></div>
+            @else
                 <div class="card-header"><h1>{{ __("Mettre a jour une Offre") }}</h1></div>
-
+            @endif
                 <div class="card-body">
-                    <form method="POST" action="{{ route('update_offre') }}">
+                @if(isset($recap) and $recap)
+                <form method="POST" action="{{ route('create_recap_offre') }}">
+                @else
+                <form method="POST" action="{{ route('update_offre') }}">            
+                @endif
+                    
                         @csrf
                         {!! Form::hidden('proposalId', $id) !!}
                         {!! Form::hidden('companieId', $proposition->companies_id) !!}
@@ -199,9 +207,17 @@ metre a jour l'annonce
                             </div>
                             </div>
                         
-
+                            @if(isset($recap) and $recap)
+                            @if(isset($dest))
+                            {!! Form::hidden('dest', $dest) !!}
+                            @endif
+                            {{ Form::submit('envoie fiche recap', ['class' => 'btn btn-warning my-2 my-sm-0 href']) }}
+                            {{ Form::close() }}
+                             @else
                             {{ Form::submit('metre a jour', ['class' => 'btn btn-warning my-2 my-sm-0 href']) }}
                             {{ Form::close() }}
+                            @endif
+                            
 
                     </form>
                 </div>

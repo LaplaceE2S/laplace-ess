@@ -569,6 +569,7 @@ class ProposalsController extends Controller
   public function voir_offre($id)
   { $proprietaire = false;
     $idUser = Auth::user()->id;
+    $typeUser = Auth::user()->type;
     $offre = DB::table('proposals')
     
     ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
@@ -585,7 +586,7 @@ class ProposalsController extends Controller
     }
 
     
-    if($offre != NULL and $offre->is_valid > 0 or $offre->userId == $idUser  and $offre->type == 'offre'){
+    if($offre != NULL and $typeUser==2 or $offre->is_valid > 0 or $offre->userId == $idUser  and $offre->type == 'offre'){
       $offre->updated_at = strtotime($offre->updated_at);
       $offre->debut = strtotime($offre->debut);
       $offre->fin = strtotime($offre->fin);
@@ -610,7 +611,7 @@ class ProposalsController extends Controller
       }
       $menu = '';
       
-      return view('proposals.voirOffre', compact('offre','menu','proprietaire'));
+      return view('proposals.voirOffre', compact('offre','me  nu','proprietaire'));
    
   }else{
     $erreur = "Une erreur a été détectée dans le numéro de l'offre, elle n'est pas encore en cours de publication ou n'existe pas";
@@ -630,6 +631,7 @@ class ProposalsController extends Controller
   {
     $proprietaire = 0;
     $idUser = Auth::user()->id;
+    $typeUser = Auth::user()->type;
     $demande = DB::table('proposals')
     
     ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
@@ -645,7 +647,7 @@ class ProposalsController extends Controller
     }
   }
      
-    if($demande != NULL and $demande->is_valid > 0 or $demande->userId == $idUser and $demande->type == 'demande'){
+    if($demande != NULL and $typeUser==2 or $demande->is_valid > 0 or $demande->userId == $idUser and $demande->type == 'demande'){
       $demande->updated_at = strtotime($demande->updated_at);
       $demande->debut = strtotime($demande->debut);
       $demande->fin = strtotime($demande->fin);
@@ -793,7 +795,6 @@ class ProposalsController extends Controller
     ->whereDate('proposals.expiration','>', $today)
     ->orderBy('proposals.created_at', 'desc')
     ->get();
-    
     $offres= array();
     $demandes= array();
     foreach($proposals as $proposal){
@@ -807,7 +808,36 @@ class ProposalsController extends Controller
         array_push($offres, $proposal);
       }
     }
+    $menu = 'annonces';
+    return view('proposals.gestion', compact('demandes','offres','menu'));
+  }
+
+  public function  publieAdmin(){
+    $id = Auth::user()->id;
+    $today = date("Y-m-d");
+    $proposals = DB::table('proposals')
     
+    ->select('proposals.*','proposals.id as proposalId','companies.nom as structNom','skills.nom as compNom','sub_skills.nom as subName')
+    ->join('companies', 'companies.id', '=', 'proposals.companies_id')
+    ->join('sub_skills', 'sub_skills.id', '=', 'proposals.sub_skills_id')
+    ->join('skills', 'skills.id', '=', 'sub_skills.skills_id')
+    ->where([['proposals.is_valid', '=', 1]])
+    ->whereDate('proposals.expiration','>', $today)
+    ->orderBy('proposals.created_at', 'desc')
+    ->get();
+    $offres= array();
+    $demandes= array();
+    foreach($proposals as $proposal){
+      $datetime1 = date_create($proposal->debut);
+      $datetime2 = date_create($proposal->fin);
+      $proposal->updated_at = strtotime($proposal->updated_at);
+      $proposal->duree = date_diff($datetime1, $datetime2);
+      if($proposal->type == 'demande'){
+        array_push($demandes, $proposal);
+      }else{
+        array_push($offres, $proposal);
+      }
+    }
     $menu = 'annonces';
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }

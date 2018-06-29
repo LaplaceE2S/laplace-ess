@@ -13,6 +13,13 @@ Nouveau message
                       {{Form::open(array('route' => 'answer_message'))}}
                     
                         @csrf
+                        @if(isset($proposalId))
+                        {!! Form::hidden('proposalId', $proposalId) !!}
+                        @endif
+                        @if(isset($is_purpose))
+                        {!! Form::hidden('is_purpose', 1) !!}
+                        @endif
+
                         <div class="row justify-content-left"><h4>Renseignements sur la proposition<h4></div>
                         <!-- label destinataire -->
                         <div class="form-group {!! $errors->has('type') ? 'has-error' : '' !!} row">
