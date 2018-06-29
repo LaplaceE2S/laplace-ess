@@ -1,10 +1,10 @@
 @extends('layouts.userLayout')
 @section('title')
-Créer son profil
+Recherche annonce par compétences
 @endsection
 @section('content')
-<div class ="col-12">
-<div class ="col-4 subSearch">
+<div class ="col-6" style="margin:auto;">
+<div class ="form-inline">
   <form method="GET" action="{{ route('proposalBySubSkill') }}">
          <?php
          

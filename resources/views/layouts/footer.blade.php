@@ -27,7 +27,7 @@
           <div class="footer-title">Besoin d'aide ?</div>
           <ul class="list-unstyled">
             <li>
-              <a href="#" class="text-color-footer">FAQ</a>
+              <a href="{{ route('faq') }}" class="text-color-footer">FAQ</a>
             </li>
           </ul>
         </div>
@@ -39,13 +39,13 @@
             <div class="footer-title">Infos légales</div>
             <ul class="list-unstyled">
               <li>
-                <a href="#" class="text-color-footer">Mentions légales</a>
+                <a href="{{ route('mentionlegale') }}" class="text-color-footer">Mentions légales</a>
               </li>
               <li>
-                <a href="#" class="text-color-footer">Conditions générales d'utilisations et de ventes</a>
+                <a href="{{ route('cgu') }}" class="text-color-footer">Conditions générales d'utilisations</a>
               </li>
               <li>
-                <a href="#" class="text-color-footer">Politique de confidentialité</a>
+                <a href="{{ route('cgv') }}" class="text-color-footer">Conditions générales de ventes</a>
               </li>
             </ul>
           </div>
@@ -54,13 +54,24 @@
       <div class="col-12 align-self-center">
         <div class="footer-widget ">
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="https://twitter.com/LaPlaceE2S"><i class="fab fa-twitter"></i></a>
             </li>
-            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="https://www.facebook.com/laplace.e2s/"><i class="fab fa-facebook-f"></i></a>
             </li>
-            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="#"><i class="fab fa-linkedin-in"></i></a>
+            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="http://www.e2s-paysdevannes.fr/pepiniere-ess/"><i class="fab fa-linkedin-in"></i></a>
           </ul>
-        </div>
+           </div>
+           
+      <!-- meteo -->
+      <!-- <div class="container">
+        <label for="location">Entrer votre ville</label>
+        <input id="location" type="text">
+        <button class="btn-success" id="weatherLocation">Obtenez l'humidité actuelle!</button>
+          <div class="errors"></div>
+          <div class="showHumidity"></div>
+          <div class="showTemp"></div>
+      </div> -->
+       
       
       <!-- /.footer-links -->
       <!-- tiny-footer -->
@@ -69,7 +80,7 @@
     <div class="row">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
         <div class="tiny-footer">
-          <p>Copyright © 2018 | La Place</p>
+          <p>© 2018 | Association E2S Pays de Vannes</p>
         </div>
       </div>
       <!-- /. tiny-footer -->

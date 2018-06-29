@@ -62,4 +62,34 @@ class WelcomeController extends Controller
     {
         return view('lespartenaires');
     }
+
+    //view Nos partenaires
+    public function misedispo()
+    {
+        return view('lamiseadisposition');
+    }
+
+    //view Mention légale
+    public function mention()
+    {
+        return view('mentionlegale');
+    }
+
+    //view FAQ
+    public function showFaq()
+    {
+        return view('faq');
+    }
+
+    //view CGU
+    public function showCgu()
+    {
+        return view('cgu');
+    }
+
+    //view CGV
+    public function showCgv()
+    {
+        return view('cgv');
+    }
 }

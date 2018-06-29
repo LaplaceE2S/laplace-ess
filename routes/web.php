@@ -12,7 +12,7 @@
 */
 
 // view Home
-Route::get('welcome', 'WelcomeController@index')->name('welcome');
+Route::get('/accueil', 'WelcomeController@index')->name('welcome');
 Route::get('/', 'WelcomeController@index');
 
 // demande du formulaire
@@ -137,7 +137,7 @@ Route::get('/lireprofil', 'UsersController@show')->name('lireprofil');
 Route::get('/editProfil', 'UsersController@edit')->name('editProfil');
 
 //mise à jour du profil de l'utilisateur
-Route::post('/editProfil', 'UsersController@update');
+Route::post('/editUser', 'UsersController@update');
 
 //vue supprimer le profil
 Route::get('/supprimerProfil', 'UsersController@users')->name('deleteView');
@@ -191,10 +191,10 @@ Route::group(['middleware' => ['is_admin']], function() {
     Route::post('/editAdmin', 'AdminController@update');
 
     // vue convention
-    Route::get('/convention', 'AdminController@convention')->name('convention');
+    Route::get('/conventionadmin', 'AdminController@convention')->name('conventionAdmin');
 
-    // vue avenant
-    Route::get('/avenant', 'AdminController@avenant')->name('avenant');
+      // vue avenant
+      Route::get('/avenantadmin', 'AdminController@avenant')->name('avenantAdmin');
 
     //espace annonce
     // annonce publié 
@@ -231,4 +231,19 @@ Route::group(['middleware' => ['is_admin']], function() {
 
     // vue Partenaires
     Route::get('/partenaires', 'WelcomeController@partenassoc')->name('partenaires');
+
+    //vue mise a dispo
+    Route::get('/miseadisposition', 'WelcomeController@misedispo')->name('miseadisposition');
+
+    //vue mention legale
+    Route::get('/mentionlegale', 'WelcomeController@mention')->name('mentionlegale');
+
+    //vue FAQ
+    Route::get('/faq', 'WelcomeController@showFaq')->name('faq');
+
+    //vue CGU
+    Route::get('/cgu', 'WelcomeController@showCgu')->name('cgu');
+
+    //vue CGV
+    Route::get('/cgv', 'WelcomeController@showCgv')->name('cgv');
     

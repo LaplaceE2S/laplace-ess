@@ -17,7 +17,7 @@ class ContactController extends Controller
     {
         Mail::send('email_contact', $request->all(), function($message) 
         {
-            $message->to('webDev.fk@gmail.com')->subject('Contact');
+            $message->to('laplace.e2s@gmail.com')->subject('Contact');
         });
 
         $title = "Confirmation de contact";
@@ -34,7 +34,7 @@ class ContactController extends Controller
 
         Mail::send('email_tel_contact',  $request->only('telephone'), function($message) 
         {
-            $message->to('webDev.fk@gmail.com')->subject('Contact téléphonique');
+            $message->to('laplace.e2s@gmail.com')->subject('Contact téléphonique');
         });
 
         $title = "Confirmation de contact téléphonique";

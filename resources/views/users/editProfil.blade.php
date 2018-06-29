@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header"><h1 class="text-center">Compléter le profil</h1></div>
                 <div class="card-body">
-                {!! Form::open([ 'route' => 'editProfil', 'files' => true ]) !!} 
+                {!! Form::open([ 'url' => 'editUser', 'files' => true ]) !!} 
                 @csrf
                 
                     <div class="row justify-content-left"><h5>Renseignements sur votre structure<h5></div><hr>
@@ -152,6 +152,19 @@
                         </div>
 
                         <!-- label URL-->
+                        @if($utilisateur->url == NULL)
+                        <div class="form-group {!! $errors->has('url') ? 'has-error' : '' !!} row">
+                            <div class='col-md-4 col-form-label text-md-right'>
+                            {!! Form::label('url', 'Site internet') !!}
+                            </div>
+                        <div class="col-md-6">
+                            {!! Form::url('url', "http://", ['class' => 'form-control', 'placeholder' => "L'adresse du site internet de votre structure"]) !!}
+                            {!! $errors->first('url', '<small class="help-block">:message</small>') !!}
+                        </div>
+                        </div>
+                        @endif
+
+                        @if($utilisateur->url != NULL)
                         <div class="form-group {!! $errors->has('url') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
                             {!! Form::label('url', 'Site internet') !!}
@@ -161,6 +174,7 @@
                             {!! $errors->first('url', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>
+                        @endif
 
                         <!-- Label PHOTO-->
                         <div class="form-group {!! $errors->has('photo') ? 'has-error' : '' !!} row">

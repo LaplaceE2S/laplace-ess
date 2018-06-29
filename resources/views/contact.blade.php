@@ -77,7 +77,7 @@
 
     </div>
 
-        {!! Form::submit('Envoyer', ['class' => 'btn btn-success pull-right']) !!}
+        {!! Form::submit('Envoyer', ['class' => 'btn btn-warning pull-right']) !!}
 
         {!! Form::close() !!}
 
@@ -98,14 +98,14 @@
     {!! $errors->first('telephone', '<small class="help-block">:message</small>') !!}
 
         <span class="input-group-btn">
-        {!! Form::submit('ok', ['class' => 'btn btn-success pull-right']) !!}
+        {!! Form::submit('ok', ['class' => 'btn btn-warning pull-right']) !!}
         </span>
     </div>
 {!! Form::close() !!}
 
                     <br />
                     <h3>Par courrier</h3>
-                    <p class="gray">E2S Pays de Vannes<br /> 47 Rue de Ferdinand Le Dressay<br />BP 74<br />56002 VANNES cedex</p>
+                    <p class="gray">E2S Pays de Vannes - La Place<br /> 47 Rue de Ferdinand Le Dressay<br />BP 74<br />56002 VANNES cedex</p>
                 </div>
             </div>
         </div>

@@ -1,4 +1,5 @@
-@extends('layouts.adminLayout')
+
+@extends( Auth::user()->type == 2 ? 'layouts.adminLayout' : 'layouts.userLayout')
 
 @section('title', "Modèle de convention")
 
@@ -9,15 +10,15 @@
  <div class="row justify-content-center">
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/model_convention_mise_a_disposition-1.png" alt="modele de convention-1" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/convention-1.png" alt="modele de convention-1" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/model_convention_mise_a_disposition-2.png" alt="modele de convention-2" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/convention-2.png" alt="modele de convention-2" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/model_convention_mise_a_disposition-3.png" alt="modele de convention-3" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/convention-3.png" alt="modele de convention-3" onclick="openImg(this);">
   </div>
 
 </div>
@@ -34,13 +35,12 @@
   <div id="imgtext"></div>
 </div> 
 
-
 <!-- CONTENT -->
 
   <div class="row justify-content-center">
 
     <div class="col-3">
-      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/model_convention_mise_a_disposition.pdf" role="button" target="_blank">Télécharger la convention</a>
+      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/convention.pdf" role="button" target="_blank">Télécharger la convention</a>
     </div>
   </div>
 

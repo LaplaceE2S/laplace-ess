@@ -1,9 +1,9 @@
 @extends('errors::layout')
 
-@section('title', 'Page Expired')
+@section('title', 'Page expirée')
 
 @section('message')
-    The page has expired due to inactivity.
+    La page a expiré en raison de l'inactivité.
     <br/><br/>
-    Please refresh and try again.
+    Veuillez actualiser et réessayer.
 @stop

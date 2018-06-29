@@ -9,19 +9,19 @@
  <div class="row justify-content-center">
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant_au_contrat-1.png" alt="avant au contrat-1" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/avenant-1.png" alt="avant au contrat-1" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant_au_contrat-2.png" alt="avant au contrat-2" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/avenant-2.png" alt="avant au contrat-2" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant_au_contrat-3.png" alt="avant au contrat-3" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/avenant-3.png" alt="avant au contrat-3" onclick="openImg(this);">
   </div>
 
   <div class="column">
-    <img src="/laplace-ess/public/uploads/pdf/avenant_au_contrat-4.png" alt="avant au contrat-4" onclick="openImg(this);">
+    <img src="/laplace-ess/public/uploads/pdf/avenant-4.png" alt="avant au contrat-4" onclick="openImg(this);">
   </div>
 
 </div>
@@ -44,7 +44,7 @@
   <div class="row justify-content-center">
 
     <div class="col-3">
-      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/avenant_au_contrat.pdf" role="button" target="_blank">Télécharger l' avenant au contrat</a>
+      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/avenant.pdf" role="button" target="_blank">Télécharger l' avenant</a>
     </div>
   </div>
 

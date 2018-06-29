@@ -9,6 +9,7 @@ use Auth;
 use App\Companies;
 use App\User;
 use Image;
+use Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Config;
 
@@ -178,49 +179,76 @@ class AdminController extends Controller
     // Update du profil Admin
     public function update(Request $request)
   {
-    //référence table users
-    $userId = Auth::id();
-    $userId = User::find($userId = Auth::id());
+    $id= Auth::id();
+    $id= User::find($userId = Auth::id());
 
-    $userId->email = request('email');
-    $userId->name = request('name');
+    $exp = bcpow('10', '14', 0)-1;
+
+    $validator = Validator::make($request->all(), [
+    'structure' => 'required|min:3|max:20|string',
+    'statut' => 'required|min:3|max:20|string',
+    'budget' => 'required|numeric',
+    'etp' => 'required|numeric',
+    'siret' => 'bail|required|max:'.$exp.'|numeric',
+    'rue' => 'required|min:3|max:50|string',
+    'postal' => 'required|max:100000|numeric',
+    'ville' => 'required|min:3|max:20|alpha',
+    'name' => 'required|min:3|max:20|string',
+    'prenom' => 'required|min:3|max:20|string',
+    'telephone' => 'bail|required|min:11|max:0989999999|numeric',
+    'email' => 'bail|required|email',
+    'url' => 'url',
+    'avatar' => 'image'
+  ]);
+
+    if ($validator->fails()) {
+        return back()->withErrors($validator)->withInput();
+    } 
+    else{
+        //référence table users
+        $userId = Auth::id();
+        $userId = User::find($userId = Auth::id());
+
+        $userId->email = request('email');
+        $userId->name = request('name');
 
 
-      if($request->hasFile('avatar')){
-        $avatar = $request->file('avatar');
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
 
-        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
 
-        Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+            Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
 
-        $user = Auth::user();
-        $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
-        $user->save();
-      }
+            $user = Auth::user();
+            $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
+            $user->save();
+        }
 
-    //Référence table companies
-    $companieId = CompaniesController::WhoAmI();
-    $companie = Companies::find($companieId = CompaniesController::WhoAmI());
+        //Référence table companies
+        $companieId = CompaniesController::WhoAmI();
+        $companie = Companies::find($companieId = CompaniesController::WhoAmI());
 
-    $companie->structure = request('structure');
-    $companie->statut = request('statut');
-    $companie->budget = request('budget');
-    $companie->siret = request('siret');
-    $companie->rue = request('rue');
-    $companie->postal = request('postal');
-    $companie->ville = request('ville');
-    $companie->nom = request('name');
-    $companie->prenom = request('prenom');
-    $companie->telephone = request('telephone');
-    $companie->etp = request('etp');
-    $companie->url = request('url');
+        $companie->structure = request('structure');
+        $companie->statut = request('statut');
+        $companie->budget = request('budget');
+        $companie->siret = request('siret');
+        $companie->rue = request('rue');
+        $companie->postal = request('postal');
+        $companie->ville = request('ville');
+        $companie->nom = request('name');
+        $companie->prenom = request('prenom');
+        $companie->telephone = request('telephone');
+        $companie->etp = request('etp');
+        $companie->url = request('url');
     
     
-    //update data
-    $userId->save();
-    $companie->save();
+        //update data
+        $userId->save();
+        $companie->save();
 
-    return redirect('/profilAdministrateur');
+        return redirect('/profilAdministrateur');
+    }
   }
 
     // user devient abonne
@@ -315,15 +343,15 @@ class AdminController extends Controller
     // view convention
     public function convention()
     {
-      $menu = 'document';
-      return view('admins.modeleconvention', compact('menu'));
+      $menu = 'documents';
+      return view('admins.convention', compact('menu'));
     }
 
     // view avenant
     public function avenant()
     {
-      $menu = 'document';
-      return view('admins.modeleavenant', compact('menu'));
+      $menu = 'documents';
+      return view('admins.avenant', compact('menu'));
     }
 
 

@@ -9,7 +9,7 @@ class CreateCompaniesTable extends Migration {
 	{
 		Schema::create('companies', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('siret', 20);
+			$table->string('siret', 20)->nullable();
 			$table->string('nom');
 			$table->string('prenom');
 			$table->string('structure');

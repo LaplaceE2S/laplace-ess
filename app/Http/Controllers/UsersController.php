@@ -30,49 +30,6 @@ class UsersController extends Controller
     
   }
 
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-
-  // public function create()
-  // {
-  //   return view('users.create');
-  // }
-
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-
-  // public function store(Request $request)
-  // {
-  //   $structure = Companies::create([
-  //   'siret' => request('siret'),
-  //   'nom' => request('nom'),
-  //   'prenom' => request('prenom'),       
-  //   'structure' => request('structure'),
-  //   'url' => request('url'),
-  //   'ville' => request('ville'),
-  //   'postal' => request('postal'),
-  //   'rue' => request('rue'),
-  //   'telephone' => request('telephone'),
-  //   'statut' => request('statut'),
-  //   'budget' => request('budget'), 
-  //   'users_id' => $request->user()->id, 
-  //   ]);
-
-  //   $title = "Confirmation de création de profil";
-  //   $msg = "Merci " . request('structure') . ", nous avons bien reçu votre demande de création de profil, vous recevrez un message de confirmation, dans les plus brefs délais.";
-
-  //   return view('users.confirmCreate', compact('title', 'msg'));     
-  //  }
-    
-
   /**
    * Display the specified resource.
    *
@@ -175,53 +132,86 @@ class UsersController extends Controller
 
   /**
    * Update the specified resource in storage.
-   *
-   * @param  int  $id
+   * @param  \Illuminate\Http\Request  $request
+   * @param  
    * @return Response
    */
 
   public function update(Request $request)
   {
-    //référence table users
-    $userId = Auth::id();
-    $userId = User::find($userId = Auth::id());
 
-    $userId->email= request('email');
-    $userId->name = request('name');
+    $id= Auth::id();
+    $id= User::find($userId = Auth::id());
 
-      if($request->hasFile('avatar')){
-        $avatar = $request->file('avatar');
+    $exp = bcpow('10', '14', 0)-1;
 
-        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+    $validator = Validator::make($request->all(), [
+    'structure' => 'required|min:3|max:20|string',
+    'statut' => 'required|min:3|max:20|string',
+    'budget' => 'required|numeric',
+    'etp' => 'required|numeric',
+    'rue' => 'required|min:3|max:50|string',
+    'postal' => 'required|max:100000|numeric',
+    'ville' => 'required|min:3|max:20|alpha',
+    'name' => 'required|min:3|max:20|string',
+    'prenom' => 'required|min:3|max:20|string',
+    'telephone' => 'bail|required|min:11|max:0989999999|numeric',
+    'email' => 'bail|required|email',
+    'url' => 'url',
+    'avatar' => 'image'
+  ]);
 
-        Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+    if ($validator->fails()) {
+      return back()->withErrors($validator)->withInput();
+    } 
+    else{
 
-        $user = Auth::user();
-        $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
-        $user->save();
-      }
-
-    //Référence table companies
-    $companieId = CompaniesController::WhoAmI();
-    $companie = Companies::find($companieId = CompaniesController::WhoAmI());
-
-    $companie->structure = request('structure');
-    $companie->statut = request('statut');
-    $companie->budget = request('budget');
-    $companie->siret = request('siret');
-    $companie->rue = request('rue');
-    $companie->postal = request('postal');
-    $companie->ville = request('ville');
-    $companie->nom = request('name');
-    $companie->prenom = request('prenom');
-    $companie->telephone = request('telephone');
-    $companie->url = request('url');
-    $companie->etp = request('etp');
+      //controle si email = emailunique ou email =! emailunique
     
-    //update data
-    $userId->save();
-    $companie->save();
-    return redirect('/lireprofil');
+        // référence table users
+        $userId = Auth::id();
+        $userId = User::find($userId = Auth::id());
+
+        $userId->email = request('email');
+        $userId->name = request('name');
+
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+
+            Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+
+            $user = Auth::user();
+            $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
+            $user->save();
+        }
+
+        // Référence table companies
+        $companieId = CompaniesController::WhoAmI();
+        $companie = Companies::find($companieId = CompaniesController::WhoAmI());
+
+        $companie->structure = request('structure');
+        $companie->statut = request('statut');
+        $companie->budget = request('budget');
+        $companie->siret = request('siret');
+        $companie->rue = request('rue');
+        $companie->postal = request('postal');
+        $companie->ville = request('ville');
+        $companie->nom = request('name');
+        $companie->prenom = request('prenom');
+        $companie->telephone = request('telephone');
+        $companie->etp = request('etp');
+        $companie->url = request('url');
+  
+  
+        // update data
+        $userId->save();
+        $companie->save();
+
+        return redirect('/home');
+    }
   }
 
   /**
@@ -255,11 +245,11 @@ class UsersController extends Controller
       
       if($id != Auth::user()->id)
       {
-        return redirect('welcome');
+        return redirect('/accueil');
       }
       
      DB::table('users')->where('id', $id)->delete();
-        return redirect('welcome');
+        return redirect('/accueil');
     }
 
     // view charte engagement

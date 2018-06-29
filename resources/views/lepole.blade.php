@@ -14,9 +14,6 @@
                 
             <h4 class="my-2">L'association E2S Pays de Vannes est un pôle de développement de l'économie sociale et solidaire.<br>Il en existe aujourd'hui 21 sur l'ensemble des Pays bretons.</h4>
         </div> <!-- ./row -->
-        <br/>
-            <img src="./images/img1.png" alt="carte">
-            <hr />
 
             <div class="col-md-12 mt-4">
                 <h5>Créé en 2010 à l’initiative des acteurs du territoire, l'association E2S du Pays de Vannes est:</h5>
@@ -77,22 +74,13 @@
                <div class="col">
                 <p>Ce sont:</p>
                     <ul class="list-group">
-                            <li class="list-group-item">des sociétés de personnes et non de capitaux</li>
-                            <li class="list-group-item">des statuts historiques de l’ESS: <strong>coopératives, associations, mutuelles et fondations</strong></li>
-                            <li class="list-group-item">des <strong>entreprises immatriculées «ESS»</strong> au registre du commerce et des sociétés ou agréées <strong>Entreprises Solidaires d’Utilité Sociale (ESUS)</strong></li>
+                            <li>&ndash; des sociétés de personnes et non de capitaux</li>
+                            <li>&ndash; des statuts historiques de l’ESS: <strong>coopératives, associations, mutuelles et fondations</strong></li>
+                            <li>&ndash; des <strong>entreprises immatriculées «ESS»</strong> au registre du commerce et des sociétés ou agréées <strong>Entreprises Solidaires d’Utilité Sociale (ESUS)</strong></li>
                         </ul> 
                 </div>
-                <hr>
-            <div class="col my-3">                
-                <div class="card bg-warning text-white">
-                    <div class="card-body">L’ESS vise à créer de la valeur pour le territoire à travers <strong>des activités non délocalisables</strong>.</div>
-                </div>
-                <div class="card bg-warning text-white">
-                    <div class="card-body">La participation des citoyens, des acteurs locaux au développement du territoire, crée une <strong>dynamique d’engagement et d’innovation locale</strong>, propre à servir l’attractivité du territoire.</div>
-                </div>
-                <div class="card bg-warning text-white">
-                    <div class="card-body">L’ESS <strong>privilégie le maintien de l’emploi et le développement d’activités sur le territoire</strong> à la distribution de bénéfices.</div>
-                </div>
+            <div class="col my-3">         
+                <p>L’ESS vise à créer de la valeur pour le territoire à travers <strong>des activités non délocalisables</strong>. La participation des citoyens, des acteurs locaux au développement du territoire, crée une <strong>dynamique d’engagement et d’innovation locale</strong>, propre à servir l’attractivité du territoire. L’ESS <strong>privilégie le maintien de l’emploi et le développement d’activités sur le territoire</strong> à la distribution de bénéfices.</p>
             </div>
                 <hr>
                 <div class="card">
@@ -101,6 +89,8 @@
                     <h5 class="card-title">Mélanie CADIO</h5>
                     <p class="card-text">47 rue Ferdinand Le Dressay BP 74 56002 VANNES Cedex</p>02 97 47 48 09 / 06 28 54 84 08 &ndash;
                     <u style="color:blue;">e2s.vannes@gmail.com</u>
+                    <br>
+                    <a href="http://www.e2s-paysdevannes.fr/" class="card-text">www.e2s-paysdevannes.fr</a>
                 </div>
                 </div>
         

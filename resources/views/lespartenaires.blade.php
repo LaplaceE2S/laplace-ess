@@ -12,7 +12,8 @@
 
         <!-- PAYS DE VANNES -->
         <div class="row">
-            <h4 class="my-2">Pays de Vannes</h4>
+            <img id="logoess" src="./images/logo_partenaires/1.PaysdeVannes.jpg" alt="logo du Pays de Vannes" height="70" width="70">    
+            <h4 class="mx-2 my-2">Pays de Vannes</h4>
             <div class="col-md-12 mt-4">
                 <p>Le Pays de Vannes œuvre au développement harmonieux du territoire. Il privilégie les complémentarités et les solidarités entre espaces ruraux et urbains et entre littoral et arrière-pays.</p>
                 <p>Le Pays de Vannes regroupe 59 communes et près de 219 288 habitants (INSEE 2015) répartis entre 3 intercommunalités:</p>
@@ -21,7 +22,6 @@
                     <li>&ndash; Questembert Communauté</li>
                     <li>&ndash; Arc Sud Bretagne</li>
                 </ul> 
-                <img src="./images/img1.png" alt="carte bretagne">
                 <p>Sa mission principale est de promouvoir un développement équilibré du territoire en finançant des projets locaux en tant que guichet unique pour toutes demandes de fonds régionaux et de fonds européens territorialisés.</p>
 
                 <a href="https://www.pays-vannes.fr/">www.pays-vannes.fr</a>
@@ -31,7 +31,8 @@
 <hr>
         <!-- Région Bretagne -->
         <div class="row">
-            <h4 class="my-2">Région Bretagne</h4>
+            <img id="logoess" src="./images/logo_partenaires/3.Logo_region_bretagne.jpeg" alt="logo Région Bretagne" height="70" width="70">   
+            <h4 class="mx-2">Région Bretagne</h4>
             <div class="col-md-12 mt-4">
                 <p>La Région Bretagne a choisi d’accompagner la démarche entrepreneuriale de l'ESS à travers trois axes d’intervention : la structuration des réseaux, le développement des activités et la promotion de l’innovation sociale.</p>
                 <p>La Région Bretagne soutient activement, dans une approche solidaire et équitable, les dynamiques à l’œuvre sur les territoires.</p>
@@ -52,7 +53,8 @@
 <hr>
         <!-- GOLFE DU MORBIHAN -->
         <div class="row">
-            <h4 class="my-2">Golfe du Morbihan Vannes Agglomération</h4>
+            <img id="logoess" src="./images/logo_partenaires/6.Vannes-agglo-le-nouveau-logo.jpg" alt="logo Golfe du Morbihan Vannes Agglomération" height="70" width="70">
+            <h4 class="mx-2">Golfe du Morbihan Vannes Agglomération</h4>
             <div class="col-md-12 mt-4">
                 <p>Golfe du Morbihan – Vannes agglomération réunit 34 communes autour d’une ambition partagée : faire de la  fusion une opportunité pour le territoire, tout en assurant la continuité d’un haut niveau de services à la population. </p>
                 <p>Ce bassin de vie aux frontières élargies, riche de la diversité de ses 169.000 habitants et de ses particularités locales, est aussi plus fort économiquement. Il concentre à ce jour près de 17 000 entreprises représentant plus de 70 000 emplois, 13.7% d'entre eux sont salarié-e-s dans l'ESS.</p>
@@ -61,17 +63,14 @@
                     <li>&bull; Encourager l’économie renouvelable (croissance verte et bleue, économie circulaire)</li>
                     <li>&bull; Favoriser une économie responsable (promouvoir l’économie sociale et solidaire – qui ne se réduit pas au secteur associatif –, l’insertion par l’économie ainsi que l’égalité hommes/femmes)</li>
                 </ul> 
-                
-                <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/">www.golfedumorbihan-vannesagglomeration.bzh</a>
-                <br>
                 <a href="http://www.golfedumorbihan-vannesagglomeration.bzh/actions-de-developpement-economique">Actions de developpement économique</a>
-        
             </div>
         </div> <!-- ./row -->
 <hr>
         <!-- CRESS -->
         <div class="row">
-            <h4 class="my-2">Cress Bretagne</h4>
+            <img id="logoess" src="./images/logo_partenaires/5.Cress-bretagne.jpg" alt="logo Cress" height="70" width="70">
+            <h4 class="mx-2">Cress Bretagne</h4>
         </div>
             <i>Chambre Régionale de l’Économie Sociale et Solidaire</i>
         
@@ -106,15 +105,16 @@
                 <h5>Développer l'observation quantitative et qualitative de l'ESS,</h5>
                 <p>en assurant la collecte, l'analyse et la diffusion des données socio-économiques sur l'ESS bretonne et en mettant en œuvre des actions d'observation et d'étude.</p>
                 <a href="https://www.ess-bretagne.org/">www.ess-bretagne.org</a>
-                <p>Depuis 2012, la Cress coordonne une démarche régionale pour identifier les actions à mettre en place pour améliorer la qualité de l'emploi dans l'ESS.</p>
-                <a href="https://www.ess-bretagne.org/demarche-regionale-qualite-de-lemploi-dans-less">Démarche régionale qualité de l'emploi dans l'ESS</a>
+                <p class="card mt-2 py-3">Depuis 2012, la Cress coordonne une démarche régionale pour identifier les actions à mettre en place pour améliorer la qualité de l'emploi dans l'ESS.
+                <a href="https://www.ess-bretagne.org/demarche-regionale-qualite-de-lemploi-dans-less">Démarche régionale qualité de l'emploi dans l'ESS</a></p>
             </div>
             </div>
         </div> <!-- ./row -->
 <hr>
         <!-- DIRECCTE -->
         <div class="row">
-            <h4 class="my-2">Direccte</h4>
+            <img id="logoess" src="./images/logo_partenaires/4.Logo_direccte.jpg" alt="logo Direccte" height="70" width="70">
+            <h4 class="mx-2">Direccte</h4>
         </div>
             <i>Direction régionale des entreprises, de la concurrence, de la consommation, du travail et de l’emploi de Bretagne (Direccte)</i>
         
@@ -131,11 +131,12 @@
                     <li>&bull; à la régulation des marchés et à la protection des consommateurs</li>
                 </ul>
                 <a href="http://bretagne.direccte.gouv.fr/l-Economie-sociale-et-solidaire-ESS-en-Bretagne">www.bretagne.direccte.gouv.fr</a>
-                <p>La Direccte Bretagne a participé au financement d'un portail d’information pour répondre aux besoins d’accompagnement des chef.fe.s des petites entreprises de Bretagne.</p>
-                <p>Les petites entreprises sont au cœur de l’économie bretonne et sont pourvoyeuses d’emploi, de formation, de développement économique et de cohésion territoriale. 
-                Les chef.fe.s d’entreprise de TPE et petite PME expriment des besoins importants d’accompagnement. Toutefois, ils.elles mobilisent insuffisamment les dispositifs existants par manque de ressources et de temps.</p>
-                <p><strong>Le portail</strong> <a href="https://mon-entreprise.bzh/"> mon-entreprise.bzh </a> leur apporte une information immédiatement opérationnelle sur les principaux interlocuteurs et outils pratiques répondants à leurs besoins : recrutement, formation, développement économique, prévention des risques professionnels, etc.</p>
-                <p>La Direccte Bretagne est aujourd'hui un des principaux financeurs du service La Place.</p>
+                <div class="card mt-2">
+                    <p>La Direccte Bretagne a participé au financement d'un portail d’information pour répondre aux besoins d’accompagnement des chef.fe.s des petites entreprises de Bretagne.</p>
+                    <p>Les petites entreprises sont au cœur de l’économie bretonne et sont pourvoyeuses d’emploi, de formation, de développement économique et de cohésion territoriale. 
+                    Les chef.fe.s d’entreprise de TPE et petite PME expriment des besoins importants d’accompagnement. Toutefois, ils.elles mobilisent insuffisamment les dispositifs existants par manque de ressources et de temps.</p>
+                    <p><strong>Le portail</strong> <a href="https://mon-entreprise.bzh/"> mon-entreprise.bzh </a> leur apporte une information immédiatement opérationnelle sur les principaux interlocuteurs et outils pratiques répondants à leurs besoins : recrutement, formation, développement économique, prévention des risques professionnels, etc.</p>
+                </div>
             </div>
         </div> <!-- ./row -->
 <hr>
@@ -148,8 +149,13 @@
 <hr>
         <!-- GRETA -->
         <div class="row"> 
-            <h4>Greta</h4>
-            <div class="col"> 
+            <img id="logoess" src="./images/logo_partenaires/greta.png" alt="logo Greta Bretagne Sud" height="70" width="70">
+            <h4 class="mx-2">Greta Bretagne Sud</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-4">
+                <p>Les GRETA sont les groupements d'établissements qui assurent le service public de formation continue des adultes de l’Éducation Nationale. Les GRETA forment en France plus de 500 000 personnes par an ! <br>Le GRETA BRETAGNE SUD, sur le département du Morbihan, forme plus de 5 000 personnes sur de nombreux domaines (bâtiment, ndustriel,transport, tertiaire, restauration, enseignement général, langues…). <br> <br>La formation KERCODE a été la première formation labellisée GRANDE ECOLE DU NUMERIQUE à ouvrir en Bretagne en 2016.<br>Cette formation est destinée à former des publics éloignés de l’emploi au métier du numérique le plus en tension, celui de développeur.<br> Formation gratuite d’une durée de 6 mois, suivis de 3 mois en entreprises, sans pré-requis de niveau ou de connaissance en code. Le recrutement se fait essentiellement sur les motivations.
+                </p> 
                 <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/vannes">Greta Bretagne Sud Vannes</a>
                 <br />
                 <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/kercode">Formation Kercode</a>
@@ -159,5 +165,5 @@
 
     </div> <!-- ./container -->  
 
-<br>c
+<br>
 @endsection

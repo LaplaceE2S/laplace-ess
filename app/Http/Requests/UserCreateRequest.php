@@ -27,20 +27,19 @@ class UserCreateRequest extends FormRequest
 
         return [
             'structure' => 'bail|required|min:3|max:20|string',
-            'statut' => 'bail|required|min:3|max:20|alpha',
+            'statut' => 'bail|required|min:3|max:20|string',
             'budget' => 'bail|required|numeric',
             'siret' => 'bail|required|max:'.$exp.'|numeric',
             'rue' => 'bail|required|min:3|max:50|string',
             'postal' => 'bail|required|max:100000|numeric',
-            'ville' => 'bail|required|min:3|max:20|alpha',
-            'nom' => 'bail|required|min:3|max:20|alpha',
-            'prenom' => 'bail|required|min:3|max:20|alpha',
+            'ville' => 'bail|required|min:3|max:20|string',
+            'nom' => 'bail|required|min:3|max:20|string',
+            'prenom' => 'bail|required|min:3|max:20|string',
             'telephone' => 'bail|required|min:11|max:0989999999|numeric',
             'email' => 'bail|required|email|unique:users,email',
             'url' => 'url',
             'etp' => 'bail|required|numeric',
             'finabo' => 'numeric'
-
         ];
     }
 }

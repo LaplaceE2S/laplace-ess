@@ -8,7 +8,15 @@ Créer une offre
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1>{{ __("Créer une Offre") }}</h1></div>
+                <div class="card-header"><h1>{{ __("Créer une Offre") }}</h1>
+                    <p>Complétez le formulaire pour créer votre offre.</p>
+                    <p>Une structure intéressée par votre offre vous contactera.</p>
+                    <p>Vous recevrez le message de cette structure sur votre espace membre.</p>
+                    <ul>
+                        <li>&ndash; Soit l'offre correspond et vous pouvez générer une fiche récapitulative directement.</li>
+                        <li>&ndash; Soit vous engagez une discussion pour adapter l'offre à la demande et la structure demandeuse devra revenir à cette annonce pour vous autoriser à générer la fiche récapitulative.</li>
+                    </ul>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('store_offre') }}">
@@ -18,7 +26,7 @@ Créer une offre
                         <!-- label type -->
                         <div class="form-group {!! $errors->has('type') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('typeL', 'type :') !!}
+                        {!! Form::label('typeL', 'Type :') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::label('type2L', $element) !!}
@@ -52,7 +60,7 @@ Créer une offre
                         <!-- label Compétence -->
                         <div class="form-group {!! $errors->has('comp') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('competenceL', 'choisssez une compétence') !!}
+                        {!! Form::label('competenceL', 'Choisssez une compétence') !!}
                         </div>
                         <div class="col-md-6">
                          {!! Form::select('comp', $liste);!!}
@@ -111,7 +119,7 @@ Créer une offre
                         <!-- label fréquence -->
                         <div class="form-group {!! $errors->has('frequence') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('frequenceL', 'fréquence : ') !!}
+                        {!! Form::label('frequenceL', 'Fréquence : ') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::label('semaineL', 'semaine : ') !!}
@@ -137,7 +145,7 @@ Créer une offre
                         <!-- label besoin -->
                         <div class="form-group {!! $errors->has('besoin') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('besoinL', 'besoin : ') !!}
+                        {!! Form::label('besoinL', 'Besoin : ') !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::label('ponctuelL', 'ponctuel : ') !!}
@@ -163,7 +171,7 @@ Créer une offre
                         <!-- label deplacement -->
                         <div class="form-group {!! $errors->has('deplacement') ? 'has-error' : '' !!} row">
                         <div class='col-md-4 col-form-label text-md-right'>
-                        {!! Form::label('deplacementL', "distance déplacement :" ) !!}
+                        {!! Form::label('deplacementL', "Distance déplacement :" ) !!}
                         </div>
                         <div class="col-md-6">
                         {!! Form::number('deplacement', null, ['class' => 'form-control']) !!}
@@ -175,7 +183,7 @@ Créer une offre
                                                     <!-- label service -->
                             <div class="form-group {!! $errors->has('service') ? 'has-error' : '' !!} row">
                             <div class='col-md-4 col-form-label text-md-right'>
-                            {!! Form::label('serviceL', 'service : ') !!}
+                            {!! Form::label('serviceL', 'Service : ') !!}
                             </div>
                             <div class="col-md-6">
                             {!! Form::label('prestationL', 'prestation : ') !!}
@@ -200,8 +208,8 @@ Créer une offre
                             </div>
                         
 
-                            {{ Form::submit('Envoyer!', ['class' => 'btn btn-outline-success my-2 my-sm-0 href']) }}
-                            {{ Form::close() }}
+                            {{ Form::submit('Envoyer', ['class' => 'btn btn-outline-success my-2 my-sm-0 href']) }}
+                        
 
                     </form>
                 </div>
