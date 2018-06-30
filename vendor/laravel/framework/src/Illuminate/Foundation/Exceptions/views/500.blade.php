@@ -2,4 +2,4 @@
 
 @section('title', 'Erreur')
 
-@section('message', 'Oups, je crois qu'il y a un problème ...')
+@section('message', "Oups, je crois qu'il y a un problème ...")
