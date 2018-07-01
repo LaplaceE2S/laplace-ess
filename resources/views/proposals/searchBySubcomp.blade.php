@@ -37,7 +37,9 @@ Recherche annonce par compétences
   <p>{{ $offre->duree->format('%a jour(s)') }}</p>
   @if (Auth::user()->type > 0)<p>{{ $offre->lieu }}</p>@endif
   </div>
+  @if(Auth::user()->type == 1)
   <a class='btn btn-outline-success my-2 my-sm-0 href ' href ='../proposal/voir_offre/{{$offre->proposalId}}'> Voir les détails de l'offre</a>
+  @endif
 </div>
 
 @endforeach
@@ -66,7 +68,9 @@ Recherche annonce par compétences
   <p>{{ $demande->duree->format('%a jour(s)') }}</p>
   @if (Auth::user()->type > 0)<p>{{ $demande->lieu }}</p>@endif
   </div>
+  @if(Auth::user()->type == 1)
   <a class='btn btn-outline-success my-2 my-sm-0 href ' href ='../proposal/voir_demande/{{$demande->proposalId}}'> Voir les détails de la demande</a>
+  @endif
 </div>
 
 @endforeach

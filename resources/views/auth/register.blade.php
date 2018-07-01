@@ -15,11 +15,11 @@
                         
                     </div>
 
-                    <form method="POST" action="{{ route('register') }}" onSubmit="return verif_formulaire()">
+                    <form id="formE"method="POST" action="{{ route('register') }}" onSubmit="return verif_formulaire()">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-6 col-form-label text-md-right">{{ __("Structure de l'économie sociale et solidaire") }}</label>
+                            <label for="name"  class="col-md-6 col-form-label text-md-right">{{ __("Structure de l'économie sociale et solidaire") }}</label>
 
                             <!-- STRUCTURE -->
                             <div class="col-md-6">
@@ -105,14 +105,8 @@
 
                         <!-- button CREATION utilisateur -->
                         <div class="form-group row mb-0">
-                        <div id="pop" style="display:none;">
-                    <!-- Button trigger modal -->
-                            <button id="submit" type="submit" class="btn btn-primary">
-                                    {{ __("S'enregistrer") }}
-                            </button>
-                        </div>
                             <div class="col-md-6 offset-md-6">
-
+                                <input type="button" id="check" value="s'enregistrer" class="btn btn-primary"/>  
                                 <button id="submit" type="submit" class="btn btn-primary">
                                     {{ __("S'enregistrer") }}
                                 </button>
@@ -125,7 +119,7 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript" src="js/loginControl.js"></script>
 @endsection
 
 
