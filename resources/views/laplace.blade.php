@@ -87,7 +87,7 @@
  </div> <!-- ./row -->
 
             <div class="row justify-content-center">
-                <a id="linkPlaquette" href="/laplace-ess/public/uploads/pdf/osez-emploi-partage.pdf" class="btn btn-success btn-lg active" role="button" aria-pressed="true" target="_blank">Osez l'emploi partagé</a>
+                <a id="linkPlaquette" href="http://laplace-ess.fr/public/uploads/pdf/osez-emploi-partage.pdf" class="btn btn-success btn-lg active" role="button" aria-pressed="true" target="_blank">Osez l'emploi partagé</a>
             </div>  
     
 </div> <!-- ./container --> 

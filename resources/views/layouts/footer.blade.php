@@ -42,10 +42,10 @@
                 <a href="{{ route('mentionlegale') }}" class="text-color-footer">Mentions légales</a>
               </li>
               <li>
-                <a href="{{ route('cgu') }}" class="text-color-footer">Conditions générales d'utilisations</a>
+                <a href="{{ route('cgu') }}" class="text-color-footer">Conditions générales d'utilisation</a>
               </li>
               <li>
-                <a href="{{ route('cgv') }}" class="text-color-footer">Conditions générales de ventes</a>
+                <a href="{{ route('cgv') }}" class="text-color-footer">Conditions générales de vente</a>
               </li>
             </ul>
           </div>

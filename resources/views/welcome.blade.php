@@ -228,8 +228,8 @@
 
 <div id="infosEss" class="jumbotron jumbotron-fluid mx-0">
   <div class="container">
-    <h5 class="h5">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités.</h5>
-    <p class="lead">Vous recherchez une compétence particulière pour développer votre activité, de manière ponctuelle ou continue mais à temps partiel.<br> Vous souhaitez améliorer l'efficacité de votre structure, en allégeant la charge de travail des salarié-e-s sur les fonctions supports.</p><p class="lead">Vous disposez de compétences à partager et/ou de temps salarié disponible.<br>Vous souhaitez consolider ou pérenniser l'emploi dans votre structure.</p>
+    <h5 class="h5">Vous êtes une structure de l'économie sociale et solidaire...</h5>
+    <p class="lead">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités. Vous recherchez une compétence particulière pour développer votre activité, de manière ponctuelle ou continue mais à temps partiel.<br> Vous souhaitez améliorer l'efficacité de votre structure, en allégeant la charge de travail des salarié-e-s sur les fonctions supports.</p><p class="lead">Vous disposez de compétences à partager et/ou de temps salarié disponible.<br>Vous souhaitez consolider ou pérenniser l'emploi dans votre structure.</p>
     <a href="{{ route('structures') }}" class="btn btn-warning">Comment ça marche</a>
   </div>
 </div>
@@ -247,7 +247,7 @@
     <a href="https://europa.eu/european-union/index_fr"><img src="http://laplace-ess.fr/public/images/logo_partenaires/2.FESI_logoRVB.jpg" height="50" width="50" alt="europe"></a>
     </div>
     <div class="slide">
-      <a href="http://www.bretagne.bzh/jcms/l_22662/fr/promouvoir-une-economie-sociale-et-solidaire"><img src=".http://laplace-ess.fr/public/images/logo_partenaires/3.Logo_region_bretagne.jpeg" height="50" width="50" alt="bretagne"></a>
+      <a href="http://www.bretagne.bzh/jcms/l_22662/fr/promouvoir-une-economie-sociale-et-solidaire"><img src="http://laplace-ess.fr/public/images/logo_partenaires/3.bretagne.jpg" height="50" width="50" alt="bretagne"></a>
     </div>
     <div class="slide">
       <a href="http://bretagne.direccte.gouv.fr/l-Economie-sociale-et-solidaire-ESS-en-Bretagne"><img src="http://laplace-ess.fr/public/images/logo_partenaires/4.Logo_direccte.jpg" height="50" width="50" alt="direccte"></a>

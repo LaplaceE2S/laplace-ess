@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title', "Les conditions générales d'utilisations")
+@section('title', "Les conditions générales d'utilisation")
 
 @section('content')
 <br>

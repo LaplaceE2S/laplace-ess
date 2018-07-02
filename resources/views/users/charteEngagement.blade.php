@@ -57,7 +57,7 @@
   <div class="row">
   
     <div class="col">
-      <a class="btn btn-primary btn-block" href="http://laplace-ess.fr/public/uploads/pdf/charte_laplace.pdf" role="button" target="_blank">Télécharger la charte</a>
+      <a class="btn btn-success btn-block" href="http://laplace-ess.fr/public/uploads/pdf/charte_laplace.pdf" role="button" target="_blank">Télécharger la charte</a>
     </div>
 
     <div class="col">

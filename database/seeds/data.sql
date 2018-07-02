@@ -20,7 +20,7 @@ INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skil
 INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Rechercher des sources de financement, monter un dossier (en particulier fonds européens) ','',2);
 INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Etablir un budget prévisionnel, un plan de trésorerie, un plan de financement d’investissement','',2);
 
-INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Gestion de la comptabilité générale ou analytique','',3);
+INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Aide administrative','',3);
 INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Les assurances','',3);
 INSERT INTO `sub_skills`(`created_at`, `updated_at`, `nom`, `description`, `skills_id`) VALUES ('now','now','Veille sur la réglementation','',3);
 

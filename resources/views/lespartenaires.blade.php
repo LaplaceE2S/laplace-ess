@@ -31,7 +31,7 @@
 <hr>
         <!-- Région Bretagne -->
         <div class="row">
-            <img id="logoess" src=".http://laplace-ess.fr/public/images/logo_partenaires/3.Logo_region_bretagne.jpeg" alt="logo Région Bretagne" height="70" width="70">   
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/3.bretagne.jpg" alt="logo Région Bretagne" height="70" width="70">   
             <h4 class="mx-2">Région Bretagne</h4>
             <div class="col-md-12 mt-4">
                 <p>La Région Bretagne a choisi d’accompagner la démarche entrepreneuriale de l'ESS à travers trois axes d’intervention : la structuration des réseaux, le développement des activités et la promotion de l’innovation sociale.</p>
@@ -141,12 +141,6 @@
         </div> <!-- ./row -->
 <hr>
 
-        <!-- MAIF -->
-        <div class="row">
-            <h4 class="my-2">Maif</h4>
-            <p></p>
-        </div> <!-- ./row -->
-<hr>
         <!-- GRETA -->
         <div class="row"> 
             <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/greta.png" alt="logo Greta Bretagne Sud" height="70" width="70">
@@ -161,7 +155,15 @@
                 <a href="http://greta-bretagne.ac-rennes.fr/portail/web/greta-de-bretagne-sud/kercode">Formation Kercode</a>
             </div>
         </div> <!-- ./row -->
-
+    <hr>
+        <!-- MAIF -->
+        <div class="row"> 
+            <img id="logoess" src="http://laplace-ess.fr/public/images/logo_partenaires/7.Maif.jpg" alt="logo Maif" height="70" width="70">
+            <h4 class="mx-2">Maif</h4>
+        </div>
+        <a href="https://ess.maif.fr/ess-action">www.ess.maif.fr/ess-action</a>
+        <br />
+       
 
     </div> <!-- ./container -->  
 
