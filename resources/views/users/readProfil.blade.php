@@ -6,7 +6,7 @@
 
          
 <div class="container-fluid">
-    <div class="row" >
+    <div class="row">
         <div class="col-12">
             <div id="infoProfil" class="card card-inverse">
                 <div class="card-block">

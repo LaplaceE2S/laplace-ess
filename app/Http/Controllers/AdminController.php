@@ -189,7 +189,6 @@ class AdminController extends Controller
     'statut' => 'required|min:3|max:20|string',
     'budget' => 'required|numeric',
     'etp' => 'required|numeric',
-    'siret' => 'bail|required|max:'.$exp.'|numeric',
     'rue' => 'required|min:3|max:50|string',
     'postal' => 'required|max:100000|numeric',
     'ville' => 'required|min:3|max:20|alpha',
@@ -221,7 +220,7 @@ class AdminController extends Controller
             Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
 
             $user = Auth::user();
-            $user->avatar = '/laplace-ess/public/uploads/avatars/' . $filename;
+            $user->avatar = 'http://laplace-ess.fr/public/uploads/avatars/' . $filename;
             $user->save();
         }
 

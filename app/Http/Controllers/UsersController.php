@@ -155,8 +155,8 @@ class UsersController extends Controller
     'ville' => 'required|min:3|max:20|alpha',
     'name' => 'required|min:3|max:20|string',
     'prenom' => 'required|min:3|max:20|string',
-    'telephone' => 'bail|required|min:11|max:0989999999|numeric',
-    'email' => 'bail|required|email',
+    'telephone' => 'required|min:11|max:0989999999|numeric',
+    'email' => 'required|email',
     'url' => 'url',
     'avatar' => 'image'
   ]);
@@ -180,8 +180,10 @@ class UsersController extends Controller
             $avatar = $request->file('avatar');
 
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            $path = public_path('images/cars/'.$filename);
+            // ->save(public_path("uploads\avatars\\") . $filename);
 
-            Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+            Image::make($avatar)->resize(150, 150)->save("uploads\avatars\\" .$filename);
 
             $user = Auth::user();
             $user->avatar = 'http://laplace-ess.fr/public/uploads/avatars/' . $filename;

@@ -68,7 +68,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $avatar = "/laplace-ess/public/uploads/avatars/avatar_utilisateur.png";
+        $avatar = "http://laplace-ess.fr/public/uploads/avatars/avatar_utilisateur.png";
 
         $user = new User;
         $user->name = request('name');
