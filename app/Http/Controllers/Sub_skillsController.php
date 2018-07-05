@@ -22,6 +22,7 @@ class Sub_skillsController extends Controller
    *
    * @return Response
    */
+  //listing des sous-compétences
   static public function getListWithSkill($comp)
   {
     $subSkills = DB::table('sub_skills')

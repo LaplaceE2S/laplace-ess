@@ -33,6 +33,7 @@
 	  			</tbody>
 			</table>
 		</div>
+		<!-- Pagination -->
 		{{ $utilisateurs->links() }}
 	</div>
 @endsection

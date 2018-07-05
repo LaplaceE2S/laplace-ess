@@ -39,6 +39,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //Annonces par compétences
   public function showBySkill($comp)
   {
     $today = date("Y-m-d");
@@ -103,6 +104,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  // Annonces par sous compétences
   public function showBySubSkill($subcomp)
   {
     $today = date("Y-m-d");
@@ -154,6 +156,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //searchbar
   public function searchSubRewrite(Request $request)
   {
     $id = $request->get('subSkillSearch');
@@ -166,6 +169,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //menu annonnces
   public function create()
 
   {
@@ -178,6 +182,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //Form Offre
   public function formOffre($comp)
   {
     $companieId= CompaniesController::WhoAmI();
@@ -193,6 +198,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //Form demande
   public function formDemande($comp)
   {
     
@@ -209,6 +215,7 @@ class ProposalsController extends Controller
    *
    * @return Response
    */
+  //Creation selon Offre ou Demande
   public function store(ProposalRequest $request)
   { 
 
@@ -312,6 +319,7 @@ class ProposalsController extends Controller
    * @param  request $request
    * @return View
    */
+  //form Offre
   public function updateFormOffre(request $request)
   {
     
@@ -376,6 +384,7 @@ class ProposalsController extends Controller
    * @param  request $request
    * @return View
    */
+  //Form Demande
   public function updateFormDemande(request $request)
   {
     $id=$request->proposalId;
@@ -425,7 +434,7 @@ class ProposalsController extends Controller
     return view('proposals.updateFormDemande', compact( 'proposition','menu','compName','liste','frequence','besoin','service','id'));
 
   }
-
+  //Si validé
   public function valid(Request $request){
     $proposal = Proposals::find($request->proposalId);
     $proposal->is_valid = 0;
@@ -433,7 +442,7 @@ class ProposalsController extends Controller
     $menu = 'annonces';
     return redirect()->route('proposalUnvalidAdmin');
   }
-
+  //si unvalidé
   public function unvalid(Request $request){
     $proposal = Proposals::find($request->proposalId);
     $proposal->is_valid = 1;
@@ -442,6 +451,7 @@ class ProposalsController extends Controller
 
     return redirect()->route('proposalUnvalidAdmin');
   }
+  //modif Offre
   public function updateOffre(Request $request){
 
     
@@ -496,6 +506,7 @@ class ProposalsController extends Controller
       return redirect()->route('proposalAttente');
     }  
   }
+  //modif Demande
   public function updateDemande(Request $request){
 
     
@@ -566,6 +577,7 @@ class ProposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  //afficher offre selon id
   public function voir_offre($id)
   { $proprietaire = false;
     $idUser = Auth::user()->id;
@@ -627,6 +639,7 @@ class ProposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  // demande selon id
   public function voir_demande($id)
   {
     $proprietaire = 0;
@@ -709,6 +722,7 @@ class ProposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  //suppression
   public function destroy(request $request)
   {
     $id=$request->proposalId;
@@ -719,7 +733,7 @@ class ProposalsController extends Controller
     return view('proposals.index', compact('message','menu'));
   }
 
-
+  //en attente
   public function  attente(){
 
     $id = Auth::user()->id;
@@ -750,7 +764,7 @@ class ProposalsController extends Controller
     $menu = 'annonces';
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
-
+  //attente admin
   public function  adminWait(){
 
     $proposals = DB::table('proposals')
@@ -781,7 +795,7 @@ class ProposalsController extends Controller
     return view('proposals.gestion', compact('demandes','offres','menu'));
 
   }
-
+  //show proposition
   public function  publie(){
     $id = Auth::user()->id;
     $today = date("Y-m-d");
@@ -811,7 +825,7 @@ class ProposalsController extends Controller
     $menu = 'annonces';
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
-
+  //show admin proposition
   public function  publieAdmin(){
     $id = Auth::user()->id;
     $today = date("Y-m-d");
@@ -842,7 +856,7 @@ class ProposalsController extends Controller
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
   
-
+  //proposition archivé
   public function  archive(){
     $id = Auth::user()->id;
     $today = date("Y-m-d");
@@ -874,7 +888,7 @@ class ProposalsController extends Controller
     $menu = 'annonces';
     return view('proposals.gestion', compact('demandes','offres','menu'));
   }
-
+  //Propo admin archivé
   public function  adminArchive(){
     $id = Auth::user()->id;
     $today = date("Y-m-d");

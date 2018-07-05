@@ -58,19 +58,19 @@
             </li>
             <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="https://www.facebook.com/laplace.e2s/"><i class="fab fa-facebook-f"></i></a>
             </li>
-            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="http://www.e2s-paysdevannes.fr/pepiniere-ess/"><i class="fab fa-linkedin-in"></i></a>
+            <li class="list-inline-item"><a class="social-icon text-center" target="_blank" href="https://www.linkedin.com/company/la-place-e2s/"><i class="fab fa-linkedin-in"></i></a>
           </ul>
            </div>
            
       <!-- meteo -->
-      <!-- <div class="container">
+      <div class="container">
         <label for="location">Entrer votre ville</label>
         <input id="location" type="text">
         <button class="btn-success" id="weatherLocation">Obtenez l'humidité actuelle!</button>
           <div class="errors"></div>
           <div class="showHumidity"></div>
           <div class="showTemp"></div>
-      </div> -->
+      </div>
        
       
       <!-- /.footer-links -->

@@ -17,6 +17,7 @@ class MessagerieController extends Controller
    *
    * @return Response
    */
+  //Messagerie
   public function index()
   {
     $id = Auth::user()->id;
@@ -41,6 +42,7 @@ class MessagerieController extends Controller
    *
    * @return Response
    */
+  // Messagerie envoie
   public function sendBox()
   {
     $id = Auth::user()->id;
@@ -64,6 +66,7 @@ class MessagerieController extends Controller
    *
    * @return Response
    */
+  //Lire messages
   public function read(Request $request)
   {
 
@@ -94,6 +97,7 @@ class MessagerieController extends Controller
    *
    * @return Response
    */
+  //Form envoie message
   public function formAnswer(Request $request)
   {
     $messages='';
@@ -108,7 +112,7 @@ class MessagerieController extends Controller
     return view('message.user.answer', compact('messages','menu','dest'));
   }
 
-
+  //répondre à un message
   public function storeAnswer(Request $request)
   {
     
@@ -157,7 +161,7 @@ class MessagerieController extends Controller
     return view('users.confirmCreate', compact('msg','menu','title'));
   
   }
-
+  //Messagerie pr annonce
   public function negocier(Request $request)
   {
     
@@ -168,6 +172,7 @@ class MessagerieController extends Controller
     $proposalId = $request->proposalId;
     return view('message.user.answer', compact('messages','menu','dest','proposalId'));
   }
+  
   public function authorisation(Request $request){
 
     $structure = Companies::find($request->dest);

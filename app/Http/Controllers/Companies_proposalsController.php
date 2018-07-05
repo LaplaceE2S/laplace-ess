@@ -40,6 +40,7 @@ class Companies_proposalsController extends Controller
    *
    * @return Response
    */
+  // Form creation Offre
   public function FormFicheWithOffre(Request $request)
   {
     if(isset($request->dest)){
@@ -105,6 +106,7 @@ class Companies_proposalsController extends Controller
    *
    * @return Response
    */
+  // Form creation Demande
   public function FormFicheWithDemande(Request $request)
   {
     
@@ -156,6 +158,7 @@ class Companies_proposalsController extends Controller
 
   }
   
+  //Fiche recap pour une Demande
   public function create_recap_demande(Request $request){
     
     
@@ -215,7 +218,7 @@ class Companies_proposalsController extends Controller
     }  
 
   }
-
+  //Fiche recap pour une Offre
   public function create_recap_offre(Request $request){
     
     
@@ -291,6 +294,7 @@ class Companies_proposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  //Envoie de la fiche recap
   public function envoi()
   {
     $uId = Auth::user()->id;
@@ -335,6 +339,7 @@ class Companies_proposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  //Reception de la fiche recap
   public function reception()
   {
     $uId = Auth::user()->id;
@@ -378,6 +383,7 @@ class Companies_proposalsController extends Controller
    * @param  int  $id
    * @return Response
    */
+  //Valider la fiche recap
   public function valide()
   {
     $uId = Auth::user()->id;
@@ -417,7 +423,7 @@ class Companies_proposalsController extends Controller
     return view('recap.gestion', compact('recaps','menu'));
   }
 
-
+  // Message de validité pour fiche recap
   public function lastValid(Request $request){
 
     $proposal = Companies_proposals::find($request->id);
@@ -430,6 +436,7 @@ class Companies_proposalsController extends Controller
     return view('users.confirmCreate', compact('msg','menu','title'));
 
   }
+  //
   public function recap_wait(){
     $proposals = DB::table('companies_proposals')
     
@@ -459,6 +466,7 @@ class Companies_proposalsController extends Controller
 
   }
 
+  // Vue fiche recap
   public function recap(){
     $proposals = DB::table('companies_proposals')
     

@@ -6,9 +6,6 @@ use Illuminate\Http\Request;
 use App\Proposals;
 use Illuminate\Support\Facades\DB;
 
-// use App\Http\Requests;
-// use App\Http\Controllers\Controller;
-
 class WelcomeController extends Controller
 {
     public function index()

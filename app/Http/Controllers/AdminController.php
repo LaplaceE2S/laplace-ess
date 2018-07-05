@@ -45,6 +45,7 @@ class AdminController extends Controller
         ->where('type', '=', 0)
         ->join('users', 'users.id', '=', 'companies.users_id')
         ->orderBy('users.created_at', 'desc')
+        //pagination
         ->paginate(10);
 
         $menu = 'structures';
@@ -217,10 +218,10 @@ class AdminController extends Controller
 
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
 
-            Image::make($avatar)->resize(150, 150)->save(public_path("uploads\avatars\\") . $filename);
+            Image::make($avatar)->resize(150, 150)->save(public_path("images/") . $filename);
 
             $user = Auth::user();
-            $user->avatar = 'http://laplace-ess.fr/public/uploads/avatars/' . $filename;
+            $user->avatar = 'http://laplace-ess.fr/public/images/' . $filename;
             $user->save();
         }
 
@@ -342,14 +343,14 @@ class AdminController extends Controller
     // view convention
     public function convention()
     {
-      $menu = 'documents';
+      $menu = 'document';
       return view('admins.convention', compact('menu'));
     }
 
     // view avenant
     public function avenant()
     {
-      $menu = 'documents';
+      $menu = 'document';
       return view('admins.avenant', compact('menu'));
     }
 

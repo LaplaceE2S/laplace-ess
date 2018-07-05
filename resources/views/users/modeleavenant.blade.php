@@ -44,7 +44,7 @@
   <div class="row justify-content-center">
 
     <div class="col-3">
-      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/avenant.pdf" role="button" target="_blank">Télécharger l' avenant</a>
+      <a class="btn btn-primary btn-block" href="http://laplace-ess.fr/public/uploads/pdf/avenant.pdf" role="button" target="_blank">Télécharger l' avenant</a>
     </div>
   </div>
 

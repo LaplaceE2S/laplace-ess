@@ -47,25 +47,5 @@ $type = Auth::user()->type;
 </div>
 @endif
 
-@if($type == 2)
-<!-- Message quand admin type = 2 admin-->
-<div class="row">
-  <div class="col-12">
-  <h1 class="text-center">Bienvenue dans ton espace d'administration !</h1>
-  </div>
-  <div class="col-6" style="margin:auto;">
-  <img src="http://laplace-ess.fr/public/images/accueilvisuel.png" alt="visuel accueil" height="500" width="500"/>
-  </div>
-  <div class="col-4">
-  <p>Recherche des annonces.</p>
-  <p>Modère les annonces des structures abonnées.</p>
-  <p>Suis les inscriptions.</p>
-  <p>Valide les abonnements.</p>
-  <p>Dialogue avec les structures abonnées.</p>
-  <p>Reçois les fiches récapitulatives de mutualisation.</p>
-  <p>A toi de jouer !</p>
-  </div>
-</div>
-@endif
 
 @endsection

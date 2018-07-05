@@ -74,6 +74,7 @@ class RegisterController extends Controller
         $user->name = request('name');
         $user->email = request('email');
         $user->avatar = $avatar;
+        //password crypté
         $user->password = Hash::make(request('password'));
         $user->type = User::DEFAULT_TYPE;
         $user->save();

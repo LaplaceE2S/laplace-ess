@@ -13,7 +13,7 @@
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Tableau de bord') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('proposalUnvalidAdmin') }}">{{ __('Les annonces') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('inscrits') }}">{{ __(' Les structures') }}</a>
-            <a class="dropdown-item essbg3" href="{{ route('convention') }}">{{ __(' Les documents') }}</a>
+            <a class="dropdown-item essbg3" href="{{ route('conventionAdmin') }}">{{ __(' Les documents') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('allMessages') }}">{{ __('Mes messages') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('profilAdministrateur') }}">{{ __('Mes données') }}</a>
             <a class="dropdown-item essbg3" href="{{ route('logout') }}"              onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}</a>

@@ -5,6 +5,7 @@
 @section('content')
     <br>
     <div class="col-sm-8">
+		<!-- si une certaine clé est présente en session -->
     	@if(session()->has('ok'))
 			<div class="alert alert-success alert-dismissible">{!! session('ok') !!}</div>
 		@endif
