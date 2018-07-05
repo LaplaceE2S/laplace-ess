@@ -182,7 +182,7 @@
                             {!! Form::label('photo', 'Logo') !!}
                             </div>
                         <div class="col-md-6">
-                            <img class="btn-md" src="{{ $utilisateur->avatar}}" alt="photo de profil par défaut">  
+                            <img class="btn-md" src="{{ $utilisateur->avatar}}" alt="logo par défaut">  
                             {!! $errors->first('photo', '<small class="help-block">:message</small>') !!}
                         </div>
                         </div>

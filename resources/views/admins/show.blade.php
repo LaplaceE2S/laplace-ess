@@ -28,7 +28,7 @@
         </div>
         <!-- avatar -->
         <div class="col-md-4 col-sm-4 text-center">
-            <img class="btn-md" src="{{ $utilisateur->avatar }}" alt="" style="border-radius:50%;">
+            <img class="btn-md" src="{{ $utilisateur->avatar }}" alt="logo" style="border-radius:50%;">
         </div>     
 
         <div class="col-md-12 col-sm-12">
