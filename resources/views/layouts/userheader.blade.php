@@ -24,7 +24,7 @@
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
             @if(Auth::user()->type == 1)
             <a id="A" class="dropdown-item essbg3" href="{{ route('UserProposalsIndex') }}">{{ __('Annonces') }}</a>
-            <a id="A" class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Propositions') }}</a>
+            <a id="A" class="dropdown-item essbg3" href="{{ route('recap_envoi') }}">{{ __('Propositions') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('convention') }}">{{ __('Documents') }}</a>
             <a id="A" class="dropdown-item essbg3" href="{{ route('allMessages') }}">{{ __('Messages') }}</a>
             @endif
