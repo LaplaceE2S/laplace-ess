@@ -150,7 +150,7 @@
                         <!-- Label PHOTO-->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Photo</label>
-                            <img class="btn-md my-2" src="{{ Auth::user()->avatar }}" alt="photo de profil par défaut" >
+                            <img class="btn-md my-2" src="{{ Auth::user()->avatar }}" alt="logo par défaut" >
                         </div>
              
                         <!-- bouton CREER SON PROFIL -->

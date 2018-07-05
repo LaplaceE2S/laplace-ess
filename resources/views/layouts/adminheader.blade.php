@@ -7,7 +7,7 @@
     
         <ul>
             <li class="nav-item dropdown right-item-nav mx-5">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ CompaniesController::WhoIsMyStruct() }} <img class="avatarProfil" src="{{ Auth::user()->avatar }}" alt"logo de la structure"></a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ CompaniesController::WhoIsMyStruct() }} <img class="avatarProfil" src="{{ Auth::user()->avatar }}" alt="logo de la structure"></a>
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('admin') }}">{{ __('Tableau de bord') }}</a>

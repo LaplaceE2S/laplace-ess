@@ -60,9 +60,9 @@
                             <!-- label Email -->
                             <div class="col-xs-12 col-sm-6 no-padding-bottom">
                             <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
-                            <!-- élément de formulaire (Form) de type "email" avec le nom "email" avec une valeur nulle et avec les attributs "class" et "placeholder" -->
+
                                 {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
-                            <!-- teste la présence d'une erreur pour chaque contrôle en ajustant le style et en affichant le texte de l'erreur si nécessaire avec la méthode first -->
+
                                 {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
 
                             </div>

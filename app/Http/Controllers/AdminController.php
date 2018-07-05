@@ -45,7 +45,6 @@ class AdminController extends Controller
         ->where('type', '=', 0)
         ->join('users', 'users.id', '=', 'companies.users_id')
         ->orderBy('users.created_at', 'desc')
-        //pagination
         ->paginate(10);
 
         $menu = 'structures';
@@ -183,22 +182,20 @@ class AdminController extends Controller
     $id= Auth::id();
     $id= User::find($userId = Auth::id());
 
-    $exp = bcpow('10', '14', 0)-1;
-
     $validator = Validator::make($request->all(), [
-    'structure' => 'required|min:3|max:20|string',
-    'statut' => 'required|min:3|max:20|string',
-    'budget' => 'required|numeric',
-    'etp' => 'required|numeric',
-    'rue' => 'required|min:3|max:50|string',
-    'postal' => 'required|max:100000|numeric',
-    'ville' => 'required|min:3|max:20|alpha',
-    'name' => 'required|min:3|max:20|string',
-    'prenom' => 'required|min:3|max:20|string',
-    'telephone' => 'bail|required|min:11|max:0989999999|numeric',
-    'email' => 'bail|required|email',
-    'url' => 'url',
-    'avatar' => 'image'
+        'structure' => 'bail|required|min:3|max:20|string',
+        'statut' => 'bail|required|min:3|max:20|string',
+        'budget' => 'bail|required|numeric',
+        'etp' => 'bail|required|min:0|max:100|numeric',
+        'rue' => 'bail|required|min:3|max:50|string',
+        'postal' => 'bail|required|max:100000|numeric',
+        'ville' => 'bail|required|min:3|max:20|alpha',
+        'name' => 'bail|required|min:3|max:20|string',
+        'prenom' => 'bail|required|min:3|max:20|string',
+        'telephone' => 'bail|required|min:11|max:0989999999|numeric',
+        'email' => 'bail|required|email',
+        'url' => 'url',
+        'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
   ]);
 
     if ($validator->fails()) {
@@ -221,7 +218,7 @@ class AdminController extends Controller
             Image::make($avatar)->resize(150, 150)->save(public_path("images/") . $filename);
 
             $user = Auth::user();
-            $user->avatar = 'http://laplace-ess.fr/public/images/' . $filename;
+            $user->avatar = '../public/images/' . $filename;
             $user->save();
         }
 

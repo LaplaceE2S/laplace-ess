@@ -47,5 +47,4 @@ $type = Auth::user()->type;
 </div>
 @endif
 
-
 @endsection

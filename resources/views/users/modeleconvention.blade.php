@@ -40,7 +40,7 @@
   <div class="row justify-content-center">
 
     <div class="col-3">
-      <a class="btn btn-primary btn-block" href="http://laplace-ess.fr/public/uploads/pdf/convention.pdf" role="button" target="_blank">Télécharger la convention</a>
+      <a class="btn btn-primary btn-block" href="/laplace-ess/public/uploads/pdf/convention.pdf" role="button" target="_blank">Télécharger la convention</a>
     </div>
   </div>
 

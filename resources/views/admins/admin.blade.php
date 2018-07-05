@@ -2,7 +2,6 @@
 @section('title', 'Tableau de bord admin')
 @section('content')
 
-<!-- Message quand admin type = 2 admin-->
 <div class="row">
   <div class="col-12">
   <h1 class="text-center">Bienvenue dans ton espace d'administration !</h1>

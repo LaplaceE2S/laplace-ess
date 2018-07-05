@@ -154,7 +154,7 @@
 <!-- Info générale -->
 <div class="card card-inverse p-3 text-center">
   <blockquote class="card-blockquote my-4">
-  <h2 style="color:#f49712;">Découvrez les Compétences et <br />Sous-compétence du service La Place</h2>
+  <h2 style="color:#f49712;">Découvrez les Compétences et <br />Sous-compétences du service La Place</h2>
   </blockquote>
 </div>
 
@@ -229,7 +229,7 @@
 <div id="infosEss" class="jumbotron jumbotron-fluid mx-0">
   <div class="container">
     <h5 class="h5">Vous êtes une structure de l'économie sociale et solidaire...</h5>
-    <p class="lead">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités. Vous recherchez une compétence particulière pour développer votre activité, de manière ponctuelle ou continue mais à temps partiel.<br> Vous souhaitez améliorer l'efficacité de votre structure, en allégeant la charge de travail des salarié-e-s sur les fonctions supports.</p><p class="lead">Vous disposez de compétences à partager et/ou de temps salarié disponible.<br>Vous souhaitez consolider ou pérenniser l'emploi dans votre structure.</p>
+    <p class="lead">Associations, coopératives, mutuelles et entreprises solidaires de toutes les tailles et de tous les secteurs d'activités. <br>Vous recherchez une compétence particulière pour développer votre activité, de manière ponctuelle ou continue mais à temps partiel.<br> Vous souhaitez améliorer l'efficacité de votre structure, en allégeant la charge de travail des salarié-e-s sur les fonctions supports.</p><p class="lead">Vous disposez de compétences à partager et/ou de temps salarié disponible.<br>Vous souhaitez consolider ou pérenniser l'emploi dans votre structure.</p>
     <a href="{{ route('structures') }}" class="btn btn-warning">Comment ça marche</a>
   </div>
 </div>

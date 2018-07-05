@@ -139,36 +139,30 @@ class UsersController extends Controller
 
   public function update(Request $request)
   {
-
     $id= Auth::id();
     $id= User::find($userId = Auth::id());
 
-    $exp = bcpow('10', '14', 0)-1;
-
     $validator = Validator::make($request->all(), [
-    'structure' => 'bail|required|min:3|max:20|string',
-    'statut' => 'bail|required|min:3|max:20|string',
-    'budget' => 'bail|required|numeric',
-    'etp' => 'bail|required|min:0|max:150|numeric',
-    'rue' => 'bail|required|min:3|max:50|string',
-    'postal' => 'bail|required|max:100000|numeric',
-    'ville' => 'bail|required|min:3|max:20|alpha',
-    'name' => 'bail|required|min:3|max:20|string',
-    'prenom' => 'bail|required|min:3|max:20|string',
-    'telephone' => 'bail|required|min:11|max:0989999999|numeric',
-    'email' => 'bail|required|email',
-    'url' => 'bail|url',
-    'avatar' => 'image'
+      'structure' => 'required|min:3|max:20|string',
+      'statut' => 'required|min:3|max:20|string',
+      'budget' => 'required|numeric',
+      'etp' => 'required|numeric',
+      'rue' => 'required|min:3|max:50|string',
+      'postal' => 'required|max:100000|numeric',
+      'ville' => 'required|min:3|max:20|alpha',
+      'name' => 'required|min:3|max:20|string',
+      'prenom' => 'required|min:3|max:20|string',
+      'telephone' => 'required|min:11|max:0989999999|numeric',
+      'email' => 'required|email',
+      'url' => 'url',
+    'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
   ]);
 
     if ($validator->fails()) {
-      return back()->withErrors($validator)->withInput();
+        return back()->withErrors($validator)->withInput();
     } 
     else{
-
-      //controle si email = emailunique ou email =! emailunique
-    
-        // référence table users
+        //référence table users
         $userId = Auth::id();
         $userId = User::find($userId = Auth::id());
 
@@ -177,19 +171,18 @@ class UsersController extends Controller
 
 
         if ($request->hasFile('avatar')) {
-            //Pour récupérer le fichier envoyé j'ai utilisé la requête et la méthode file
             $avatar = $request->file('avatar');
-            //Pour récupérer l'extension originelle on utilise la méthodegetClientOriginalExtension
+
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            //on enregistre l'image avec la méthode save
-            Image::make($avatar)->resize(150, 150)->save(public_path("images/") . $filename);
+
+            Image::make($avatar)->resize(150, 150)->save(public_path("images/") .$filename);
 
             $user = Auth::user();
-            $user->avatar = 'http://laplace-ess.fr/public/images/' . $filename;
+            $user->avatar = '../public/images/' . $filename;
             $user->save();
         }
 
-        // Référence table companies
+        //Référence table companies
         $companieId = CompaniesController::WhoAmI();
         $companie = Companies::find($companieId = CompaniesController::WhoAmI());
 
@@ -205,12 +198,11 @@ class UsersController extends Controller
         $companie->telephone = request('telephone');
         $companie->etp = request('etp');
         $companie->url = request('url');
-  
-  
-        // update data
+    
+    
+        //update data
         $userId->save();
         $companie->save();
-
         return redirect('/home');
     }
   }

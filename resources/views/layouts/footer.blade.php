@@ -63,14 +63,14 @@
            </div>
            
       <!-- meteo -->
-      <div class="container">
+      <!-- <div class="container">
         <label for="location">Entrer votre ville</label>
         <input id="location" type="text">
         <button class="btn-success" id="weatherLocation">Obtenez l'humidité actuelle!</button>
           <div class="errors"></div>
           <div class="showHumidity"></div>
           <div class="showTemp"></div>
-      </div>
+      </div> -->
        
       
       <!-- /.footer-links -->
