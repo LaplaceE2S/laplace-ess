@@ -18,7 +18,7 @@
 <div class="col-md-2">
             <ul>
                 <li class="nav-item dropdown left-item-nav">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ CompaniesController::WhoIsMyStruct() }} <img class="avatarProfil" src="{{ Auth::user()->avatar }}" alt"photo de profil"></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">{{ CompaniesController::WhoIsMyStruct() }} <img class="avatarProfil" src="{{ Auth::user()->avatar }}" alt="photo de profil"></a>
 
         <div class="dropdown-menu essbg2">
             <a class="dropdown-item essbg3" href="{{ route('home') }}">{{ __('Tableau de bord') }}</a>
