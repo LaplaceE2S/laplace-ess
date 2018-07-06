@@ -147,6 +147,7 @@ class UsersController extends Controller
       'statut' => 'required|min:3|max:20|string',
       'budget' => 'required|numeric',
       'etp' => 'required|numeric',
+      'siret' => 'numeric',
       'rue' => 'required|min:3|max:50|string',
       'postal' => 'required|max:100000|numeric',
       'ville' => 'required|min:3|max:20|alpha',
@@ -155,7 +156,7 @@ class UsersController extends Controller
       'telephone' => 'required|min:11|max:0989999999|numeric',
       'email' => 'required|email',
       'url' => 'url',
-    'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
+      'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
   ]);
 
     if ($validator->fails()) {
